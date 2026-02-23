@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louie Elizondo — Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #252525;
+      --text: #e8e4dc;
+      --muted: #6b6760;
+      --accent: #c8f060;
+      --accent2: #ff6b35;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NOISE TEXTURE */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(13,13,13,0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+      gap: 4rem;
+    }
+
+    .hero-left { position: relative; }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+    }
+
+    h1 .line2 {
+      color: var(--accent);
+      display: block;
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 38ch;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-bio span { color: var(--text); }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0d0d0d;
+    }
+
+    .btn-primary:hover { background: #d4ff70; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover { border-color: var(--text); }
+
+    /* HERO RIGHT - stats card */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .stat-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .stat-card:nth-child(1) { animation-delay: 0.1s; }
+    .stat-card:nth-child(2) { animation-delay: 0.2s; }
+    .stat-card:nth-child(3) { animation-delay: 0.3s; }
+    .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .stat-icon {
+      font-size: 1.8rem;
+      width: 3rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-value {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    /* SECTION */
+    section {
+      padding: 6rem 4rem;
+      position: relative;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-text p span { color: var(--text); }
+
+    .about-tags {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .about-quote {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .about-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: normal;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* PROJECTS */
+    #projects { background: var(--surface); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,240,96,0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .project-card.coming-soon { opacity: 0.6; }
+    .project-card.coming-soon:hover { transform: none; border-color: var(--border); }
+
+    .project-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 1.2rem;
+      background: rgba(200,240,96,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(200,240,96,0.2);
+    }
+
+    .project-badge.soon {
+      background: rgba(255,107,53,0.1);
+      color: var(--accent2);
+      border-color: rgba(255,107,53,0.2);
+    }
+
+    .project-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .project-link:hover { gap: 0.7rem; }
+
+    /* STACK */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .stack-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+
+    .stack-item:hover { border-color: var(--accent); }
+
+    .stack-emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+    .stack-name {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* CONTACT */
+    #contact { background: var(--surface); }
+
+    .contact-inner {
+      max-width: 600px;
+    }
+
+    .contact-inner p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left { animation: fadeUp 0.7s ease both; }
+
+    /* PHOTO */
+    .hero-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), transparent 60%);
+      z-index: 0;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 180px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 12px;
+      display: block;
+      border: 2px solid var(--bg);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 7rem 1.5rem 3rem;
+        gap: 3rem;
+      }
+
+      section { padding: 4rem 1.5rem; }
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">LE</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-photo-wrap">
+        <img src="louie.jpg" alt="Louie Elizondo" class="hero-photo" />
+      </div>
+      <div class="hero-eyebrow">Chihuahua, México · Builder</div>
+      <h1>
+        Louie<br>
+        <span class="line2">Elizondo.</span>
+      </h1>
+      <p class="hero-bio">
+        Entrepreneur, operator, and self-taught developer. 
+        <span>Turned a family food business into a tech-first operation</span> — 
+        now building tools that didn't exist when I needed them.<br><br>
+        Emprendedor, operador, y programador autodidacta. 
+        <span>Aprendiendo en público.</span>
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">Ver proyectos →</a>
+        <a href="https://x.com/louieelizondo" target="_blank" class="btn btn-ghost">𝕏 @louieelizondo</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-icon">🥗</div>
+        <div>
+          <div class="stat-label">Partner & Operator</div>
+          <div class="stat-value">Natural Balance Club</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏛️</div>
+        <div>
+          <div class="stat-label">Cargo / Role</div>
+          <div class="stat-value">Presidente · Sección de Restauranteros, CANACO Chih.</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚙️</div>
+        <div>
+          <div class="stat-label">Current Mission</div>
+          <div class="stat-value">Building in public · Aprendiendo en público</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📍</div>
+        <div>
+          <div class="stat-label">Base</div>
+          <div class="stat-value">Chihuahua, México</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">About / Sobre mí</div>
+    <h2>Operator first,<br>developer in progress.</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I run <span>Natural Balance</span> — a food business in Chihuahua selling homestyle meals: 
+          prepped, cooked, refrigerated, frozen, and hot-ready combos for families who want to eat well without the daily cooking grind.
+        </p>
+        <p>
+          Instead of just running the business the traditional way, I rebuilt it around technology. 
+          <span>Notion runs operations. Shopify runs sales.</span> The result is a lean, modern business that punches above its weight.
+        </p>
+        <p>
+          Now I'm going further — learning to build the software I always wanted but couldn't find. 
+          <span>This portfolio is my public learning log.</span> Every project here started as a real problem.
+        </p>
+        <p>
+          Soy presidente de la Sección de Restauranteros en <span>CANACO Chihuahua</span> — 
+          trabajando para que más negocios locales se modernicen y crezcan.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Shopify</span>
+          <span class="tag">Notion</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Food Tech</span>
+          <span class="tag">Ops Automation</span>
+          <span class="tag">CANACO</span>
+        </div>
+      </div>
+
+      <blockquote class="about-quote">
+        "Build it. Break it. Feel like an idiot. Figure it out. Do it again — but better.
+        <br><br>
+        Construye. Rómpelo. Siéntete idiota. Entiéndelo. Repite — pero mejor."
+        <cite>— Louie Elizondo</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Projects / Proyectos</div>
+    <h2>Built, building,<br>and next up.</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-badge">Live · En vivo</div>
+        <h3>Natural Balance Club</h3>
+        <p>
+          Home-style food delivery in Chihuahua. Prepped, cooked, refrigerated, frozen, and hot-ready meals for busy families. 
+          Powered by Shopify + a custom Notion operations system.
+          <br><br>
+          <em>Comida casera a domicilio en Chihuahua. Shopify + Notion como cerebro de operaciones.</em>
+        </p>
+        <a href="https://naturalbalance.club" target="_blank" class="project-link">
+          naturalbalance.club →
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-badge">Live · En vivo</div>
+        <h3>This Portfolio Site</h3>
+        <p>
+          My first hand-coded project. Built to learn Git, GitHub Pages, and HTML/CSS from scratch. 
+          Hosted free on GitHub Pages.
+          <br><br>
+          <em>Mi primer proyecto de código. Hecho para aprender Git y GitHub Pages desde cero.</em>
+        </p>
+        <a href="https://github.com" target="_blank" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card coming-soon">
+        <div class="project-badge soon">Coming Soon · Próximamente</div>
+        <h3>Kettlebell Workout App</h3>
+        <p>
+          A training app for kettlebell athletes. Structured programs, progress tracking, and smart workout recommendations.
+          <br><br>
+          <em>App de entrenamiento con pesas rusas. Programas estructurados y seguimiento de progreso.</em>
+        </p>
+      </div>
+
+      <div class="project-card coming-soon">
+        <div class="project-badge soon">Coming Soon · Próximamente</div>
+        <h3>Shopify App</h3>
+        <p>
+          A tool born from running Natural Balance — solving a real operations problem that no existing Shopify app solves well.
+          <br><br>
+          <em>Una herramienta nacida de operar Natural Balance. Resolviendo un problema real de operaciones.</em>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="section-label">Tools / Herramientas</div>
+    <h2>What I build with.</h2>
+
+    <div class="stack-grid">
+      <div class="stack-item">
+        <div class="stack-emoji">🛒</div>
+        <div class="stack-name">Shopify</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-emoji">🧠</div>
+        <div class="stack-name">Notion</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-emoji">🌐</div>
+        <div class="stack-name">HTML / CSS</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-emoji">⚡</div>
+        <div class="stack-name">JavaScript</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-emoji">🐙</div>
+        <div class="stack-name">GitHub</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-emoji">🤖</div>
+        <div class="stack-name">Claude AI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Contact / Contacto</div>
+    <h2>Let's talk.</h2>
+    <div class="contact-inner">
+      <p>
+        Building something interesting? Want to talk food tech, Shopify, or operations in Mexico?
+        I publish most of my thinking on X.
+        <br><br>
+        <em>¿Construyendo algo interesante? Hablemos de tech, Shopify, u operaciones. Publico la mayoría de mis ideas en X.</em>
+      </p>
+      <div class="contact-links">
+        <a href="https://x.com/louieelizondo" target="_blank" class="btn btn-primary">𝕏 @louieelizondo</a>
+        <a href="https://naturalbalance.club" target="_blank" class="btn btn-ghost">Natural Balance →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Louie Elizondo · Chihuahua, México</span>
+    <span>Built with HTML + GitHub Pages · Hecho con código y café ☕</span>
+  </footer>
+
+</body>
+</html>
