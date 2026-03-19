@@ -516,6 +516,72 @@
     }
     .project-link:hover { gap: 0.8rem; }
 
+    /* GITHUB CALENDAR */
+    #github { border-bottom: 1px solid var(--border); }
+
+    .github-calendar {
+      margin-top: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      overflow-x: auto;
+    }
+
+    .github-calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .github-total {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .github-total span {
+      color: var(--c-green);
+    }
+
+    .github-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .github-link:hover { color: var(--text); }
+
+    #contrib-graph {
+      width: 100%;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #contrib-graph .loading {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .github-legend {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      justify-content: flex-end;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .legend-box {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
     /* STACK */
     .stack-grid {
       display: grid;
@@ -621,6 +687,8 @@
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
       .project-card.featured { grid-column: span 1; }
+      .github-calendar { padding: 1.25rem; }
+      .github-calendar-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .stack-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
       .stack-item { padding: 1rem 0.5rem; }
       .stack-emoji { font-size: 1.5rem; }
@@ -648,6 +716,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#github">GitHub</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -874,6 +943,31 @@
     </div>
   </section>
 
+  <!-- GITHUB ACTIVITY -->
+  <section id="github">
+    <div class="section-label reveal">GitHub / Actividad</div>
+    <h2 class="reveal">Commit by commit.</h2>
+
+    <div class="github-calendar reveal">
+      <div class="github-calendar-header">
+        <div class="github-total" id="contrib-total">Loading contributions...</div>
+        <a href="https://github.com/louieelizondo" target="_blank" class="github-link">@louieelizondo →</a>
+      </div>
+      <div id="contrib-graph">
+        <span class="loading">Fetching GitHub data...</span>
+      </div>
+      <div class="github-legend" id="contrib-legend" style="display:none;">
+        <span>Less</span>
+        <div class="legend-box" style="background: #1a1a24;"></div>
+        <div class="legend-box" style="background: #1c4a2a;"></div>
+        <div class="legend-box" style="background: #2d7a3a;"></div>
+        <div class="legend-box" style="background: #3fb950;"></div>
+        <div class="legend-box" style="background: #4ade80;"></div>
+        <span>More</span>
+      </div>
+    </div>
+  </section>
+
   <!-- STACK -->
   <section id="stack">
     <div class="section-label reveal">Tools / Herramientas</div>
@@ -925,6 +1019,89 @@
     }, { threshold: 0.05 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // GitHub Contribution Calendar
+    (async function() {
+      const username = 'louieelizondo';
+      const graph = document.getElementById('contrib-graph');
+      const totalEl = document.getElementById('contrib-total');
+      const legendEl = document.getElementById('contrib-legend');
+
+      const colors = ['#1a1a24', '#1c4a2a', '#2d7a3a', '#3fb950', '#4ade80'];
+
+      try {
+        const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
+        if (!res.ok) throw new Error('API error');
+        const data = await res.json();
+
+        const total = data.total?.lastYear || data.total?.['last'] || Object.values(data.total || {}).pop() || 0;
+        totalEl.innerHTML = `<span>${total}</span> contributions in the last year`;
+
+        const contributions = data.contributions || [];
+
+        // Build SVG calendar
+        const cellSize = 11;
+        const cellGap = 3;
+        const step = cellSize + cellGap;
+        const weeks = 53;
+        const days = 7;
+        const labelW = 28;
+        const svgW = labelW + weeks * step;
+        const monthLabelH = 18;
+        const svgH = monthLabelH + days * step;
+
+        let svg = `<svg width="100%" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg" style="max-width:${svgW}px;">`;
+
+        // Month labels
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        let lastMonth = -1;
+        const flat = contributions.flat();
+
+        flat.forEach((day, i) => {
+          const d = new Date(day.date);
+          const weekIdx = Math.floor(i / 7);
+          const dayIdx = i % 7;
+          if (dayIdx === 0) {
+            const m = d.getMonth();
+            if (m !== lastMonth) {
+              lastMonth = m;
+              const x = labelW + weekIdx * step;
+              svg += `<text x="${x}" y="12" fill="#7a7a8a" font-size="9" font-family="DM Sans, sans-serif">${months[m]}</text>`;
+            }
+          }
+        });
+
+        // Day labels
+        ['Mon','','Wed','','Fri','',''].forEach((label, i) => {
+          if (label) {
+            svg += `<text x="0" y="${monthLabelH + i * step + cellSize - 2}" fill="#7a7a8a" font-size="8" font-family="DM Sans, sans-serif">${label}</text>`;
+          }
+        });
+
+        // Cells
+        flat.forEach((day, i) => {
+          const weekIdx = Math.floor(i / 7);
+          const dayIdx = i % 7;
+          const x = labelW + weekIdx * step;
+          const y = monthLabelH + dayIdx * step;
+          const level = Math.min(day.level || 0, 4);
+          const color = colors[level];
+
+          svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2" fill="${color}"`;
+          svg += ` style="transition:opacity 0.2s"`;
+          svg += `><title>${day.date}: ${day.count || 0} contribution${(day.count || 0) !== 1 ? 's' : ''}</title></rect>`;
+        });
+
+        svg += '</svg>';
+        graph.innerHTML = svg;
+        legendEl.style.display = 'flex';
+
+      } catch (err) {
+        // Fallback: show link to profile
+        graph.innerHTML = `<a href="https://github.com/${username}" target="_blank" style="color: var(--c-green); text-decoration: none; font-size: 0.9rem;">View my contributions on GitHub →</a>`;
+        totalEl.textContent = 'GitHub contributions';
+      }
+    })();
   </script>
 
 </body>
