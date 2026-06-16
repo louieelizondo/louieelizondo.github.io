@@ -603,13 +603,16 @@
     otros:         { label:'Otros',              emoji:'📦', budget:0,     kind:'variable' },
   };
   const MONTHLY_INCOME = 71000;
+  // Tables are prefixed so they can live alongside other tables in a shared
+  // Supabase project without colliding (e.g. fin_transactions, fin_goals).
+  const TABLE_PREFIX = 'fin_';
   const EF_CURRENT = 149565.81;
   const EF_TARGET = 213000;
   const MORTGAGE_BALANCE = 1863323.43;
   const HOME_VALUE_EST = 2650000;
   const CAT_COLORS = ['#b8f044','#2dd4bf','#60a5fa','#a78bfa','#fbbf24','#fb923c','#f87171','#f472b6','#4ade80','#34d399','#818cf8','#facc15','#fda4af','#5eead4','#c4b5fd','#94a3b8'];
 
-  const SCHEMA_SQL = `create table transactions (
+  const SCHEMA_SQL = `create table fin_transactions (
   id uuid primary key default gen_random_uuid(),
   date date not null, description text not null,
   amount decimal(12,2) not null, currency text not null default 'MXN',
@@ -619,7 +622,7 @@
   reimbursed_amount decimal(12,2) default 0, notes text default '',
   created_at timestamptz default now()
 );
-create table investments (
+create table fin_investments (
   id uuid primary key default gen_random_uuid(),
   date date not null, owner text not null default 'louie', platform text not null,
   asset text, amount_usd decimal(12,2), amount_mxn decimal(12,2),
@@ -627,31 +630,31 @@ create table investments (
   transaction_type text default 'buy', source text default 'csv',
   notes text default '', created_at timestamptz default now()
 );
-create table portfolio_snapshots (
+create table fin_portfolio_snapshots (
   id uuid primary key default gen_random_uuid(),
   date date not null, owner text default 'louie', platform text,
   total_value_usd decimal(12,2), total_value_mxn decimal(12,2),
   exchange_rate decimal(10,4), notes text default '', created_at timestamptz default now()
 );
-create table mortgage_payments (
+create table fin_mortgage_payments (
   id uuid primary key default gen_random_uuid(),
   month text not null, date date, actual_payment decimal(12,2),
   baseline_payment decimal(12,2) default 20287, extra_principal decimal(12,2),
   total_paid decimal(12,2), balance_after decimal(14,2), created_at timestamptz default now()
 );
-create table goals (
+create table fin_goals (
   id uuid primary key default gen_random_uuid(),
   key text not null, date date not null, balance decimal(14,2) not null,
   currency text default 'MXN', target decimal(14,2), source text default 'manual',
   notes text default '', created_at timestamptz default now()
 );
-create table recurring_items (
+create table fin_recurring_items (
   id uuid primary key default gen_random_uuid(),
   label text not null, kind text not null, amount decimal(12,2),
   currency text default 'MXN', start_date date, end_date date,
   active boolean default true, notes text default ''
 );
-create table budget_config (
+create table fin_budget_config (
   id uuid primary key default gen_random_uuid(),
   monthly_income_mxn decimal(12,2) default 71000, monthly_expenses_mxn decimal(12,2) default 70887,
   emergency_fund_months int default 3, investment_goal_mxn decimal(12,2) default 3125,
@@ -659,7 +662,7 @@ create table budget_config (
   categories jsonb default '{}', exchange_rate decimal(10,4) default 17.5,
   updated_at timestamptz default now()
 );
-create table habits_cache (
+create table fin_habits_cache (
   id uuid primary key default gen_random_uuid(),
   year int not null, month int not null, analysis jsonb not null,
   created_at timestamptz default now(), unique(year, month)
@@ -702,10 +705,13 @@ create table habits_cache (
     } catch(e){ console.error(e); S.sb = null; return false; }
   }
 
+  // Returns a query builder for a prefixed table (fin_*).
+  function sbt(name){ return S.sb.from(TABLE_PREFIX + name); }
+
   async function dbSelect(table, builder) {
     if (!S.sb) return [];
     try {
-      let q = S.sb.from(table).select('*');
+      let q = sbt(table).select('*');
       if (builder) q = builder(q);
       const { data, error } = await q;
       if (error) { console.warn(table, error.message); return []; }
@@ -894,14 +900,14 @@ create table habits_cache (
     if (!S.sb) { toast('Configura Supabase para guardar','error'); return; }
     const t = S.allTxns.find(x=>x.id===id);
     const amt = val ? toMXN(t.amount,t.currency) : 0;
-    try { await S.sb.from('transactions').update({ reimbursed:val, reimbursed_amount:amt }).eq('id',id);
+    try { await sbt('transactions').update({ reimbursed:val, reimbursed_amount:amt }).eq('id',id);
       t.reimbursed=val; t.reimbursed_amount=amt; renderAll(); toast('Actualizado','success');
     } catch(e){ toast('Error al actualizar','error'); }
   }
   async function deleteTxn(id) {
     if (!confirm('¿Eliminar este movimiento?')) return;
     if (!S.sb) { toast('Configura Supabase','error'); return; }
-    try { await S.sb.from('transactions').delete().eq('id',id);
+    try { await sbt('transactions').delete().eq('id',id);
       S.allTxns = S.allTxns.filter(x=>x.id!==id); refreshMonth(); renderAll(); toast('Eliminado','success');
     } catch(e){ toast('Error al eliminar','error'); }
   }
@@ -1114,7 +1120,7 @@ Rules: amounts always positive; currency MXN unless clearly USD; dates ISO 8601 
   }
   async function saveInvestments(rows) {
     if (!S.sb) { toast('Configura Supabase para guardar','error'); return; }
-    try { const { error } = await S.sb.from('investments').insert(rows); if(error) throw error;
+    try { const { error } = await sbt('investments').insert(rows); if(error) throw error;
       closeModal('reviewModal'); await loadAll(); toast(`${rows.length} inversiones guardadas`,'success');
     } catch(e){ console.error(e); toast('Error al guardar inversiones','error'); }
   }
@@ -1166,10 +1172,10 @@ Rules: amounts always positive; currency MXN unless clearly USD; dates ISO 8601 
     if (!rows.length) { toast('No hay filas válidas','info'); return; }
     try {
       if (reviewIsEdit && rows[0].id) {
-        const r=rows[0]; const {id,...upd}=r; await S.sb.from('transactions').update(upd).eq('id',id);
+        const r=rows[0]; const {id,...upd}=r; await sbt('transactions').update(upd).eq('id',id);
       } else {
         const ins = rows.map(({id,...rest})=>rest);
-        const { error } = await S.sb.from('transactions').insert(ins); if(error) throw error;
+        const { error } = await sbt('transactions').insert(ins); if(error) throw error;
       }
       closeModal('reviewModal'); await loadAll(); toast(`Guardado: ${rows.length} cargo(s)`,'success');
     } catch(e){ console.error(e); toast('Error al guardar','error'); }
@@ -1190,7 +1196,7 @@ Rules: amounts always positive; currency MXN unless clearly USD; dates ISO 8601 
       { k:'date', label:'Fecha', type:'date', value: new Date().toISOString().slice(0,10) }
     ], async v=>{
       if(!S.sb){toast('Configura Supabase','error');return;}
-      try{ await S.sb.from('goals').insert({ key:'emergency_fund', date:v.date, balance:parseFloat(v.balance), target:EF_TARGET, source:'manual' });
+      try{ await sbt('goals').insert({ key:'emergency_fund', date:v.date, balance:parseFloat(v.balance), target:EF_TARGET, source:'manual' });
         closeModal('quickModal'); await loadAll(); toast('Saldo actualizado','success'); }catch(e){toast('Error','error');}
     });
 
@@ -1202,7 +1208,7 @@ Rules: amounts always positive; currency MXN unless clearly USD; dates ISO 8601 
     ], async v=>{
       if(!S.sb){toast('Configura Supabase','error');return;}
       try{ const actual=parseFloat(v.actual_payment)||0, extra=parseFloat(v.extra_principal)||0;
-        await S.sb.from('mortgage_payments').insert({ month:v.month, date:new Date().toISOString().slice(0,10), actual_payment:actual, baseline_payment:20287, extra_principal:extra, total_paid:actual+extra, balance_after:parseFloat(v.balance_after)||null });
+        await sbt('mortgage_payments').insert({ month:v.month, date:new Date().toISOString().slice(0,10), actual_payment:actual, baseline_payment:20287, extra_principal:extra, total_paid:actual+extra, balance_after:parseFloat(v.balance_after)||null });
         closeModal('quickModal'); await loadAll(); toast('Pago registrado','success'); }catch(e){toast('Error','error');}
     });
 
@@ -1212,7 +1218,7 @@ Rules: amounts always positive; currency MXN unless clearly USD; dates ISO 8601 
     ], async v=>{
       if(!S.sb){toast('Configura Supabase','error');return;}
       try{ const usd=parseFloat(v.total_value_usd)||0;
-        await S.sb.from('portfolio_snapshots').insert({ date:v.date, owner:'louie', total_value_usd:usd, total_value_mxn:usd*rate(), exchange_rate:rate() });
+        await sbt('portfolio_snapshots').insert({ date:v.date, owner:'louie', total_value_usd:usd, total_value_mxn:usd*rate(), exchange_rate:rate() });
         closeModal('quickModal'); await loadAll(); toast('Valor actualizado','success'); }catch(e){toast('Error','error');}
     });
 
@@ -1221,7 +1227,7 @@ Rules: amounts always positive; currency MXN unless clearly USD; dates ISO 8601 
       { k:'notes', label:'Notas', value:'Aumentar conforme crezca el ingreso' }
     ], async v=>{
       if(!S.sb){toast('Configura Supabase','error');return;}
-      try{ await S.sb.from('goals').insert({ key:'sophia_payment', date:new Date().toISOString().slice(0,10), balance:0, target:parseFloat(v.target)||0, notes:v.notes });
+      try{ await sbt('goals').insert({ key:'sophia_payment', date:new Date().toISOString().slice(0,10), balance:0, target:parseFloat(v.target)||0, notes:v.notes });
         closeModal('quickModal'); toast('Meta guardada','success'); }catch(e){toast('Error','error');}
     });
 
@@ -1252,7 +1258,7 @@ Todo en español.`;
       const analysis = await claudeAnalysis(prompt);
       renderCoach(analysis);
       $('coachStatus').textContent='';
-      if (S.sb) { try { await S.sb.from('habits_cache').upsert({ year:y, month:mo, analysis }, { onConflict:'year,month' }); } catch(e){} }
+      if (S.sb) { try { await sbt('habits_cache').upsert({ year:y, month:mo, analysis }, { onConflict:'year,month' }); } catch(e){} }
     } catch(e){ console.error(e); $('coachStatus').textContent=''; toast('Error al analizar','error'); }
   }
   function renderCoach(a) {
