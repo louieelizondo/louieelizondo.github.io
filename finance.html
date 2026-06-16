@@ -249,6 +249,7 @@
       <li><a href="#inversiones">Inversiones</a></li>
       <li><a href="#habitos">Hábitos</a></li>
       <li><button class="nav-gear" id="gearBtn" title="Configuración">⚙️</button></li>
+      <li><button class="nav-gear" id="logoutBtn" title="Cerrar sesión" style="display:none;">⎋</button></li>
     </ul>
   </nav>
 
@@ -531,17 +532,18 @@
       </div>
       <div id="setupStep2" style="display:none;">
         <h2>Crea tu base de datos</h2>
-        <p class="muted small" style="margin-bottom:.8rem;">Crea un proyecto gratis en <strong>supabase.com</strong> → SQL Editor → pega y ejecuta este script:</p>
+        <p class="muted small" style="margin-bottom:.8rem;">En tu proyecto de <strong>Supabase</strong> → <strong>SQL Editor</strong> → pega y ejecuta este script. Crea las tablas (<code>fin_*</code>) y activa la seguridad (RLS) para que solo usuarios con sesión puedan ver los datos:</p>
         <div class="sql-box" id="sqlBox"></div>
         <div style="margin-top:.8rem;display:flex;gap:.6rem;"><button class="btn btn-sm" id="copySqlBtn">Copiar SQL</button></div>
         <div class="modal-foot"><button class="btn" id="setupBack2">← Atrás</button><button class="btn btn-primary" id="setupNext2">Siguiente →</button></div>
       </div>
       <div id="setupStep3" style="display:none;">
-        <h2>¡Todo listo!</h2>
-        <p class="muted small" style="margin-bottom:1rem;">Tu tablero está conectado. Empieza subiendo un screenshot de gastos o un CSV de inversiones.</p>
+        <h2>Crea las cuentas de acceso</h2>
+        <p class="muted small" style="margin-bottom:.8rem;">En Supabase → <strong>Authentication → Users → Add user</strong>, crea una cuenta (correo + contraseña) para ti y otra para tu esposa. Desactiva "Auto Confirm" no es necesario: marca <em>Auto Confirm User</em> para que puedan entrar de inmediato.</p>
+        <p class="muted small" style="margin-bottom:1rem;">Después inicia sesión con ese correo y contraseña. Empieza subiendo un screenshot o un CSV.</p>
         <ul class="muted small" style="padding-left:1.2rem;line-height:1.9;">
+          <li>🔒 Solo las cuentas que crees podrán ver los datos</li>
           <li>📸 Sube capturas de tu app bancaria → IA extrae los cargos</li>
-          <li>📄 Importa CSVs de Robinhood, Cash App, GBM o Bitso</li>
           <li>🧠 Pide un análisis al coach financiero cada mes</li>
         </ul>
         <div class="modal-foot"><button class="btn" id="setupBack3">← Atrás</button><button class="btn btn-primary" id="setupDone">Listo</button></div>
@@ -559,6 +561,22 @@
       <label class="field"><span>Supabase anon key</span><input type="password" id="setSbKey"></label>
       <label class="field"><span>Tipo de cambio USD→MXN</span><input type="number" id="setRate" step="0.01"></label>
       <div class="modal-foot"><button class="btn" id="closeSettings">Cancelar</button><button class="btn btn-primary" id="saveSettings">Guardar</button></div>
+    </div>
+  </div>
+
+  <!-- AUTH (LOGIN) MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal" style="max-width:400px;text-align:center;">
+      <div style="font-size:2.4rem;">🔒</div>
+      <h2 style="margin-top:.4rem;">Finanzas Familiares</h2>
+      <p class="muted small" style="margin-bottom:1.4rem;">Inicia sesión para ver tus datos. Solo tú y tu familia tienen acceso.</p>
+      <form id="authForm" style="text-align:left;">
+        <label class="field"><span>Correo</span><input type="email" id="authEmail" autocomplete="username" required></label>
+        <label class="field"><span>Contraseña</span><input type="password" id="authPass" autocomplete="current-password" required></label>
+        <button type="submit" class="btn btn-primary" id="authSubmit" style="width:100%;margin-top:.4rem;">Entrar</button>
+      </form>
+      <p id="authError" class="small" style="color:var(--c-red);min-height:1.1rem;margin-top:.6rem;"></p>
+      <p class="small muted" style="margin-top:.4rem;">Las cuentas se crean en Supabase → Authentication → Users.</p>
     </div>
   </div>
 
@@ -666,7 +684,24 @@ create table fin_habits_cache (
   id uuid primary key default gen_random_uuid(),
   year int not null, month int not null, analysis jsonb not null,
   created_at timestamptz default now(), unique(year, month)
-);`;
+);
+
+-- Row Level Security: only logged-in (authenticated) users can read/write.
+-- The public anon key is then harmless to anyone who is not signed in.
+-- Shared family data: any authenticated user (you + your wife) sees everything.
+do $$
+declare t text;
+begin
+  foreach t in array array[
+    'fin_transactions','fin_investments','fin_portfolio_snapshots',
+    'fin_mortgage_payments','fin_goals','fin_recurring_items',
+    'fin_budget_config','fin_habits_cache'
+  ] loop
+    execute format('alter table %I enable row level security;', t);
+    execute format('drop policy if exists family_rw on %I;', t);
+    execute format('create policy family_rw on %I for all to authenticated using (true) with check (true);', t);
+  end loop;
+end $$;`;
 
   /* ============== STATE ============== */
   const S = { sb:null, config:{}, month:'', txns:[], allTxns:[], investments:[], snapshots:[], mortgage:[], goals:[], recurring:[], habits:null, charts:{} };
@@ -1315,16 +1350,16 @@ Todo en español.`;
       localStorage.setItem('sb_key',$('inSbKey').value);
       localStorage.setItem('exchange_rate',$('inRate').value||'17.5');
       localStorage.setItem('setup_done','1');
-      closeModal('setupModal'); initSupabase(); renderBanner(); loadAll(); toast('Configuración lista','success');
+      closeModal('setupModal'); initSupabase(); renderBanner(); checkAuthAndLoad(); toast('Configuración lista','success');
     };
     // settings
     $('gearBtn').onclick=()=>{ $('setClaude').value=localStorage.getItem('claude_key')||''; $('setSbUrl').value=localStorage.getItem('sb_url')||''; $('setSbKey').value=localStorage.getItem('sb_key')||''; $('setRate').value=localStorage.getItem('exchange_rate')||'17.5'; openModal('settingsModal'); };
     $('closeSettings').onclick=()=>closeModal('settingsModal');
-    $('saveSettings').onclick=()=>{ localStorage.setItem('claude_key',$('setClaude').value); localStorage.setItem('sb_url',$('setSbUrl').value); localStorage.setItem('sb_key',$('setSbKey').value); localStorage.setItem('exchange_rate',$('setRate').value||'17.5'); closeModal('settingsModal'); initSupabase(); renderBanner(); loadAll(); toast('Guardado','success'); };
+    $('saveSettings').onclick=()=>{ localStorage.setItem('claude_key',$('setClaude').value); localStorage.setItem('sb_url',$('setSbUrl').value); localStorage.setItem('sb_key',$('setSbKey').value); localStorage.setItem('exchange_rate',$('setRate').value||'17.5'); closeModal('settingsModal'); initSupabase(); renderBanner(); checkAuthAndLoad(); toast('Guardado','success'); };
     // generic modal cancels
     $('quickCancel').onclick=()=>closeModal('quickModal');
     $('reviewCancel').onclick=()=>closeModal('reviewModal');
-    document.querySelectorAll('.modal-overlay').forEach(ov=>ov.addEventListener('click',e=>{ if(e.target===ov && ov.id!=='setupModal') ov.classList.remove('show'); }));
+    document.querySelectorAll('.modal-overlay').forEach(ov=>ov.addEventListener('click',e=>{ if(e.target===ov && ov.id!=='setupModal' && ov.id!=='authModal') ov.classList.remove('show'); }));
   }
   function renderBanner() {
     $('bannerSlot').innerHTML = S.sb ? '' : '<div class="banner"><span>⚠️ Configura tu base de datos para guardar tus datos. Puedes explorar el tablero mientras tanto.</span><button class="btn btn-sm" onclick="document.getElementById(\'gearBtn\').click()">Configurar</button></div>';
@@ -1344,15 +1379,41 @@ Todo en español.`;
     $('analyzeBtn').onclick=analyzeMonth;
   }
 
+  /* ============== AUTH ============== */
+  async function checkAuthAndLoad() {
+    if (!S.sb) { renderAll(); return; }      // not configured → demo/empty view
+    let session = null;
+    try { const { data } = await S.sb.auth.getSession(); session = data.session; } catch(e){}
+    if (session) { closeModal('authModal'); $('logoutBtn').style.display=''; await loadAll(); }
+    else { $('logoutBtn').style.display='none'; renderAll(); openModal('authModal'); }
+  }
+  function setupAuth() {
+    $('authForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!S.sb) { $('authError').textContent='Configura Supabase primero (⚙️).'; return; }
+      const btn=$('authSubmit'); btn.disabled=true; btn.textContent='Entrando…'; $('authError').textContent='';
+      try {
+        const { error } = await S.sb.auth.signInWithPassword({ email:$('authEmail').value.trim(), password:$('authPass').value });
+        if (error) { $('authError').textContent='Correo o contraseña incorrectos.'; }
+        else { $('authPass').value=''; closeModal('authModal'); $('logoutBtn').style.display=''; await loadAll(); toast('Sesión iniciada','success'); }
+      } catch(e){ $('authError').textContent='Error al iniciar sesión.'; }
+      btn.disabled=false; btn.textContent='Entrar';
+    });
+    $('logoutBtn').onclick = async ()=>{
+      if (S.sb) { try { await S.sb.auth.signOut(); } catch(e){} }
+      $('logoutBtn').style.display='none'; openModal('authModal');
+    };
+  }
+
   function init() {
     S.month = todayMonth();
     localStorage.setItem('exchange_rate', localStorage.getItem('exchange_rate')||'17.5');
-    setupHandlers(); setupToggles(); setupMonthNav(); setupQuickForms(); renderEdu();
+    setupHandlers(); setupToggles(); setupMonthNav(); setupQuickForms(); renderEdu(); setupAuth();
     setupDropzone('shotDrop','shotInput',handleScreenshot);
     setupDropzone('csvDrop','csvInput',handleCsv);
     initSupabase(); renderBanner();
     if (!localStorage.getItem('setup_done')) { openModal('setupModal'); renderAll(); }
-    else loadAll();
+    else checkAuthAndLoad();
   }
   document.addEventListener('DOMContentLoaded', init);
   </script>
