@@ -73,7 +73,7 @@
       pointer-events: none;
     }
 
-    /* SCROLL REVEAL — fixed to actually work */
+    /* SCROLL REVEAL */
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -83,7 +83,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Coming-soon cards keep their reduced opacity even when revealed */
     .project-card.coming-soon.visible { opacity: 0.55; }
     .project-card.coming-soon.visible:hover { opacity: 0.75; }
 
@@ -217,7 +216,7 @@
     }
     .btn-ghost:hover { border-color: var(--border-hover); background: var(--border); }
 
-    /* HERO RIGHT — Glassmorphism stat cards */
+    /* HERO RIGHT */
     .hero-right { display: flex; flex-direction: column; gap: 0.75rem; }
 
     .stat-card {
@@ -389,7 +388,6 @@
       margin-top: 2rem;
     }
 
-    /* === PROJECT CARDS === */
     .project-card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -421,7 +419,6 @@
       transform: translateY(-2px);
     }
 
-    /* Per-card color assignments */
     .project-card[data-color="green"]  { --card-color: var(--c-green);  --card-glow: rgba(74,222,128,0.06); }
     .project-card[data-color="blue"]   { --card-color: var(--c-blue);   --card-glow: rgba(96,165,250,0.06); }
     .project-card[data-color="purple"] { --card-color: var(--c-purple); --card-glow: rgba(167,139,250,0.06); }
@@ -431,7 +428,6 @@
     .project-card[data-color="red"]    { --card-color: var(--c-red);    --card-glow: rgba(248,113,113,0.06); }
     .project-card[data-color="rose"]   { --card-color: var(--c-rose);   --card-glow: rgba(244,114,182,0.06); }
 
-    /* Card header with emoji */
     .card-header {
       display: flex;
       align-items: center;
@@ -457,7 +453,6 @@
       letter-spacing: -0.01em;
     }
 
-    /* Badge */
     .project-badge {
       display: inline-flex;
       align-items: center;
@@ -665,7 +660,7 @@
       border: 2px solid var(--bg);
     }
 
-    /* ==================== RESPONSIVE ==================== */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       .hero { padding: 8rem 3rem 4rem; gap: 3rem; }
       section, #projects, #contact { padding: 5rem 3rem; }
@@ -721,7 +716,6 @@
       <li><a href="#github">GitHub</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="finance.html">Finanzas</a></li>
     </ul>
   </nav>
 
@@ -1025,7 +1019,6 @@
     <span>Built with HTML + GitHub Pages · Hecho con código y café ☕</span>
   </footer>
 
-  <!-- SCROLL REVEAL — fixed: lower threshold + no negative rootMargin -->
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1056,7 +1049,6 @@
 
         const contributions = data.contributions || [];
 
-        // Build SVG calendar
         const cellSize = 11;
         const cellGap = 3;
         const step = cellSize + cellGap;
@@ -1069,7 +1061,6 @@
 
         let svg = `<svg width="100%" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg" style="max-width:${svgW}px;">`;
 
-        // Month labels
         const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         let lastMonth = -1;
         const flat = contributions.flat();
@@ -1088,14 +1079,12 @@
           }
         });
 
-        // Day labels
         ['Mon','','Wed','','Fri','',''].forEach((label, i) => {
           if (label) {
             svg += `<text x="0" y="${monthLabelH + i * step + cellSize - 2}" fill="#7a7a8a" font-size="8" font-family="DM Sans, sans-serif">${label}</text>`;
           }
         });
 
-        // Cells
         flat.forEach((day, i) => {
           const weekIdx = Math.floor(i / 7);
           const dayIdx = i % 7;
@@ -1114,7 +1103,6 @@
         legendEl.style.display = 'flex';
 
       } catch (err) {
-        // Fallback: show link to profile
         graph.innerHTML = `<a href="https://github.com/${username}" target="_blank" style="color: var(--c-green); text-decoration: none; font-size: 0.9rem;">View my contributions on GitHub →</a>`;
         totalEl.textContent = 'GitHub contributions';
       }
