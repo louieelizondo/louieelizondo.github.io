@@ -136,7 +136,6 @@ function applyLang(next) {
 
 langButtons.forEach((b) => b.addEventListener('click', () => applyLang(b.dataset.lang)));
 window.addEventListener('resize', moveThumb);
-applyLang(lang);
 document.fonts?.ready.then(moveThumb);
 
 /* =========================================================
@@ -723,3 +722,5 @@ buildCommands();
 
   io.observe(stage);
 })();
+
+applyLang(lang);
