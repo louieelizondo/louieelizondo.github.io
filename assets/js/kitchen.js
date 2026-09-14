@@ -58,43 +58,58 @@ export function initKitchen(stage, options = {}) {
   const renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
-    alpha: true,
+    alpha: false,
     powerPreference: 'high-performance',
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 1.15;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.setClearColor(palette.fog, 1);
+
+  const gl = renderer.getContext();
+  const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+  const gpu = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
+  const softwareGL = /swiftshader|llvmpipe|softpipe|software|mesa/i.test(gpu);
+  if (softwareGL) {
+    renderer.shadowMap.enabled = false;
+    renderer.toneMapping = THREE.NoToneMapping;
+    renderer.setPixelRatio(1);
+  }
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(palette.fog, 16, 34);
+  scene.background = new THREE.Color(palette.fog);
+  scene.fog = new THREE.Fog(palette.fog, 18, 38);
 
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
 
-  /* ---------- MATERIALS (kept in a registry so themes can restyle) ---------- */
+  /* Standard materials without an environment map go black at high metalness.
+     Keep metal low so the line reads on SwiftShader and on real GPUs. */
   const mats = {
     floor: new THREE.MeshStandardMaterial({ color: palette.floor, roughness: 0.95, metalness: 0.0 }),
-    steel: new THREE.MeshStandardMaterial({ color: palette.steel, roughness: 0.34, metalness: 0.86 }),
-    steelDark: new THREE.MeshStandardMaterial({ color: palette.steelDark, roughness: 0.5, metalness: 0.7 }),
-    board: new THREE.MeshStandardMaterial({ color: palette.board, roughness: 0.8, metalness: 0.05 }),
+    steel: new THREE.MeshStandardMaterial({ color: palette.steel, roughness: 0.45, metalness: 0.18 }),
+    steelDark: new THREE.MeshStandardMaterial({ color: palette.steelDark, roughness: 0.55, metalness: 0.12 }),
+    board: new THREE.MeshStandardMaterial({ color: palette.board, roughness: 0.8, metalness: 0.0 }),
     plate: new THREE.MeshStandardMaterial({ color: palette.plate, roughness: 0.42, metalness: 0.04 }),
     paper: new THREE.MeshStandardMaterial({ color: palette.paper, roughness: 0.9, metalness: 0.0, side: THREE.DoubleSide }),
-    ember: new THREE.MeshStandardMaterial({ color: palette.ember, emissive: palette.ember, emissiveIntensity: 1.5, roughness: 0.5 }),
-    limon: new THREE.MeshStandardMaterial({ color: palette.limon, roughness: 0.6, metalness: 0.1 }),
-    cilantro: new THREE.MeshStandardMaterial({ color: palette.cilantro, roughness: 0.65, metalness: 0.05 }),
-    clay: new THREE.MeshStandardMaterial({ color: palette.clay, roughness: 0.7, metalness: 0.1 }),
-    lampGlow: new THREE.MeshStandardMaterial({ color: palette.ember, emissive: palette.ember, emissiveIntensity: 2.2, roughness: 1 }),
+    ember: new THREE.MeshStandardMaterial({ color: palette.ember, emissive: palette.ember, emissiveIntensity: 1.5, roughness: 0.5, metalness: 0 }),
+    limon: new THREE.MeshStandardMaterial({ color: palette.limon, roughness: 0.6, metalness: 0.05 }),
+    cilantro: new THREE.MeshStandardMaterial({ color: palette.cilantro, roughness: 0.65, metalness: 0.0 }),
+    clay: new THREE.MeshStandardMaterial({ color: palette.clay, roughness: 0.7, metalness: 0.0 }),
+    lampGlow: new THREE.MeshStandardMaterial({ color: palette.ember, emissive: palette.ember, emissiveIntensity: 2.2, roughness: 1, metalness: 0 }),
   };
 
   /* ---------- LIGHTS ---------- */
-  const ambient = new THREE.HemisphereLight(0xffffff, palette.floor, palette.ambient);
+  const ambient = new THREE.HemisphereLight(0xfff6ea, palette.floor, palette.ambient);
   scene.add(ambient);
+  const fill = new THREE.AmbientLight(0xffffff, softwareGL ? 0.85 : 0.35);
+  scene.add(fill);
 
   const key = new THREE.DirectionalLight(0xfff2e0, palette.key);
   key.position.set(5, 11, 7);
-  key.castShadow = true;
+  key.castShadow = !softwareGL;
   key.shadow.mapSize.set(1024, 1024);
   key.shadow.camera.left = -12;
   key.shadow.camera.right = 12;
@@ -564,6 +579,8 @@ export function initKitchen(stage, options = {}) {
   function setTheme(name) {
     palette = PALETTES[name === 'light' ? 'light' : 'dark'];
     scene.fog.color.setHex(palette.fog);
+    scene.background.setHex(palette.fog);
+    renderer.setClearColor(palette.fog, 1);
     mats.floor.color.setHex(palette.floor);
     mats.steel.color.setHex(palette.steel);
     mats.steelDark.color.setHex(palette.steelDark);
