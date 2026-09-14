@@ -1,1113 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louie Elizondo — Builder</title>
+  <title>Louie Elizondo — Tres estaciones</title>
+  <meta name="description" content="Louie Elizondo Alvidrez. Operador de Natural Balance Club, presidente de Restauranteros CANACO Chihuahua, y desarrollador autodidacta aprendiendo en público." />
+  <meta name="theme-color" content="#100c09" />
+  <link rel="canonical" href="https://louieelizondo.com/" />
+  <meta property="og:title" content="Louie Elizondo — Tres estaciones" />
+  <meta property="og:description" content="Cocina. Cámara. Código. Un tablero personal desde Chihuahua." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://louieelizondo.com/" />
+  <meta property="og:image" content="https://louieelizondo.com/louie.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@louieelizondo" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0a0a0e;
-      --surface: #12121a;
-      --surface2: #1a1a24;
-      --border: #1f1f2e;
-      --border-hover: #2e2e42;
-      --text: #ededf0;
-      --muted: #7a7a8a;
-      --accent: #b8f044;
-      --accent2: #ff7a45;
-
-      /* Per-project colors */
-      --c-green: #4ade80;
-      --c-blue: #60a5fa;
-      --c-purple: #a78bfa;
-      --c-amber: #fbbf24;
-      --c-teal: #2dd4bf;
-      --c-orange: #fb923c;
-      --c-red: #f87171;
-      --c-rose: #f472b6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* NOISE */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* AMBIENT GLOWS */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(184,240,68,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -10%;
-      left: -15%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(96,165,250,0.04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .project-card.coming-soon.visible { opacity: 0.55; }
-    .project-card.coming-soon.visible:hover { opacity: 0.75; }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.1rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(16px) saturate(180%);
-      background: rgba(10,10,14,0.8);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1px;
-      background: var(--accent);
-      transition: width 0.3s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 8rem 4rem 4rem;
-      position: relative;
-      gap: 4rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .hero-left { animation: fadeUp 0.7s ease both; }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 2rem; height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--c-teal));
-    }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 2rem;
-    }
-    h1 .line2 {
-      background: linear-gradient(135deg, var(--accent), var(--c-teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-    }
-
-    .hero-bio {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 38ch;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .hero-bio span { color: var(--text); }
-
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--c-teal));
-      color: #0a0a0e;
-      box-shadow: 0 0 20px rgba(184,240,68,0.12);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 30px rgba(184,240,68,0.2);
-    }
-    .btn-ghost {
-      background: var(--surface2);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-ghost:hover { border-color: var(--border-hover); background: var(--border); }
-
-    /* HERO RIGHT */
-    .hero-right { display: flex; flex-direction: column; gap: 0.75rem; }
-
-    .stat-card {
-      background: rgba(18,18,26,0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: fadeUp 0.6s ease both;
-    }
-    .stat-card:hover {
-      border-color: rgba(255,255,255,0.1);
-      transform: translateX(6px);
-      background: rgba(26,26,36,0.7);
-    }
-    .stat-card:nth-child(1) { animation-delay: 0.1s; }
-    .stat-card:nth-child(2) { animation-delay: 0.2s; }
-    .stat-card:nth-child(3) { animation-delay: 0.3s; }
-    .stat-card:nth-child(4) { animation-delay: 0.4s; }
-
-    .stat-icon {
-      font-size: 1.5rem;
-      width: 2.8rem;
-      height: 2.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: rgba(255,255,255,0.04);
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-    .stat-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.1rem;
-    }
-    .stat-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    /* SECTION */
-    section {
-      padding: 6rem 4rem;
-      position: relative;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    #projects, #contact { max-width: none; }
-    #projects > *, #contact > * { max-width: 1400px; margin-left: auto; margin-right: auto; }
-
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .section-label::before {
-      content: '';
-      width: 2rem; height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--c-teal));
-    }
-
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
-    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; }
-    .about-text p span { color: var(--text); }
-
-    .about-tags { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      transition: all 0.3s;
-    }
-    .tag:hover { border-color: var(--border-hover); color: var(--text); }
-
-    .about-quote {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 12px;
-      padding: 2.5rem;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      font-style: italic;
-      color: var(--text);
-    }
-    .about-quote cite {
-      display: block;
-      margin-top: 1.2rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-style: normal;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    /* DIVIDER */
-    .divider {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* PROJECTS */
-    #projects {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 6rem 4rem;
-    }
-
-    .project-count {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(184,240,68,0.06);
-      border: 1px solid rgba(184,240,68,0.1);
-      border-radius: 100px;
-      padding: 0.35rem 1rem;
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .project-count .count {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .project-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--card-color, var(--border));
-      border-radius: 14px;
-      padding: 1.75rem 2rem;
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card:hover {
-      border-color: var(--border-hover);
-      border-left-color: var(--card-color, var(--border-hover));
-      transform: translateY(-4px);
-      box-shadow:
-        0 8px 32px rgba(0,0,0,0.4),
-        0 0 48px var(--card-glow, transparent);
-    }
-
-    .project-card.featured { grid-column: span 2; }
-
-    .project-card.coming-soon {
-      opacity: 0.55;
-      border-left-style: dashed;
-    }
-    .project-card.coming-soon:hover {
-      opacity: 0.75;
-      transform: translateY(-2px);
-    }
-
-    .project-card[data-color="green"]  { --card-color: var(--c-green);  --card-glow: rgba(74,222,128,0.06); }
-    .project-card[data-color="blue"]   { --card-color: var(--c-blue);   --card-glow: rgba(96,165,250,0.06); }
-    .project-card[data-color="purple"] { --card-color: var(--c-purple); --card-glow: rgba(167,139,250,0.06); }
-    .project-card[data-color="amber"]  { --card-color: var(--c-amber);  --card-glow: rgba(251,191,36,0.06); }
-    .project-card[data-color="teal"]   { --card-color: var(--c-teal);   --card-glow: rgba(45,212,191,0.06); }
-    .project-card[data-color="orange"] { --card-color: var(--c-orange); --card-glow: rgba(251,146,60,0.06); }
-    .project-card[data-color="red"]    { --card-color: var(--c-red);    --card-glow: rgba(248,113,113,0.06); }
-    .project-card[data-color="rose"]   { --card-color: var(--c-rose);   --card-glow: rgba(244,114,182,0.06); }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .card-emoji {
-      font-size: 1.6rem;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-    .project-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .project-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 100px;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-    .project-badge.live {
-      background: rgba(74,222,128,0.08);
-      color: var(--c-green);
-      border: 1px solid rgba(74,222,128,0.12);
-    }
-    .project-badge.live::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--c-green);
-      animation: pulse 2s infinite;
-    }
-    .project-badge.soon {
-      background: rgba(251,146,60,0.08);
-      color: var(--c-orange);
-      border: 1px solid rgba(251,146,60,0.12);
-    }
-    .project-badge.soon::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--c-orange);
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.3); }
-      50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(74,222,128,0); }
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.7;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 1.25rem;
-      font-size: 0.84rem;
-      color: var(--card-color, var(--accent));
-      text-decoration: none;
-      font-weight: 500;
-      transition: gap 0.3s;
-    }
-    .project-link:hover { gap: 0.8rem; }
-
-    /* GITHUB CALENDAR */
-    #github { border-bottom: 1px solid var(--border); }
-
-    .github-calendar {
-      margin-top: 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.75rem 2rem;
-      overflow-x: auto;
-    }
-
-    .github-calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .github-total {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .github-total span {
-      color: var(--c-green);
-    }
-
-    .github-link {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .github-link:hover { color: var(--text); }
-
-    #contrib-graph {
-      width: 100%;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #contrib-graph .loading {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .github-legend {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      margin-top: 1rem;
-      justify-content: flex-end;
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .legend-box {
-      width: 10px;
-      height: 10px;
-      border-radius: 2px;
-    }
-
-    /* STACK */
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-    .stack-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .stack-item:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    }
-    .stack-emoji { font-size: 2rem; margin-bottom: 0.6rem; }
-    .stack-name { font-size: 0.78rem; font-weight: 500; color: var(--muted); }
-
-    /* CONTACT */
-    #contact {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 6rem 4rem;
-    }
-    .contact-inner { max-width: 600px; }
-    .contact-inner p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; line-height: 1.8; }
-    .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* FOOTER */
-    footer {
-      padding: 2rem 4rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 0.78rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* PHOTO */
-    .hero-photo-wrap {
-      position: relative;
-      width: fit-content;
-      margin-bottom: 2rem;
-    }
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      top: -3px; left: -3px;
-      width: calc(100% + 6px);
-      height: calc(100% + 6px);
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--c-teal));
-      z-index: 0;
-    }
-    .hero-photo {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 180px;
-      aspect-ratio: 1;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 12px;
-      display: block;
-      border: 2px solid var(--bg);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .hero { padding: 8rem 3rem 4rem; gap: 3rem; }
-      section, #projects, #contact { padding: 5rem 3rem; }
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-card.featured { grid-column: span 2; }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.72rem; }
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 6.5rem 1.5rem 3rem;
-        gap: 2.5rem;
-        min-height: auto;
-      }
-      h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
-      .hero-bio { font-size: 0.95rem; max-width: none; }
-      section, #projects, #contact { padding: 4rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .project-card.featured { grid-column: span 1; }
-      .github-calendar { padding: 1.25rem; }
-      .github-calendar-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .stack-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-      .stack-item { padding: 1rem 0.5rem; }
-      .stack-emoji { font-size: 1.5rem; }
-      .stack-name { font-size: 0.7rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem 1.5rem; }
-      .hero-photo { max-width: 140px; }
-    }
-
-    @media (max-width: 400px) {
-      .nav-links { gap: 0.7rem; }
-      .nav-links a { font-size: 0.65rem; }
-      .hero { padding: 6rem 1.25rem 2rem; }
-      section, #projects, #contact { padding: 3rem 1.25rem; }
-      .stack-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-ctas { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip" href="#identity">Skip to content</a>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">LE</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#github">GitHub</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-photo-wrap">
-        <img src="louie.jpeg" alt="Louie Elizondo" class="hero-photo" />
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#identity">
+        <span class="brand-mark">LE</span>
+        <span class="brand-meta">
+          <strong>Louie Elizondo</strong>
+          <span data-i18n="brandSub">Chihuahua · MX</span>
+        </span>
+      </a>
+      <div class="top-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="chip k-hint" id="cmd-open">
+          <span data-i18n="kPalette">Comanda</span><kbd>⌘K</kbd>
+        </button>
       </div>
-      <div class="hero-eyebrow">Chihuahua, México · Builder</div>
-      <h1>
-        Louie<br>
-        <span class="line2">Elizondo.</span>
-      </h1>
-      <p class="hero-bio">
-        Entrepreneur, operator, and self-taught developer.
-        <span>Turned a family food business into a tech-first operation</span> —
-        now building tools that didn't exist when I needed them.<br><br>
-        Emprendedor, operador, y programador autodidacta.
-        <span>Aprendiendo en público.</span>
-      </p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">Ver proyectos →</a>
-        <a href="https://x.com/louieelizondo" target="_blank" class="btn btn-ghost">𝕏 @louieelizondo</a>
-      </div>
-    </div>
+    </header>
 
-    <div class="hero-right">
-      <div class="stat-card">
-        <div class="stat-icon">🥗</div>
+    <nav class="stations" aria-label="Stations">
+      <a class="station-tab" href="#identity" aria-current="true"><span class="n">01</span><span data-i18n="tab1">Quién</span></a>
+      <a class="station-tab" href="#kitchen"><span class="n">02</span><span data-i18n="tab2">Cocina</span></a>
+      <a class="station-tab" href="#chamber"><span class="n">03</span><span data-i18n="tab3">Cámara</span></a>
+      <a class="station-tab" href="#code"><span class="n">04</span><span data-i18n="tab4">Código</span></a>
+      <a class="station-tab" href="#now"><span class="n">05</span><span data-i18n="tab5">Ahora</span></a>
+    </nav>
+
+    <section id="identity">
+      <div class="board">
+        <article class="tile tile-identity reveal">
+          <p class="kicker" data-i18n="kicker">Tres estaciones · 01 identidad</p>
+          <h1>Louie <em>Elizondo.</em></h1>
+          <p class="lede" data-i18n="lede">Opero una cocina. Presido una sección restaurantera. Aprendo software en público — porque las herramientas que necesitaba no existían.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#kitchen" data-i18n="ctaWork">Ver las estaciones</a>
+            <a class="btn btn-ghost" href="https://x.com/louieelizondo" target="_blank" rel="noreferrer">𝕏 @louieelizondo</a>
+          </div>
+        </article>
+
+        <article class="tile tile-photo reveal">
+          <img class="photo-frame" src="louie.jpeg" alt="Louie Elizondo" width="640" height="800" />
+          <div class="photo-caption">
+            <span data-i18n="photoCaption">Chihuahua, México</span>
+            <span data-i18n="photoStamp">Estación 01</span>
+          </div>
+        </article>
+
+        <article class="tile tile-clock reveal">
+          <p class="kicker" data-i18n="clockKicker">Hora local</p>
+          <div class="clock-time" id="clock-time">--:--:--</div>
+          <p class="clock-sub"><span class="live-dot"></span> <span id="clock-date"></span></p>
+          <p class="clock-sub" data-i18n="clockSub">America/Chihuahua · en vivo</p>
+        </article>
+
+        <article class="tile tile-now reveal">
+          <p class="kicker" data-i18n="nowKicker">Ahora</p>
+          <p class="now-body" data-i18n="nowBody">Enviando el storefront de Natural Balance y construyendo las herramientas de ops que el negocio realmente usa.</p>
+        </article>
+
+        <article class="tile tile-links reveal">
+          <p class="kicker" data-i18n="linksKicker">Señales</p>
+          <div class="link-row">
+            <a href="https://naturalbalance.club" target="_blank" rel="noreferrer">Natural Balance <span>↗</span></a>
+            <a href="https://github.com/louieelizondo" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+            <a href="mailto:louie@naturalbalance.club">Email <span>@</span></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="block">
+        <div class="block-head">
+          <div>
+            <p class="kicker" data-i18n="aboutKicker">Estación 01</p>
+            <h2 data-i18n="aboutTitle">Operador primero. Desarrollador en progreso.</h2>
+          </div>
+          <p class="block-note" data-i18n="aboutNote">Bio</p>
+        </div>
+        <div class="split">
+          <div class="copy">
+            <p data-i18n="about1"></p>
+            <p data-i18n="about2"></p>
+            <p data-i18n="about3"></p>
+            <div class="tags">
+              <span class="tag">Shopify</span>
+              <span class="tag">Notion</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Apps Script</span>
+              <span class="tag">CANACO</span>
+              <span class="tag">Food tech</span>
+            </div>
+          </div>
+          <blockquote class="quote">
+            <span data-i18n="quote"></span>
+            <cite>— Louie Elizondo</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="kitchen">
+      <div class="block-head">
         <div>
-          <div class="stat-label">Partner & Operator</div>
-          <div class="stat-value">Natural Balance Club</div>
+          <p class="kicker" data-i18n="workKicker">Estación 02</p>
+          <h2 data-i18n="workTitle">La cocina.</h2>
         </div>
+        <p class="block-note" data-i18n="workNote">Natural Balance</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">🏛️</div>
+      <div class="featured">
+        <article class="work-card">
+          <p class="kicker">02 · Cocina</p>
+          <h3 data-i18n="workH">Natural Balance Club</h3>
+          <p data-i18n="workP"></p>
+          <div class="metric-row">
+            <div class="metric"><b data-i18n="m1t">Shopify</b><span data-i18n="m1s"></span></div>
+            <div class="metric"><b data-i18n="m2t">Ops</b><span data-i18n="m2s"></span></div>
+            <div class="metric"><b data-i18n="m3t">Hecho aquí</b><span data-i18n="m3s"></span></div>
+          </div>
+          <p style="margin-top:1.2rem"><a class="btn btn-primary" href="https://naturalbalance.club" target="_blank" rel="noreferrer">naturalbalance.club →</a></p>
+        </article>
+        <article class="civic-card" style="background:linear-gradient(180deg, rgba(143,160,132,0.16), rgba(16,12,9,0.9)), var(--night-2);">
+          <p class="kicker" style="color:var(--sage)" data-i18n="labKicker">Lic. · Director</p>
+          <h3>Louie Elizondo Alvidrez</h3>
+          <p data-i18n="labBody">Partner y operador. El negocio es el laboratorio: cada app nació de un problema del turno, no de un tutorial.</p>
+          <p style="margin-top:1rem;color:var(--muted);font-size:0.9rem">Chihuahua, México · 🇲🇽 🇺🇸</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="chamber">
+      <div class="block-head">
         <div>
-          <div class="stat-label">Cargo / Role</div>
-          <div class="stat-value">Presidente · Sección de Restauranteros, CANACO Chih.</div>
+          <p class="kicker" style="color:var(--gold)" data-i18n="civicKicker">Estación 03</p>
+          <h2 data-i18n="civicTitle">La cámara.</h2>
         </div>
+        <p class="block-note" data-i18n="civicNote">CANACO Chihuahua</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">⚙️</div>
+      <article class="civic-card">
+        <p class="kicker" style="color:var(--gold)">Presidente · Sección Restauranteros</p>
+        <h3 data-i18n="civicH">Sección Restauranteros</h3>
+        <p data-i18n="civicP"></p>
+        <div class="hero-ctas" style="margin-top:1.4rem">
+          <a class="btn btn-primary" href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noreferrer" data-i18n="civicCta">Visitar Donde Comemos</a>
+          <a class="btn btn-ghost" href="https://www.canacochihuahua.com" target="_blank" rel="noreferrer" data-i18n="civicJoin">CANACO Chihuahua</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="block" id="code">
+      <div class="block-head">
         <div>
-          <div class="stat-label">Current Mission</div>
-          <div class="stat-value">Building in public · Aprendiendo en público</div>
+          <p class="kicker" style="color:var(--sage)" data-i18n="codeKicker">Estación 04</p>
+          <h2 data-i18n="codeTitle">El código.</h2>
+        </div>
+        <p class="block-note" data-i18n="codeNote">Bitácora pública</p>
+      </div>
+
+      <div class="tickets">
+        <article class="ticket live span-2">
+          <div class="ticket-top"><span>COM 001</span><span class="stamp" data-i18n="tLive">En vivo</span></div>
+          <h3 data-i18n="p1t"></h3>
+          <p data-i18n="p1p"></p>
+          <a href="https://naturalbalance.club" target="_blank" rel="noreferrer">naturalbalance.club →</a>
+        </article>
+        <article class="ticket live">
+          <div class="ticket-top"><span>COM 002</span><span class="stamp" data-i18n="tLive">En vivo</span></div>
+          <h3 data-i18n="p2t"></h3>
+          <p data-i18n="p2p"></p>
+        </article>
+        <article class="ticket live">
+          <div class="ticket-top"><span>COM 003</span><span class="stamp" data-i18n="tLive">En vivo</span></div>
+          <h3 data-i18n="p3t"></h3>
+          <p data-i18n="p3p"></p>
+        </article>
+        <article class="ticket live">
+          <div class="ticket-top"><span>COM 004</span><span class="stamp" data-i18n="tLive">En vivo</span></div>
+          <h3 data-i18n="p4t"></h3>
+          <p data-i18n="p4p"></p>
+          <a href="nomina.html">nomina.html →</a>
+        </article>
+        <article class="ticket live">
+          <div class="ticket-top"><span>COM 005</span><span class="stamp" data-i18n="tLive">En vivo</span></div>
+          <h3 data-i18n="p5t"></h3>
+          <p data-i18n="p5p"></p>
+          <a href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noreferrer">dondecomemos →</a>
+        </article>
+        <article class="ticket live">
+          <div class="ticket-top"><span>COM 006</span><span class="stamp" data-i18n="tLive">En vivo</span></div>
+          <h3 data-i18n="p6t"></h3>
+          <p data-i18n="p6p"></p>
+          <a href="https://github.com/louieelizondo/louieelizondo.github.io" target="_blank" rel="noreferrer">GitHub →</a>
+        </article>
+        <article class="ticket soon">
+          <div class="ticket-top"><span>COM 007</span><span class="stamp" data-i18n="tSoon">En el pass</span></div>
+          <h3 data-i18n="p7t"></h3>
+          <p data-i18n="p7p"></p>
+        </article>
+        <article class="ticket soon">
+          <div class="ticket-top"><span>COM 008</span><span class="stamp" data-i18n="tSoon">En el pass</span></div>
+          <h3 data-i18n="p8t"></h3>
+          <p data-i18n="p8p"></p>
+        </article>
+      </div>
+
+      <div class="block">
+        <div class="block-head">
+          <div>
+            <p class="kicker" data-i18n="ghKicker">Señal de oficio</p>
+            <h2 data-i18n="ghTitle">Commit a commit.</h2>
+          </div>
+        </div>
+        <div class="github-box">
+          <div class="github-head">
+            <div id="contrib-total" data-i18n="ghLoading">Cargando contribuciones…</div>
+            <a href="https://github.com/louieelizondo" target="_blank" rel="noreferrer">@louieelizondo →</a>
+          </div>
+          <div id="contrib-graph"></div>
+          <div class="legend" id="contrib-legend" style="display:none">
+            <span>Less</span>
+            <i style="background:#241c16"></i>
+            <i style="background:#5a2a1e"></i>
+            <i style="background:#8f3a28"></i>
+            <i style="background:#c4452d"></i>
+            <i style="background:#e24a2f"></i>
+            <span>More</span>
+          </div>
         </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">📍</div>
+
+      <div class="block">
+        <div class="block-head">
+          <div>
+            <p class="kicker" data-i18n="stackKicker">Caja de herramientas</p>
+            <h2 data-i18n="stackTitle">Con qué construyo.</h2>
+          </div>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-item">🛒<b>Shopify</b><span>Storefront</span></div>
+          <div class="stack-item">🧠<b>Notion</b><span>Ops OS</span></div>
+          <div class="stack-item">⚡<b>JavaScript</b><span>Interfaces</span></div>
+          <div class="stack-item">🌐<b>HTML / CSS</b><span>Craft</span></div>
+          <div class="stack-item">📜<b>Apps Script</b><span>Back office</span></div>
+          <div class="stack-item">🐙<b>GitHub</b><span>En público</span></div>
+          <div class="stack-item">🤖<b>Claude / Cursor</b><span>Copiloto</span></div>
+          <div class="stack-item">🍽️<b>Food tech</b><span>Dominio</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="now">
+      <div class="block-head">
         <div>
-          <div class="stat-label">Base</div>
-          <div class="stat-value">Chihuahua, México</div>
+          <p class="kicker" data-i18n="contactKicker">Estación 05</p>
+          <h2 data-i18n="contactTitle">Pásate a la ventana.</h2>
         </div>
       </div>
+      <div class="contact-grid">
+        <article class="contact-main">
+          <p data-i18n="contactP"></p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://x.com/louieelizondo" target="_blank" rel="noreferrer">𝕏 @louieelizondo</a>
+            <a class="btn btn-ghost" href="mailto:louie@naturalbalance.club">louie@naturalbalance.club</a>
+            <a class="btn btn-ghost" href="https://wa.me/526142354312" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+          <p class="keys-hint" data-i18n="keys">Atajos: 1–5 estaciones · L idioma · ⌘K comanda</p>
+        </article>
+        <article class="tile">
+          <p class="kicker">louieelizondo.com</p>
+          <p class="now-body" data-i18n="sitePitch">Un tablero personal. No es una plantilla de currículum. Tres estaciones, una ciudad, trabajo que sale.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <span data-i18n="footLeft">© 2026 Louie Elizondo Alvidrez · Chihuahua, México</span>
+      <span data-i18n="footRight">Hecho a mano · tres estaciones · café de olla</span>
+    </footer>
+  </div>
+
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette">
+      <input id="palette-input" type="search" autocomplete="off" data-i18n-placeholder="palPlaceholder" placeholder="Buscar…" />
+      <ul class="palette-list" id="palette-list"></ul>
     </div>
-  </section>
+  </div>
 
-  <hr class="divider" />
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-label reveal">About / Sobre mí</div>
-    <h2 class="reveal">Operator first,<br>developer in progress.</h2>
-
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>
-          I run <span>Natural Balance</span> — a food business in Chihuahua selling homestyle meals:
-          prepped, cooked, refrigerated, frozen, and hot-ready combos for families who want to eat well without the daily cooking grind.
-        </p>
-        <p>
-          Instead of just running the business the traditional way, I rebuilt it around technology.
-          <span>Notion runs operations. Shopify runs sales.</span> The result is a lean, modern business that punches above its weight.
-        </p>
-        <p>
-          Now I'm going further — learning to build the software I always wanted but couldn't find.
-          <span>This portfolio is my public learning log.</span> Every project here started as a real problem.
-        </p>
-        <p>
-          Soy presidente de la Sección de Restauranteros en <span>CANACO Chihuahua</span> —
-          trabajando para que más negocios locales se modernicen y crezcan.
-        </p>
-        <div class="about-tags">
-          <span class="tag">Shopify</span>
-          <span class="tag">Notion</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Google Apps Script</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">Claude AI</span>
-          <span class="tag">Food Tech</span>
-          <span class="tag">Ops Automation</span>
-          <span class="tag">CANACO</span>
-        </div>
-      </div>
-
-      <blockquote class="about-quote reveal">
-        "Build it. Break it. Feel like an idiot. Figure it out. Do it again — but better.
-        <br><br>
-        Construye. Rómpelo. Siéntete idiota. Entiéndelo. Repite — pero mejor."
-        <cite>— Louie Elizondo</cite>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-label reveal">Projects / Proyectos</div>
-    <h2 class="reveal">Built, building,<br>and next up.</h2>
-    <div class="project-count reveal">
-      <span class="count">5</span> live · <span class="count">2</span> in development
-    </div>
-
-    <div class="projects-grid">
-
-      <div class="project-card featured reveal" data-color="green">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">🥗</div>
-          <h3>Natural Balance Club</h3>
-        </div>
-        <p>
-          Home-style food delivery in Chihuahua. Prepped, cooked, refrigerated, frozen, and hot-ready meals for busy families.
-          Powered by Shopify + a custom Notion operations system.
-          <br><br>
-          <em>Comida casera a domicilio en Chihuahua. Shopify + Notion como cerebro de operaciones.</em>
-        </p>
-        <a href="https://naturalbalance.club" target="_blank" class="project-link">naturalbalance.club →</a>
-      </div>
-
-      <div class="project-card reveal" data-color="blue">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">📊</div>
-          <h3>NB Finance Portal</h3>
-        </div>
-        <p>
-          A suite of 6 web apps I built to run our finances — dashboard with KPIs, supplier invoice management,
-          AI-powered invoice capture, daily cash reconciliation, income tracking, and inventory.
-          Built with HTML/CSS/JS on GitHub Pages, Google Apps Script backend, and Google Sheets as the database.
-          <br><br>
-          <em>Suite de 6 apps web para administrar las finanzas del negocio. Dashboard, facturas, cortes de caja,
-          ingresos e inventario. Frontend en GitHub Pages, backend en Google Apps Script.</em>
-        </p>
-      </div>
-
-      <div class="project-card reveal" data-color="purple">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">📝</div>
-          <h3>Contract Generator</h3>
-        </div>
-        <p>
-          Automated employment contract system for our team. Generates pre-filled contracts for 9 roles
-          and 3 contract types (trial, training, and permanent) — ready to print and sign.
-          <br><br>
-          <em>Sistema automatizado de contratos laborales. Genera contratos pre-llenados para 9 puestos
-          y 3 tipos de contrato — listos para firmar.</em>
-        </p>
-      </div>
-
-      <div class="project-card reveal" data-color="amber">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">💰</div>
-          <h3>Nómina & Bono System</h3>
-        </div>
-        <p>
-          Payroll bonus engine that calculates biweekly productivity bonuses based on sales per station.
-          Connected to our POS data with editable percentage tables and real-time calculations.
-          <br><br>
-          <em>Motor de bonos de productividad quincenal basado en ventas por mesa.
-          Conectado al punto de venta con tablas editables y cálculos en tiempo real.</em>
-        </p>
-      </div>
-
-      <div class="project-card reveal" data-color="teal">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">🌐</div>
-          <h3>This Portfolio Site</h3>
-        </div>
-        <p>
-          My first hand-coded project. Built to learn Git, GitHub Pages, and HTML/CSS from scratch.
-          Hosted free on GitHub Pages.
-          <br><br>
-          <em>Mi primer proyecto de código. Hecho para aprender Git y GitHub Pages desde cero.</em>
-        </p>
-        <a href="https://github.com/louieelizondo/louieelizondo.github.io" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card reveal" data-color="rose">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">🍽️</div>
-          <h3>Donde Comemos — CANACO</h3>
-        </div>
-        <p>
-          Restaurant directory for CANACO Chihuahua. A guide to help locals discover where to eat — built as part of the Restauranteros committee.
-          <br><br>
-          <em>Directorio de restaurantes de CANACO Chihuahua. Una guía para descubrir dónde comer en la ciudad.</em>
-        </p>
-        <a href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" class="project-link">Visit Site →</a>
-      </div>
-
-      <div class="project-card coming-soon reveal" data-color="orange">
-        <div class="project-badge soon">Building Next · En desarrollo</div>
-        <div class="card-header">
-          <div class="card-emoji">🛒</div>
-          <h3>Shopify App</h3>
-        </div>
-        <p>
-          A tool born from running Natural Balance — solving a real operations problem that no existing Shopify app solves well.
-          The finance portal gave me the foundation to build this.
-          <br><br>
-          <em>Una herramienta nacida de operar Natural Balance. El portal financiero me dio la base para construir esto.</em>
-        </p>
-      </div>
-
-      <div class="project-card coming-soon reveal" data-color="red">
-        <div class="project-badge soon">Building Next · En desarrollo</div>
-        <div class="card-header">
-          <div class="card-emoji">🏋️</div>
-          <h3>Kettlebell Workout App</h3>
-        </div>
-        <p>
-          A training app for kettlebell athletes. Structured programs, progress tracking, and smart workout recommendations.
-          Planned as an add-on to the Natural Balance ecosystem.
-          <br><br>
-          <em>App de entrenamiento con pesas rusas. Planeada como extensión del ecosistema Natural Balance.</em>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- GITHUB ACTIVITY -->
-  <section id="github">
-    <div class="section-label reveal">GitHub / Actividad</div>
-    <h2 class="reveal">Commit by commit.</h2>
-
-    <div class="github-calendar reveal">
-      <div class="github-calendar-header">
-        <div class="github-total" id="contrib-total">Loading contributions...</div>
-        <a href="https://github.com/louieelizondo" target="_blank" class="github-link">@louieelizondo →</a>
-      </div>
-      <div id="contrib-graph">
-        <span class="loading">Fetching GitHub data...</span>
-      </div>
-      <div class="github-legend" id="contrib-legend" style="display:none;">
-        <span>Less</span>
-        <div class="legend-box" style="background: #1a1a24;"></div>
-        <div class="legend-box" style="background: #1c4a2a;"></div>
-        <div class="legend-box" style="background: #2d7a3a;"></div>
-        <div class="legend-box" style="background: #3fb950;"></div>
-        <div class="legend-box" style="background: #4ade80;"></div>
-        <span>More</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section id="stack">
-    <div class="section-label reveal">Tools / Herramientas</div>
-    <h2 class="reveal">What I build with.</h2>
-
-    <div class="stack-grid">
-      <div class="stack-item reveal"><div class="stack-emoji">🛒</div><div class="stack-name">Shopify</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🧠</div><div class="stack-name">Notion</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🌐</div><div class="stack-name">HTML / CSS</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">⚡</div><div class="stack-name">JavaScript</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">📜</div><div class="stack-name">Google Apps Script</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🐙</div><div class="stack-name">GitHub</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🤖</div><div class="stack-name">Claude AI</div></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-label reveal">Contact / Contacto</div>
-    <h2 class="reveal">Let's talk.</h2>
-    <div class="contact-inner reveal">
-      <p>
-        Building something interesting? Want to talk food tech, Shopify, or operations in Mexico?
-        I publish most of my thinking on X.
-        <br><br>
-        <em>¿Construyendo algo interesante? Hablemos de tech, Shopify, u operaciones. Publico la mayoría de mis ideas en X.</em>
-      </p>
-      <div class="contact-links">
-        <a href="https://x.com/louieelizondo" target="_blank" class="btn btn-primary">𝕏 @louieelizondo</a>
-        <a href="https://naturalbalance.club" target="_blank" class="btn btn-ghost">Natural Balance →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <span>© 2026 Louie Elizondo · Chihuahua, México</span>
-    <span>Built with HTML + GitHub Pages · Hecho con código y café ☕</span>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.05 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // GitHub Contribution Calendar
-    (async function() {
-      const username = 'louieelizondo';
-      const graph = document.getElementById('contrib-graph');
-      const totalEl = document.getElementById('contrib-total');
-      const legendEl = document.getElementById('contrib-legend');
-
-      const colors = ['#1a1a24', '#1c4a2a', '#2d7a3a', '#3fb950', '#4ade80'];
-
-      try {
-        const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
-        if (!res.ok) throw new Error('API error');
-        const data = await res.json();
-
-        const total = data.total?.lastYear || data.total?.['last'] || Object.values(data.total || {}).pop() || 0;
-        totalEl.innerHTML = `<span>${total}</span> contributions in the last year`;
-
-        const contributions = data.contributions || [];
-
-        const cellSize = 11;
-        const cellGap = 3;
-        const step = cellSize + cellGap;
-        const weeks = 53;
-        const days = 7;
-        const labelW = 28;
-        const svgW = labelW + weeks * step;
-        const monthLabelH = 18;
-        const svgH = monthLabelH + days * step;
-
-        let svg = `<svg width="100%" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg" style="max-width:${svgW}px;">`;
-
-        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        let lastMonth = -1;
-        const flat = contributions.flat();
-
-        flat.forEach((day, i) => {
-          const d = new Date(day.date);
-          const weekIdx = Math.floor(i / 7);
-          const dayIdx = i % 7;
-          if (dayIdx === 0) {
-            const m = d.getMonth();
-            if (m !== lastMonth) {
-              lastMonth = m;
-              const x = labelW + weekIdx * step;
-              svg += `<text x="${x}" y="12" fill="#7a7a8a" font-size="9" font-family="DM Sans, sans-serif">${months[m]}</text>`;
-            }
-          }
-        });
-
-        ['Mon','','Wed','','Fri','',''].forEach((label, i) => {
-          if (label) {
-            svg += `<text x="0" y="${monthLabelH + i * step + cellSize - 2}" fill="#7a7a8a" font-size="8" font-family="DM Sans, sans-serif">${label}</text>`;
-          }
-        });
-
-        flat.forEach((day, i) => {
-          const weekIdx = Math.floor(i / 7);
-          const dayIdx = i % 7;
-          const x = labelW + weekIdx * step;
-          const y = monthLabelH + dayIdx * step;
-          const level = Math.min(day.level || 0, 4);
-          const color = colors[level];
-
-          svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2" fill="${color}"`;
-          svg += ` style="transition:opacity 0.2s"`;
-          svg += `><title>${day.date}: ${day.count || 0} contribution${(day.count || 0) !== 1 ? 's' : ''}</title></rect>`;
-        });
-
-        svg += '</svg>';
-        graph.innerHTML = svg;
-        legendEl.style.display = 'flex';
-
-      } catch (err) {
-        graph.innerHTML = `<a href="https://github.com/${username}" target="_blank" style="color: var(--c-green); text-decoration: none; font-size: 0.9rem;">View my contributions on GitHub →</a>`;
-        totalEl.textContent = 'GitHub contributions';
-      }
-    })();
-  </script>
-
+  <script src="app.js"></script>
 </body>
 </html>
