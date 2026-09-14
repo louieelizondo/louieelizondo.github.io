@@ -88,40 +88,57 @@
       <p class="letter-place">Chihuahua</p>
       <h1>Louie Elizondo</h1>
       <div class="letter-body">
-        <p data-en="I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the house didn’t come with."
-           data-es="Corro Natural Balance: comida de casa para familias que no tienen tiempo de cocinar. Presido Restauranteros en CANACO Chihuahua. Estoy aprendiendo a escribir el software que la casa no trajo.">
-          I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the house didn’t come with.
+        <p data-en="I run Natural Balance. Homestyle meals, packed for the week, for families in Chihuahua who don’t have time to cook. That’s the house. That’s what pays for everything else."
+           data-es="Corro Natural Balance. Comida de casa, empacada para la semana, para familias en Chihuahua que no tienen tiempo de cocinar. Esa es la casa. Eso paga lo demás.">
+          I run Natural Balance. Homestyle meals, packed for the week, for families in Chihuahua who don’t have time to cook. That’s the house. That’s what pays for everything else.
         </p>
-        <p data-en="This site is the public face. Press a button. A ticket prints."
-           data-es="Este sitio es la cara pública. Oprime un botón. Sale un ticket.">
-          This site is the public face. Press a button. A ticket prints.
+        <p data-en="I chair Restauranteros at CANACO. Meetings, events, the section. I’m learning to be a better businessman — and to sit with the others when one kitchen can’t fix it alone."
+           data-es="Presido Restauranteros en CANACO. Juntas, eventos, la sección. Estoy aprendiendo a ser mejor businessman — y a sentarme con los demás cuando una cocina no lo arregla sola.">
+          I chair Restauranteros at CANACO. Meetings, events, the section. I’m learning to be a better businessman — and to sit with the others when one kitchen can’t fix it alone.
+        </p>
+        <p data-en="I’m also writing the software the house didn’t come with. This page is the public face. The printer is the rest: pick a ticket."
+           data-es="También estoy escribiendo el software que la casa no trajo. Esta página es la cara pública. La impresora es lo demás: elige un ticket.">
+          I’m also writing the software the house didn’t come with. This page is the public face. The printer is the rest: pick a ticket.
         </p>
       </div>
     </article>
 
     <section class="desk" aria-label="Printer">
+      <div class="print-menu" role="group" aria-label="Print">
+        <button type="button" class="printer-key" data-print="house">
+          <span class="key-no">01</span>
+          <span>Natural Balance</span>
+        </button>
+        <button type="button" class="printer-key" data-print="restauranteros">
+          <span class="key-no">02</span>
+          <span>Restauranteros</span>
+        </button>
+        <button type="button" class="printer-key" data-print="office">
+          <span class="key-no">03</span>
+          <span data-en="Office" data-es="Oficina">Office</span>
+        </button>
+      </div>
+
       <div class="printer" id="printer">
         <button type="button" class="printer-lid" id="printer-lid" aria-label="Printer">
           <span class="printer-led" aria-hidden="true"></span>
           <span class="printer-lcd" id="printer-lcd">READY</span>
         </button>
-        <div class="printer-mouth">
-          <article class="receipt" id="receipt" hidden></article>
+        <div class="printer-shell" aria-hidden="true">
+          <div class="printer-window">
+            <span class="roll"></span>
+          </div>
+          <span class="screw s1"></span>
+          <span class="screw s2"></span>
+          <span class="brand">LE · TICKET</span>
         </div>
-        <div class="printer-keys" role="group" aria-label="Print">
-          <button type="button" class="printer-key" data-print="house">
-            <span class="key-no">01</span>
-            <span data-en="Natural Balance" data-es="Natural Balance">Natural Balance</span>
-          </button>
-          <button type="button" class="printer-key" data-print="restauranteros">
-            <span class="key-no">02</span>
-            <span>Restauranteros</span>
-          </button>
-          <button type="button" class="printer-key" data-print="office">
-            <span class="key-no">03</span>
-            <span data-en="Office" data-es="Oficina">Office</span>
-          </button>
-        </div>
+        <div class="cutter" aria-hidden="true"></div>
+        <span class="foot left"></span>
+        <span class="foot right"></span>
+      </div>
+
+      <div class="paper-well">
+        <article class="receipt" id="receipt" hidden></article>
       </div>
     </section>
   </main>
