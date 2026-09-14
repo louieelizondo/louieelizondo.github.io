@@ -52,6 +52,7 @@ export function initKitchen(stage, options = {}) {
   const tipSys = stage.querySelector('.linea-tip-sys');
   const onSelect = options.onSelect || (() => {});
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const steamCache = { tex: null };
 
   let palette = PALETTES[options.theme === 'light' ? 'light' : 'dark'];
 
@@ -439,9 +440,8 @@ export function initKitchen(stage, options = {}) {
     return { points, origin, seeds, count: COUNT };
   }
 
-  let _steamTex = null;
   function steamTexture() {
-    if (_steamTex) return _steamTex;
+    if (steamCache.tex) return steamCache.tex;
     const c = document.createElement('canvas');
     c.width = c.height = 64;
     const ctx = c.getContext('2d');
@@ -451,8 +451,8 @@ export function initKitchen(stage, options = {}) {
     grad.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, 64, 64);
-    _steamTex = new THREE.CanvasTexture(c);
-    return _steamTex;
+    steamCache.tex = new THREE.CanvasTexture(c);
+    return steamCache.tex;
   }
 
   /* ---------- CAMERA ORBIT (hand-rolled, clamped) ---------- */
