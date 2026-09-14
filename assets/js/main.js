@@ -57,8 +57,8 @@ const PRINTS = {
 };
 
 const LCD = {
-  en: { ready: 'READY', print: 'PRINTING…', courtesy: 'CARTA' },
-  es: { ready: 'LISTO', print: 'IMPRIMIENDO…', courtesy: 'CARTA' },
+  en: { ready: 'READY', print: 'PRINTING…', courtesy: 'COURTESY' },
+  es: { ready: 'LISTO', print: 'IMPRIMIENDO…', courtesy: 'CORTESÍA' },
 };
 
 let lang = root.lang === 'es' ? 'es' : 'en';

@@ -10,7 +10,7 @@ Hosted on [GitHub Pages](https://pages.github.com) from this repo.
 
 **The letter.** Name, a photo, a few sentences.
 
-**The printer.** Three buttons, three tickets:
+**The printer.** Menu first, then the machine. Paper comes out the bottom.
 
 | Button | What prints |
 | --- | --- |
