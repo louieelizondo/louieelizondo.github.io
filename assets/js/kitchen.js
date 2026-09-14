@@ -167,6 +167,49 @@ export function initKitchen(stage, options = {}) {
   line.add(shelf);
 
   /* ---------- STATION BUILDERS ---------- */
+  function steamTexture() {
+    if (steamCache.tex) return steamCache.tex;
+    const c = document.createElement('canvas');
+    c.width = c.height = 64;
+    const ctx = c.getContext('2d');
+    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grad.addColorStop(0, 'rgba(255,255,255,0.9)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,0.25)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 64, 64);
+    steamCache.tex = new THREE.CanvasTexture(c);
+    return steamCache.tex;
+  }
+
+  function makeSteam(parent, origin, scale = 1) {
+    const COUNT = 26;
+    const positions = new Float32Array(COUNT * 3);
+    const seeds = new Float32Array(COUNT);
+    for (let i = 0; i < COUNT; i++) {
+      positions[i * 3] = origin.x + (Math.random() - 0.5) * 0.28;
+      positions[i * 3 + 1] = origin.y + Math.random() * 1.1;
+      positions[i * 3 + 2] = origin.z + (Math.random() - 0.5) * 0.28;
+      seeds[i] = Math.random();
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const mat = new THREE.PointsMaterial({
+      size: 0.16 * scale,
+      map: steamTexture(),
+      transparent: true,
+      opacity: 0.34,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      color: 0xffffff,
+    });
+
+    const points = new THREE.Points(geo, mat);
+    parent.add(points);
+    return { points, origin, seeds, count: COUNT };
+  }
+
   const stationGroups = [];
 
   function makeStation(index, build) {
@@ -205,9 +248,9 @@ export function initKitchen(stage, options = {}) {
       bin.castShadow = true;
       g.add(bin);
 
-      const fill = new THREE.Mesh(new THREE.CylinderGeometry(0.21, 0.21, 0.05, 20), m);
-      fill.position.set(-0.75 + i * 0.52, 1.35, -0.62);
-      g.add(fill);
+      const garnish = new THREE.Mesh(new THREE.CylinderGeometry(0.21, 0.21, 0.05, 20), m);
+      garnish.position.set(-0.75 + i * 0.52, 1.35, -0.62);
+      g.add(garnish);
     });
 
     const blade = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.015, 0.11), mats.steel);
@@ -409,50 +452,6 @@ export function initKitchen(stage, options = {}) {
     g.position.set(LINE_START + (i * (LINE_END - LINE_START)) / PLATE_COUNT, 1.08, 0.85);
     line.add(g);
     plates.push(g);
-  }
-
-  /* ---------- STEAM ---------- */
-  function makeSteam(parent, origin, scale = 1) {
-    const COUNT = 26;
-    const positions = new Float32Array(COUNT * 3);
-    const seeds = new Float32Array(COUNT);
-    for (let i = 0; i < COUNT; i++) {
-      positions[i * 3] = origin.x + (Math.random() - 0.5) * 0.28;
-      positions[i * 3 + 1] = origin.y + Math.random() * 1.1;
-      positions[i * 3 + 2] = origin.z + (Math.random() - 0.5) * 0.28;
-      seeds[i] = Math.random();
-    }
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-    const mat = new THREE.PointsMaterial({
-      size: 0.16 * scale,
-      map: steamTexture(),
-      transparent: true,
-      opacity: 0.34,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      color: 0xffffff,
-    });
-
-    const points = new THREE.Points(geo, mat);
-    parent.add(points);
-    return { points, origin, seeds, count: COUNT };
-  }
-
-  function steamTexture() {
-    if (steamCache.tex) return steamCache.tex;
-    const c = document.createElement('canvas');
-    c.width = c.height = 64;
-    const ctx = c.getContext('2d');
-    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    grad.addColorStop(0, 'rgba(255,255,255,0.9)');
-    grad.addColorStop(0.5, 'rgba(255,255,255,0.25)');
-    grad.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 64, 64);
-    steamCache.tex = new THREE.CanvasTexture(c);
-    return steamCache.tex;
   }
 
   /* ---------- CAMERA ORBIT (hand-rolled, clamped) ---------- */
