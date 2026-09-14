@@ -676,7 +676,7 @@ buildCommands();
     if (visible && !api) {
       io.disconnect();
       try {
-        const { initKitchen } = await import('./kitchen.js?v=3');
+        const { initKitchen } = await import('./kitchen.js?v=4');
         api = initKitchen(stage, {
           theme: root.dataset.theme,
           stations,

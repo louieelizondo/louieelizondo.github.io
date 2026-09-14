@@ -604,6 +604,17 @@ export function initKitchen(stage, options = {}) {
     requestFrame();
   }
 
+  /* ---------- LOOP STATE (must exist before resize() runs) ---------- */
+  const clock = new THREE.Clock();
+  let running = false;
+  let rafId = 0;
+  let needsFrame = true;
+
+  function requestFrame() {
+    needsFrame = true;
+    if (!running && !rafId) rafId = requestAnimationFrame(tick);
+  }
+
   /* ---------- RESIZE ---------- */
   function resize() {
     const w = stage.clientWidth;
@@ -618,16 +629,6 @@ export function initKitchen(stage, options = {}) {
   resize();
 
   /* ---------- LOOP ---------- */
-  const clock = new THREE.Clock();
-  let running = false;
-  let rafId = 0;
-  let needsFrame = true;
-
-  function requestFrame() {
-    needsFrame = true;
-    if (!running && !rafId) rafId = requestAnimationFrame(tick);
-  }
-
   function tick() {
     rafId = 0;
     const t = clock.getElapsedTime();
