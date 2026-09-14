@@ -2,9 +2,50 @@
 
 Personal site for **Louie Elizondo** — operator at Natural Balance Club, Presidente of CANACO Chihuahua Restauranteros, self-taught developer learning in public.
 
-Theme: **Mise en Place**. Dark + light. English + Spanish. The 3D kitchen line (“La Línea”) is the résumé, plated.
+Two rooms: a letter, then the line. Dark + light. English + Spanish.
 
 Hosted on [GitHub Pages](https://pages.github.com) from this repo.
+
+## What’s in each room
+
+**Room 1 — the letter.** Name, a photo, a few sentences, and three links (X, Natural Balance, CANACO / Donde Comemos). Language and theme live in the corner. Nothing else.
+
+**Room 2 — the line.** Full-bleed 3D kitchen. Click a station and a paper ticket is the bio:
+
+| Station | What’s on the ticket |
+| --- | --- |
+| Prep | Notion: recipes, checklists, the week |
+| Fire | Natural Balance — Shopify + POS |
+| The pass | Private finance suite (six apps, not public) |
+| Out | Payroll and contracts, with a quiet link to nómina |
+
+The footer is the commit trail.
+
+## Keep the GitHub calendar honest
+
+GitHub’s public contribution graph only paints commits that:
+
+1. Land on a **default branch** (this site’s is `main`), and
+2. Use an **author email verified** on [github.com/settings/emails](https://github.com/settings/emails).
+
+Work on a feature branch, or commits from `cursoragent@cursor.com`, will not turn Louie’s squares green — even if the kitchen was busy. That is why the last few weeks looked empty.
+
+This site does not scrape a third-party cache as the source of truth. A committed file, `assets/data/contributions.json`, is rebuilt by `.github/workflows/update-contributions.yml` **on every push to `main` and once a day**. Each day is the max of:
+
+- GitHub’s official public contribution count
+- Commits in **this repository** (`git log --all`)
+
+To make GitHub’s own profile catch up, commit to `main` with `le.nbclub@gmail.com` (or another verified address):
+
+```bash
+git config user.email "le.nbclub@gmail.com"
+```
+
+Refresh locally anytime:
+
+```bash
+python3 scripts/update_contributions.py
+```
 
 ## Point the GoDaddy domain here
 

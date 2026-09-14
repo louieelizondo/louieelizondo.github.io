@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louie Elizondo — Mise en Place</title>
-  <meta name="description" content="Louie Elizondo — operator of Natural Balance Club, President of CANACO Chihuahua Restauranteros, and a self-taught software developer learning in public from Chihuahua, México." />
+  <title>Louie Elizondo</title>
+  <meta name="description" content="Louie Elizondo — Chihuahua. Natural Balance, CANACO Restauranteros, and the software the kitchen didn’t come with." />
   <meta name="author" content="Louie Elizondo" />
   <meta name="theme-color" content="#0b0a09" />
   <link rel="canonical" href="https://louieelizondo.com/" />
@@ -13,21 +13,21 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://louieelizondo.com/" />
-  <meta property="og:title" content="Louie Elizondo — Mise en Place" />
-  <meta property="og:description" content="Operator. Restaurantero. Self-taught developer. Building the software a food business actually needs — in Chihuahua, México." />
+  <meta property="og:title" content="Louie Elizondo" />
+  <meta property="og:description" content="A letter, then the line. Chihuahua, México." />
   <meta property="og:image" content="https://louieelizondo.com/louie.jpeg" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="es_MX" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@louieelizondo" />
-  <meta name="twitter:title" content="Louie Elizondo — Mise en Place" />
-  <meta name="twitter:description" content="Operator. Restaurantero. Self-taught developer. Chihuahua, México." />
+  <meta name="twitter:title" content="Louie Elizondo" />
+  <meta name="twitter:description" content="A letter, then the line. Chihuahua, México." />
   <meta name="twitter:image" content="https://louieelizondo.com/louie.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/kitchen.css" />
 
@@ -41,6 +41,8 @@
         document.documentElement.lang = lang;
         var meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.setAttribute('content', theme === 'light' ? '#f7f2e8' : '#0b0a09');
+        var hash = (location.hash || '').replace('#', '');
+        document.documentElement.dataset.room = hash === 'line' ? 'line' : 'letter';
       } catch (e) {}
     })();
   </script>
@@ -63,819 +65,124 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#letter">Skip to letter</a>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span class="ticker-item">Mise en place</span>
-      <span class="ticker-item">Chihuahua, México</span>
-      <span class="ticker-item">Natural Balance Club</span>
-      <span class="ticker-item">CANACO Restauranteros</span>
-      <span class="ticker-item">Aprendiendo en público</span>
-      <span class="ticker-item">Building in public</span>
-      <span class="ticker-item">Operator first · developer in progress</span>
-      <span class="ticker-item">Shopify · Notion · HTML · JS · Apps Script</span>
+  <header class="chrome">
+    <div class="seg" data-seg="lang" role="group" aria-label="Language">
+      <span class="seg-thumb" aria-hidden="true"></span>
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
     </div>
-    <div class="ticker-track" aria-hidden="true">
-      <span class="ticker-item">Mise en place</span>
-      <span class="ticker-item">Chihuahua, México</span>
-      <span class="ticker-item">Natural Balance Club</span>
-      <span class="ticker-item">CANACO Restauranteros</span>
-      <span class="ticker-item">Aprendiendo en público</span>
-      <span class="ticker-item">Building in public</span>
-      <span class="ticker-item">Operator first · developer in progress</span>
-      <span class="ticker-item">Shopify · Notion · HTML · JS · Apps Script</span>
-    </div>
-  </div>
+    <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M21 14.3A8.5 8.5 0 1 1 9.7 3a7 7 0 0 0 11.3 11.3z" />
+      </svg>
+    </button>
+  </header>
 
-  <nav class="nav" aria-label="Primary">
-    <a href="#top" class="nav-brand">
-      <span class="nav-mark">LE</span>
-      <span class="nav-brand-text">Louie Elizondo</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#bio" data-en="Bio" data-es="Bio">Bio</a></li>
-      <li><a href="#work" data-en="Work" data-es="Trabajo">Work</a></li>
-      <li><a href="#canaco">CANACO</a></li>
-      <li><a href="#linea" data-en="The line" data-es="La línea">The line</a></li>
-      <li><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
-      <li><a href="#log">Log</a></li>
-      <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
-    </ul>
-    <div class="nav-tools">
-      <div class="seg" data-seg="lang" role="group" aria-label="Language">
-        <span class="seg-thumb" aria-hidden="true"></span>
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="es" aria-pressed="false">ES</button>
-      </div>
-      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to light mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-          <path d="M21 14.3A8.5 8.5 0 1 1 9.7 3a7 7 0 0 0 11.3 11.3z" />
-        </svg>
-      </button>
-      <button type="button" class="cmd-trigger" id="cmd-trigger" aria-haspopup="dialog">
-        <span>Menu</span>
-        <kbd>⌘K</kbd>
-      </button>
-    </div>
-  </nav>
-  <div class="progress" aria-hidden="true"></div>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <canvas id="ember-canvas" aria-hidden="true"></canvas>
-      <div class="hero-copy">
-        <p class="hero-eyebrow" data-en="Chihuahua, México · On the line" data-es="Chihuahua, México · En la línea">Chihuahua, México · On the line</p>
-        <h1>Louie<br /><span class="surname">Elizondo.</span></h1>
-        <div class="hero-roles">
-          <span class="role-chip role-chip--ember" data-en="Operator" data-es="Operador">Operator</span>
-          <span class="role-chip" data-en="Restaurantero" data-es="Restaurantero">Restaurantero</span>
-          <span class="role-chip role-chip--limon" data-en="Self-taught developer" data-es="Dev autodidacta">Self-taught developer</span>
-        </div>
-        <p class="hero-bio"
-           data-en="I run a family food business like a kitchen: everything in its place before service. Then I write the software that didn't exist when we needed it. <b>This site is the pass</b> — personal, work, CANACO, and the tools I ship while learning in public."
-           data-es="Opero un negocio familiar de comida como una cocina: todo en su lugar antes del servicio. Luego escribo el software que no existía cuando lo necesitábamos. <b>Este sitio es el pase</b> — lo personal, el trabajo, CANACO, y las herramientas que publico mientras aprendo en público.">
-          I run a family food business like a kitchen: everything in its place before service. Then I write the software that didn't exist when we needed it. <b>This site is the pass</b> — personal, work, CANACO, and the tools I ship while learning in public.
+  <section class="room room-letter" id="letter" aria-label="The letter">
+    <article class="letter">
+      <img class="letter-photo" src="louie.jpeg" width="220" height="220" alt="Louie Elizondo" />
+      <p class="letter-place">Chihuahua</p>
+      <h1>Louie Elizondo</h1>
+      <div class="letter-body">
+        <p data-en="I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the kitchen didn’t come with."
+           data-es="Corro Natural Balance: comida de casa para familias que no tienen tiempo de cocinar. Presido Restauranteros en CANACO Chihuahua. Estoy aprendiendo a escribir el software que la cocina no trajo.">
+          I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the kitchen didn’t come with.
         </p>
-        <div class="hero-ctas">
-          <a href="#linea" class="btn btn-primary">
-            <span data-en="Walk the line" data-es="Recorre la línea">Walk the line</span>
-            <span class="btn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="https://x.com/louieelizondo" class="btn btn-ghost" target="_blank" rel="noopener">𝕏 @louieelizondo</a>
-        </div>
+        <p data-en="This page is the public log. The first room is a letter. The second is the line — four stations, each a real system at the house."
+           data-es="Esta página es el cuaderno público. El primer cuarto es una carta. El segundo es la línea: cuatro estaciones, cada una un sistema real de la casa.">
+          This page is the public log. The first room is a letter. The second is the line — four stations, each a real system at the house.
+        </p>
       </div>
+      <p class="letter-links">
+        <a href="https://x.com/louieelizondo" target="_blank" rel="noopener">X</a>
+        <a href="https://naturalbalance.club" target="_blank" rel="noopener">Natural Balance</a>
+        <a href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noopener">CANACO</a>
+      </p>
+      <a class="enter-line" href="#line" data-en="The line →" data-es="La línea →">The line →</a>
+    </article>
+  </section>
 
-      <aside class="pass-card" aria-label="Service pass">
-        <div class="pass-head">
-          <span class="mono" data-en="Service pass · 001" data-es="Pase de servicio · 001">Service pass · 001</span>
-          <span class="status-dot" id="service-status">In service</span>
-        </div>
-        <div class="pass-identity">
-          <div class="portrait-wrap">
-            <img src="louie.jpeg" width="180" height="180" alt="Portrait of Louie Elizondo" />
-          </div>
-          <div>
-            <div class="pass-identity-name">Louie Elizondo</div>
-            <div class="pass-identity-role" data-en="Partner, Natural Balance · Presidente, Restauranteros CANACO Chih." data-es="Socio, Natural Balance · Presidente, Restauranteros CANACO Chih.">Partner, Natural Balance · Presidente, Restauranteros CANACO Chih.</div>
-          </div>
-        </div>
-        <dl class="pass-rows">
-          <div class="pass-row">
-            <dt data-en="Station" data-es="Estación">Station</dt>
-            <dd data-en="The pass — ops + code" data-es="El pase — ops + código">The pass — ops + code</dd>
-          </div>
-          <div class="pass-row">
-            <dt data-en="Base" data-es="Base">Base</dt>
-            <dd>Chihuahua, MX</dd>
-          </div>
-          <div class="pass-row">
-            <dt data-en="Clock" data-es="Reloj">Clock</dt>
-            <dd><span class="clock" id="clock">--:-- CST</span></dd>
-          </div>
-          <div class="pass-row">
-            <dt>X</dt>
-            <dd><a href="https://x.com/louieelizondo" target="_blank" rel="noopener">@louieelizondo</a></dd>
-          </div>
-        </dl>
-      </aside>
-    </section>
+  <section class="room room-line" id="line" aria-label="The line">
+    <a class="back-letter" href="#letter" data-en="← The letter" data-es="← La carta">← The letter</a>
 
-    <div class="band" aria-hidden="true">
-      <div class="band-track">
-        <span class="band-item">Mise en place</span>
-        <span class="band-item">Food tech</span>
-        <span class="band-item">Ops automation</span>
-        <span class="band-item">Shopify</span>
-        <span class="band-item">CANACO</span>
-        <span class="band-item">Aprendiendo en público</span>
-        <span class="band-item">Family business</span>
-        <span class="band-item">Chihuahua</span>
+    <div class="linea-stage" id="linea-stage">
+      <canvas aria-label="Interactive 3D kitchen line"></canvas>
+      <div class="linea-state" data-state="loading">
+        <span class="linea-spinner" aria-hidden="true"></span>
+        <p data-en="Firing the line…" data-es="Encendiendo la línea…">Firing the line…</p>
       </div>
-      <div class="band-track" aria-hidden="true">
-        <span class="band-item">Mise en place</span>
-        <span class="band-item">Food tech</span>
-        <span class="band-item">Ops automation</span>
-        <span class="band-item">Shopify</span>
-        <span class="band-item">CANACO</span>
-        <span class="band-item">Aprendiendo en público</span>
-        <span class="band-item">Family business</span>
-        <span class="band-item">Chihuahua</span>
+      <p class="linea-hint" data-en="Drag to look around · click a station" data-es="Arrastra para mirar · clic en una estación">Drag to look around · click a station</p>
+      <div class="linea-controls">
+        <button type="button" class="linea-ctrl" id="linea-spin" aria-pressed="true" data-en="Spin" data-es="Girar">Spin</button>
+        <button type="button" class="linea-ctrl" id="linea-reset" data-en="Reset" data-es="Reset">Reset</button>
+      </div>
+      <div class="linea-tip" aria-hidden="true">
+        <div class="linea-tip-name"></div>
+        <div class="linea-tip-sys"></div>
       </div>
     </div>
 
-    <section class="section" id="bio">
-      <header class="section-head">
-        <span class="section-index">01</span>
-        <div>
-          <p class="section-kicker" data-en="Bio / Spec sheet" data-es="Bio / Ficha técnica">Bio / Spec sheet</p>
-          <h2 class="section-title" data-en="Operator first,<br>developer in progress." data-es="Operador primero,<br>desarrollador en proceso.">Operator first,<br>developer in progress.</h2>
-          <p class="section-lede"
-             data-en="The short version of who I am, before the tickets. Built like a spec sheet because that's how kitchens stay honest: labels, quantities, no fluff."
-             data-es="La versión corta de quién soy, antes de los tickets. Hecha como ficha técnica porque así se mantiene honesta una cocina: etiquetas, cantidades, sin relleno.">
-            The short version of who I am, before the tickets. Built like a spec sheet because that's how kitchens stay honest: labels, quantities, no fluff.
-          </p>
-        </div>
+    <article class="kitchen-ticket" id="kitchen-ticket" hidden>
+      <header>
+        <span class="ticket-no"></span>
+        <span class="ticket-sys"></span>
+        <button type="button" class="ticket-close" id="ticket-close" aria-label="Close ticket">×</button>
       </header>
+      <h2 class="ticket-title"></h2>
+      <p class="ticket-body"></p>
+      <p class="ticket-holds"></p>
+      <a class="ticket-link" hidden target="_blank" rel="noopener"></a>
+    </article>
 
-      <div class="stats reveal">
-        <div class="stat">
-          <div class="stat-num" data-count="5">0</div>
-          <div class="stat-label" data-en="Live tools" data-es="Herramientas en vivo">Live tools</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="6">0</div>
-          <div class="stat-label" data-en="Finance apps" data-es="Apps de finanzas">Finance apps</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" data-count="9">0</div>
-          <div class="stat-label" data-en="Contract roles" data-es="Puestos de contrato">Contract roles</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">1</div>
-          <div class="stat-label" data-en="City. One kitchen." data-es="Ciudad. Una cocina.">City. One kitchen.</div>
-        </div>
-      </div>
-
-      <div class="spec reveal" data-delay="1" style="margin-top: 1.25rem;">
-        <div class="spec-cell">
-          <div class="spec-key" data-en="Name" data-es="Nombre">Name</div>
-          <div class="spec-val">Louie Elizondo</div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-key" data-en="Based" data-es="Base">Based</div>
-          <div class="spec-val">Chihuahua, México<small>Mountain time · CST</small></div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-key" data-en="Day job" data-es="Trabajo">Day job</div>
-          <div class="spec-val" data-en="Partner &amp; operator" data-es="Socio y operador">Partner &amp; operator<small>Natural Balance Club</small></div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-key" data-en="Civic" data-es="Cívico">Civic</div>
-          <div class="spec-val">Presidente<small>Sección de Restauranteros, CANACO Chih.</small></div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-key" data-en="Craft" data-es="Oficio">Craft</div>
-          <div class="spec-val" data-en="Self-taught software" data-es="Software autodidacta"><span data-en="Self-taught software" data-es="Software autodidacta">Self-taught software</span><small>HTML, CSS, JS, Apps Script</small></div>
-        </div>
-        <div class="spec-cell">
-          <div class="spec-key" data-en="Publishing" data-es="Publicando">Publishing</div>
-          <div class="spec-val">Building in public<small>@louieelizondo on X</small></div>
-        </div>
-      </div>
-
-      <div class="story" style="margin-top: clamp(2.5rem, 5vw, 4rem);">
-        <div class="prose reveal">
-          <p data-en="I run <b>Natural Balance</b> — homestyle meals in Chihuahua: prepped, cooked, refrigerated, frozen, and hot-ready combos for families who want to eat well without the daily cooking grind."
-             data-es="Opero <b>Natural Balance</b> — comida casera en Chihuahua: preps, cocidos, refrigerados, congelados y combos listos para familias que quieren comer bien sin la molienda diaria.">
-            I run <b>Natural Balance</b> — homestyle meals in Chihuahua: prepped, cooked, refrigerated, frozen, and hot-ready combos for families who want to eat well without the daily cooking grind.
-          </p>
-          <p data-en="Instead of running it the traditional way, I rebuilt operations around software. <b>Notion runs the kitchen brain. Shopify runs sales.</b> Then I started writing the tools no vendor would sell us — payroll bonuses, contracts, a six-app finance suite."
-             data-es="En vez de operarlo a la manera tradicional, reconstruí las operaciones alrededor de software. <b>Notion es el cerebro de cocina. Shopify corre las ventas.</b> Luego empecé a escribir las herramientas que ningún proveedor nos iba a vender — bonos de nómina, contratos, una suite de seis apps de finanzas.">
-            Instead of running it the traditional way, I rebuilt operations around software. <b>Notion runs the kitchen brain. Shopify runs sales.</b> Then I started writing the tools no vendor would sell us — payroll bonuses, contracts, a six-app finance suite.
-          </p>
-          <p data-en="This domain is the public log of that work. Every project started as a real problem on a real line. I am still learning. The point is to keep plating."
-             data-es="Este dominio es la bitácora pública de ese trabajo. Cada proyecto nació de un problema real en una línea real. Sigo aprendiendo. El punto es seguir emplatando.">
-            This domain is the public log of that work. Every project started as a real problem on a real line. I am still learning. The point is to keep plating.
-          </p>
-        </div>
-        <blockquote class="pull-quote reveal" data-delay="2">
-          <span data-en="Build it. Break it. Feel like an idiot. Figure it out. Do it again — but better."
-                data-es="Construye. Rómpelo. Siéntete idiota. Entiéndelo. Repite — pero mejor.">
-            Build it. Break it. Feel like an idiot. Figure it out. Do it again — but better.
-          </span>
-          <cite>— Louie Elizondo</cite>
-        </blockquote>
-      </div>
-
-      <ol class="timeline reveal">
-        <li class="tl-item">
-          <time class="tl-when">Now</time>
-          <div>
-            <div class="tl-what" data-en="Learning software in public" data-es="Aprendiendo software en público">Learning software in public</div>
-            <div class="tl-detail" data-en="Shipping tools for Natural Balance, CANACO, and whoever else on the line needs them." data-es="Publicando herramientas para Natural Balance, CANACO, y quien más las necesite en la línea.">Shipping tools for Natural Balance, CANACO, and whoever else on the line needs them.</div>
-          </div>
-        </li>
-        <li class="tl-item">
-          <time class="tl-when">CANACO</time>
-          <div>
-            <div class="tl-what">Presidente · Sección de Restauranteros</div>
-            <div class="tl-detail" data-en="Helping Chihuahua restaurants modernize — starting with a public directory of where we actually eat." data-es="Ayudando a que los restaurantes de Chihuahua se modernicen — empezando por un directorio público de dónde sí comemos.">Helping Chihuahua restaurants modernize — starting with a public directory of where we actually eat.</div>
-          </div>
-        </li>
-        <li class="tl-item">
-          <time class="tl-when">NB</time>
-          <div>
-            <div class="tl-what">Natural Balance Club</div>
-            <div class="tl-detail" data-en="Turned a family food business into a tech-first operation: Shopify storefront, Notion ops, custom internal software." data-es="Convertí un negocio familiar de comida en una operación tech-first: tienda en Shopify, ops en Notion, software interno a la medida.">Turned a family food business into a tech-first operation: Shopify storefront, Notion ops, custom internal software.</div>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section class="section section--band" id="work">
-      <div class="section-inner">
-        <header class="section-head">
-          <span class="section-index">02</span>
-          <div>
-            <p class="section-kicker">Work / Natural Balance</p>
-            <h2 class="section-title" data-en="A kitchen that runs<br>on software." data-es="Una cocina que corre<br>en software.">A kitchen that runs<br>on software.</h2>
-          </div>
-        </header>
-
-        <article class="feature reveal">
-          <div class="feature-main">
-            <span class="feature-tag feature-tag--ember">Natural Balance Club</span>
-            <h3 class="feature-title" data-en="Homestyle meals,<br>tech-first ops." data-es="Comida casera,<br>ops de tecnología.">Homestyle meals,<br>tech-first ops.</h3>
-            <div class="feature-body">
-              <p data-en="We cook for busy families in Chihuahua — prepped, cooked, refrigerated, frozen, and hot-ready. The product is food. The moat is the system behind it."
-                 data-es="Cocinamos para familias ocupadas en Chihuahua — preps, cocidos, refrigerados, congelados y listos. El producto es comida. El foso es el sistema detrás.">
-                We cook for busy families in Chihuahua — prepped, cooked, refrigerated, frozen, and hot-ready. The product is food. The moat is the system behind it.
-              </p>
-              <p data-en="<b>Shopify</b> is the storefront. <b>Notion</b> is the operations brain. Everything we couldn't buy — finance, bonuses, contracts — I built."
-                 data-es="<b>Shopify</b> es la tienda. <b>Notion</b> es el cerebro de operaciones. Todo lo que no pudimos comprar — finanzas, bonos, contratos — lo construí.">
-                <b>Shopify</b> is the storefront. <b>Notion</b> is the operations brain. Everything we couldn't buy — finance, bonuses, contracts — I built.
-              </p>
-            </div>
-            <a class="ticket-link" href="https://naturalbalance.club" target="_blank" rel="noopener" style="--tone: var(--ember-ink); margin-top: 1.4rem;">naturalbalance.club →</a>
-          </div>
-          <div class="feature-side">
-            <p class="side-label" data-en="On the line" data-es="En la línea">On the line</p>
-            <ul class="bullets">
-              <li data-en="Shopify storefront for weekly menus and combos" data-es="Tienda Shopify para menús semanales y combos">Shopify storefront for weekly menus and combos</li>
-              <li data-en="Notion as the kitchen brain — recipes, stations, inventory" data-es="Notion como cerebro de cocina — recetas, estaciones, inventario">Notion as the kitchen brain — recipes, stations, inventory</li>
-              <li data-en="Six internal finance apps on HTML + Apps Script" data-es="Seis apps internas de finanzas en HTML + Apps Script">Six internal finance apps on HTML + Apps Script</li>
-              <li data-en="Payroll bonus engine wired to POS sales" data-es="Motor de bonos de nómina conectado a ventas del POS">Payroll bonus engine wired to POS sales</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="canaco">
-      <header class="section-head">
-        <span class="section-index">03</span>
-        <div>
-          <p class="section-kicker">CANACO Chihuahua</p>
-          <h2 class="section-title" data-en="Restaurants, organized." data-es="Restaurantes, en orden.">Restaurants, organized.</h2>
-        </div>
-      </header>
-
-      <article class="feature reveal">
-        <div class="feature-main">
-          <span class="feature-tag feature-tag--plum">Sección de Restauranteros</span>
-          <h3 class="feature-title">Presidente,<br>CANACO Chihuahua.</h3>
-          <div class="feature-body">
-            <p data-en="I chair the restaurant section at the local chamber of commerce. The brief is simple: help more Chihuahua kitchens modernize — not with slogans, with tools they will actually use."
-               data-es="Presido la sección de restauranteros de la cámara local. El brief es simple: que más cocinas de Chihuahua se modernicen — no con slogans, con herramientas que sí usen.">
-              I chair the restaurant section at the local chamber of commerce. The brief is simple: help more Chihuahua kitchens modernize — not with slogans, with tools they will actually use.
-            </p>
-            <p data-en="<b>Donde Comemos</b> is the first public artifact: a directory so locals can find where to eat, built as part of the committee's work."
-               data-es="<b>Donde Comemos</b> es el primer artefacto público: un directorio para que la gente encuentre dónde comer, hecho como parte del trabajo del comité.">
-              <b>Donde Comemos</b> is the first public artifact: a directory so locals can find where to eat, built as part of the committee's work.
-            </p>
-          </div>
-          <a class="ticket-link" href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noopener" style="--tone: var(--plum); margin-top: 1.4rem;">Donde Comemos →</a>
-        </div>
-        <div class="feature-side">
-          <p class="side-label" data-en="What this seat is for" data-es="Para qué es este cargo">What this seat is for</p>
-          <ul class="bullets bullets--plum">
-            <li data-en="A public restaurant guide for the city" data-es="Una guía pública de restaurantes para la ciudad">A public restaurant guide for the city</li>
-            <li data-en="Digital tools instead of paperwork theater" data-es="Herramientas digitales en vez de teatro de papeles">Digital tools instead of paperwork theater</li>
-            <li data-en="Operators talking to operators" data-es="Operadores hablando con operadores">Operators talking to operators</li>
-            <li data-en="Proof that local commerce can ship software" data-es="Prueba de que el comercio local sí puede publicar software">Proof that local commerce can ship software</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <section class="section section--band" id="linea">
-      <div class="section-inner">
-        <header class="section-head">
-          <span class="section-index">04</span>
-          <div>
-            <p class="section-kicker" data-en="The line / La línea" data-es="La línea">The line / La línea</p>
-            <h2 class="section-title" data-en="Four stations.<br>One operation." data-es="Cuatro estaciones.<br>Una operación.">Four stations.<br>One operation.</h2>
-            <p class="section-lede"
-               data-en="A live kitchen line, built in the browser from geometric primitives — no 3D files. Hover a station to see which real system runs it at Natural Balance. Drag to orbit. This is the résumé, plated."
-               data-es="Una línea de cocina en vivo, construida en el navegador con primitivas geométricas — sin archivos 3D. Pasa el cursor por una estación para ver qué sistema real la opera en Natural Balance. Arrastra para orbitar. Este es el currículum, emplatado.">
-              A live kitchen line, built in the browser from geometric primitives — no 3D files. Hover a station to see which real system runs it at Natural Balance. Drag to orbit. This is the résumé, plated.
-            </p>
-          </div>
-        </header>
-
-        <div class="linea reveal">
-          <div class="linea-stage" id="linea-stage">
-            <canvas aria-label="Interactive 3D kitchen line"></canvas>
-            <div class="linea-state" data-state="loading">
-              <span class="linea-spinner" aria-hidden="true"></span>
-              <p data-en="Firing the line…" data-es="Encendiendo la línea…">Firing the line…</p>
-            </div>
-            <div class="linea-hud"><b>●</b> <span data-en="Live service" data-es="Servicio en vivo">Live service</span></div>
-            <p class="linea-hint" data-en="Drag to orbit · click a station" data-es="Arrastra para orbitar · clic en estación">Drag to orbit · click a station</p>
-            <div class="linea-controls">
-              <button type="button" class="linea-ctrl" id="linea-spin" aria-pressed="true" data-en="Spin" data-es="Girar">Spin</button>
-              <button type="button" class="linea-ctrl" id="linea-reset" data-en="Reset" data-es="Reset">Reset</button>
-            </div>
-            <div class="linea-tip" aria-hidden="true">
-              <div class="linea-tip-name"></div>
-              <div class="linea-tip-sys"></div>
-            </div>
-          </div>
-
-          <aside class="linea-rail">
-            <div class="linea-rail-head">
-              <p class="side-label" data-en="Stations" data-es="Estaciones">Stations</p>
-              <p data-en="Each station is a real system. Click to focus it on the line."
-                 data-es="Cada estación es un sistema real. Clic para enfocarla en la línea.">
-                Each station is a real system. Click to focus it on the line.
-              </p>
-            </div>
-            <ul class="linea-stations">
-              <li>
-                <button type="button" class="linea-station" data-tone="ember" aria-pressed="false">
-                  <span class="linea-station-no">01</span>
-                  <span>
-                    <span class="linea-station-name"><span class="linea-station-label" data-en="Prep" data-es="Prep">Prep</span> <em>Mise</em></span>
-                    <span class="linea-station-sys">Notion ops</span>
-                    <span class="linea-station-desc"
-                          data-en="Recipes, stations, inventory. Everything in its place before service."
-                          data-es="Recetas, estaciones, inventario. Todo en su lugar antes del servicio.">
-                      Recipes, stations, inventory. Everything in its place before service.
-                    </span>
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="linea-station" data-tone="clay" aria-pressed="false">
-                  <span class="linea-station-no">02</span>
-                  <span>
-                    <span class="linea-station-name"><span class="linea-station-label" data-en="Fire" data-es="Fuego">Fire</span> <em>Fuego</em></span>
-                    <span class="linea-station-sys">Shopify + POS</span>
-                    <span class="linea-station-desc"
-                          data-en="Orders in, heat on. The storefront and the ticket printer."
-                          data-es="Entran órdenes, se prende el fuego. La tienda y el ticket.">
-                      Orders in, heat on. The storefront and the ticket printer.
-                    </span>
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="linea-station" data-tone="limon" aria-pressed="false">
-                  <span class="linea-station-no">03</span>
-                  <span>
-                    <span class="linea-station-name"><span class="linea-station-label" data-en="The pass" data-es="El pase">The pass</span> <em>QC</em></span>
-                    <span class="linea-station-sys">Finance suite</span>
-                    <span class="linea-station-desc"
-                          data-en="Nothing leaves without a check. Six internal apps keep the numbers honest."
-                          data-es="Nada sale sin revisión. Seis apps internas mantienen los números honestos.">
-                      Nothing leaves without a check. Six internal apps keep the numbers honest.
-                    </span>
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="linea-station" data-tone="cilantro" aria-pressed="false">
-                  <span class="linea-station-no">04</span>
-                  <span>
-                    <span class="linea-station-name"><span class="linea-station-label" data-en="Out" data-es="Entrega">Out</span> <em>Entrega</em></span>
-                    <span class="linea-station-sys">Payroll · contracts</span>
-                    <span class="linea-station-desc"
-                          data-en="Packed, paid, signed. Bonuses from POS data and contracts ready to print."
-                          data-es="Empacado, pagado, firmado. Bonos desde el POS y contratos listos para imprimir.">
-                      Packed, paid, signed. Bonuses from POS data and contracts ready to print.
-                    </span>
-                  </span>
-                </button>
-              </li>
-            </ul>
-          </aside>
-        </div>
-
-        <div class="linea-fallback" data-state="fallback" hidden>
-          <div class="linea-fb-cell">
-            <div class="linea-fb-no">01</div>
-            <div class="linea-fb-name" data-en="Prep" data-es="Prep">Prep</div>
-            <div class="linea-fb-sys">Notion ops</div>
-          </div>
-          <div class="linea-fb-cell">
-            <div class="linea-fb-no">02</div>
-            <div class="linea-fb-name" data-en="Fire" data-es="Fuego">Fire</div>
-            <div class="linea-fb-sys">Shopify + POS</div>
-          </div>
-          <div class="linea-fb-cell">
-            <div class="linea-fb-no">03</div>
-            <div class="linea-fb-name" data-en="The pass" data-es="El pase">The pass</div>
-            <div class="linea-fb-sys">Finance suite</div>
-          </div>
-          <div class="linea-fb-cell">
-            <div class="linea-fb-no">04</div>
-            <div class="linea-fb-name" data-en="Out" data-es="Entrega">Out</div>
-            <div class="linea-fb-sys">Payroll · contracts</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <header class="section-head">
-        <span class="section-index">05</span>
-        <div>
-          <p class="section-kicker" data-en="Tickets / Proyectos" data-es="Tickets / Proyectos">Tickets / Proyectos</p>
-          <h2 class="section-title" data-en="On the board." data-es="En el pizarrón.">On the board.</h2>
-          <p class="section-lede"
-             data-en="<b>5</b> fired · <b>2</b> still on the rail. Every ticket started as a problem on a real service."
-             data-es="<b>5</b> salieron · <b>2</b> siguen en el riel. Cada ticket nació de un problema en un servicio real.">
-            <b>5</b> fired · <b>2</b> still on the rail. Every ticket started as a problem on a real service.
-          </p>
-        </div>
-      </header>
-
-      <div class="tickets">
-        <article class="ticket ticket--wide reveal" data-tone="ember">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 001</span>
-            <span class="ticket-stamp ticket-stamp--served" data-en="Served" data-es="Servido">Served</span>
-          </div>
-          <h3>Natural Balance Club</h3>
-          <p data-en="Home-style food delivery in Chihuahua. Prepped, cooked, refrigerated, frozen, and hot-ready meals. Shopify on the front. Notion in the back."
-             data-es="Comida casera a domicilio en Chihuahua. Preps, cocidos, refrigerados, congelados y listos. Shopify al frente. Notion atrás.">
-            Home-style food delivery in Chihuahua. Prepped, cooked, refrigerated, frozen, and hot-ready meals. Shopify on the front. Notion in the back.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">Shopify</span>
-            <span class="chip">Notion</span>
-            <span class="chip">Ops</span>
-          </div>
-          <a class="ticket-link" href="https://naturalbalance.club" target="_blank" rel="noopener">naturalbalance.club →</a>
-        </article>
-
-        <article class="ticket reveal" data-tone="limon" data-delay="1">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 002</span>
-            <span class="ticket-stamp ticket-stamp--served" data-en="Served" data-es="Servido">Served</span>
-          </div>
-          <h3>NB Finance Portal</h3>
-          <p data-en="Six web apps to run the books: KPIs, supplier invoices, AI capture, daily cash, income, inventory. GitHub Pages + Google Apps Script + Sheets."
-             data-es="Seis apps web para la caja: KPIs, facturas, captura con IA, corte diario, ingresos, inventario. GitHub Pages + Apps Script + Sheets.">
-            Six web apps to run the books: KPIs, supplier invoices, AI capture, daily cash, income, inventory. GitHub Pages + Google Apps Script + Sheets.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">HTML</span>
-            <span class="chip">Apps Script</span>
-            <span class="chip">Sheets</span>
-          </div>
-        </article>
-
-        <article class="ticket reveal" data-tone="plum" data-delay="2">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 003</span>
-            <span class="ticket-stamp ticket-stamp--served" data-en="Served" data-es="Servido">Served</span>
-          </div>
-          <h3>Contract Generator</h3>
-          <p data-en="Employment contracts for nine roles and three types — trial, training, permanent — pre-filled, ready to print and sign."
-             data-es="Contratos laborales para nueve puestos y tres tipos — prueba, capacitación, planta — prellenados, listos para firmar.">
-            Employment contracts for nine roles and three types — trial, training, permanent — pre-filled, ready to print and sign.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">Automation</span>
-            <span class="chip">HR</span>
-          </div>
-        </article>
-
-        <article class="ticket reveal" data-tone="clay">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 004</span>
-            <span class="ticket-stamp ticket-stamp--served" data-en="Served" data-es="Servido">Served</span>
-          </div>
-          <h3>Nómina &amp; Bono</h3>
-          <p data-en="Biweekly productivity bonuses from sales per station. Wired to POS data, with editable percentages and live math."
-             data-es="Bonos quincenales de productividad según ventas por estación. Conectado al POS, con porcentajes editables y cálculo en vivo.">
-            Biweekly productivity bonuses from sales per station. Wired to POS data, with editable percentages and live math.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">POS</span>
-            <span class="chip">Payroll</span>
-          </div>
-        </article>
-
-        <article class="ticket reveal" data-tone="cilantro" data-delay="1">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 005</span>
-            <span class="ticket-stamp ticket-stamp--served" data-en="Served" data-es="Servido">Served</span>
-          </div>
-          <h3>Donde Comemos</h3>
-          <p data-en="Restaurant directory for CANACO Chihuahua. A public guide so the city can find where to eat — built with the Restauranteros committee."
-             data-es="Directorio de restaurantes de CANACO Chihuahua. Una guía pública para encontrar dónde comer — hecha con el comité de Restauranteros.">
-            Restaurant directory for CANACO Chihuahua. A public guide so the city can find where to eat — built with the Restauranteros committee.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">CANACO</span>
-            <span class="chip">Directory</span>
-          </div>
-          <a class="ticket-link" href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noopener">Visit site →</a>
-        </article>
-
-        <article class="ticket reveal" data-tone="cream" data-delay="2">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 006</span>
-            <span class="ticket-stamp ticket-stamp--served" data-en="Served" data-es="Servido">Served</span>
-          </div>
-          <h3 data-en="This site" data-es="Este sitio">This site</h3>
-          <p data-en="louieelizondo.com — bilingual, themed, with a 3D kitchen line. Hand-coded HTML, CSS, and JS on GitHub Pages. The portfolio is also the demo."
-             data-es="louieelizondo.com — bilingüe, con tema, y una línea de cocina 3D. HTML, CSS y JS a mano en GitHub Pages. El portafolio también es el demo.">
-            louieelizondo.com — bilingual, themed, with a 3D kitchen line. Hand-coded HTML, CSS, and JS on GitHub Pages. The portfolio is also the demo.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">HTML</span>
-            <span class="chip">Three.js</span>
-            <span class="chip">GitHub Pages</span>
-          </div>
-          <a class="ticket-link" href="https://github.com/louieelizondo/louieelizondo.github.io" target="_blank" rel="noopener">View source →</a>
-        </article>
-
-        <article class="ticket ticket--soon reveal" data-tone="ember">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 007</span>
-            <span class="ticket-stamp ticket-stamp--prep" data-en="On the rail" data-es="En el riel">On the rail</span>
-          </div>
-          <h3>Shopify App</h3>
-          <p data-en="A tool born from running Natural Balance — an ops problem no existing Shopify app solves well. The finance portal is the foundation."
-             data-es="Una herramienta nacida de operar Natural Balance — un problema de ops que ninguna app de Shopify resuelve bien. El portal financiero es la base.">
-            A tool born from running Natural Balance — an ops problem no existing Shopify app solves well. The finance portal is the foundation.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">Shopify</span>
-            <span class="chip">Next</span>
-          </div>
-        </article>
-
-        <article class="ticket ticket--soon reveal" data-tone="clay" data-delay="1">
-          <div class="ticket-meta">
-            <span class="ticket-no">Ticket 008</span>
-            <span class="ticket-stamp ticket-stamp--prep" data-en="On the rail" data-es="En el riel">On the rail</span>
-          </div>
-          <h3>Kettlebell App</h3>
-          <p data-en="Training for kettlebell athletes: programs, progress, smart recommendations. Planned as an add-on to the Natural Balance ecosystem."
-             data-es="Entrenamiento con pesas rusas: programas, progreso, recomendaciones. Planeada como extensión del ecosistema Natural Balance.">
-            Training for kettlebell athletes: programs, progress, smart recommendations. Planned as an add-on to the Natural Balance ecosystem.
-          </p>
-          <div class="ticket-stack">
-            <span class="chip">Fitness</span>
-            <span class="chip">Next</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--band" id="log">
-      <div class="section-inner">
-        <header class="section-head">
-          <span class="section-index">06</span>
-          <div>
-            <p class="section-kicker" data-en="Log / GitHub" data-es="Bitácora / GitHub">Log / GitHub</p>
-            <h2 class="section-title" data-en="Commit by commit." data-es="Commit a commit.">Commit by commit.</h2>
-          </div>
-        </header>
-
-        <div class="gh-panel reveal">
-          <div class="gh-head">
-            <div class="gh-total" id="gh-total">Loading commit log…</div>
-            <a class="gh-link" href="https://github.com/louieelizondo" target="_blank" rel="noopener">@louieelizondo →</a>
-          </div>
-          <div id="gh-graph"><span class="placeholder">Loading commit log…</span></div>
-          <div class="gh-legend" id="gh-legend" hidden>
-            <span data-en="Less" data-es="Menos">Less</span>
-            <i></i><i></i><i></i><i></i><i></i>
-            <span data-en="More" data-es="Más">More</span>
-          </div>
-        </div>
-
-        <header class="section-head" style="margin-top: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem;">
-          <span class="section-index">07</span>
-          <div>
-            <p class="section-kicker" data-en="Mise / Tools" data-es="Mise / Herramientas">Mise / Tools</p>
-            <h2 class="section-title" data-en="What I cook with." data-es="Con qué cocino.">What I cook with.</h2>
-          </div>
-        </header>
-
-        <div class="stack">
-          <div class="stack-cell" style="--lvl: 78%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">Shopify</span>
-              <span class="stack-level" data-en="Daily" data-es="Diario">Daily</span>
-            </div>
-            <p class="stack-note" data-en="The storefront. Menus, checkout, the front door." data-es="La tienda. Menús, checkout, la puerta.">The storefront. Menus, checkout, the front door.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-          <div class="stack-cell" style="--lvl: 82%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">Notion</span>
-              <span class="stack-level" data-en="Daily" data-es="Diario">Daily</span>
-            </div>
-            <p class="stack-note" data-en="Kitchen brain. Recipes, stations, the book." data-es="Cerebro de cocina. Recetas, estaciones, el libro.">Kitchen brain. Recipes, stations, the book.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-          <div class="stack-cell" style="--lvl: 70%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">HTML / CSS</span>
-              <span class="stack-level" data-en="Building" data-es="Construyendo">Building</span>
-            </div>
-            <p class="stack-note" data-en="Every public surface I ship, including this one." data-es="Cada superficie pública que publico, incluida esta.">Every public surface I ship, including this one.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-          <div class="stack-cell" style="--lvl: 62%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">JavaScript</span>
-              <span class="stack-level" data-en="Building" data-es="Construyendo">Building</span>
-            </div>
-            <p class="stack-note" data-en="Interaction, automation, this 3D line." data-es="Interacción, automatización, esta línea 3D.">Interaction, automation, this 3D line.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-          <div class="stack-cell" style="--lvl: 68%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">Apps Script</span>
-              <span class="stack-level" data-en="In production" data-es="En producción">In production</span>
-            </div>
-            <p class="stack-note" data-en="The backend of the finance suite and payroll math." data-es="El backend de la suite financiera y la nómina.">The backend of the finance suite and payroll math.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-          <div class="stack-cell" style="--lvl: 55%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">GitHub</span>
-              <span class="stack-level" data-en="Public log" data-es="Bitácora">Public log</span>
-            </div>
-            <p class="stack-note" data-en="Where the commits live. Pages hosts the sites." data-es="Donde viven los commits. Pages hospeda los sitios.">Where the commits live. Pages hosts the sites.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-          <div class="stack-cell" style="--lvl: 75%;">
-            <div class="stack-cell-top">
-              <span class="stack-name">Claude</span>
-              <span class="stack-level" data-en="Copilot" data-es="Copiloto">Copilot</span>
-            </div>
-            <p class="stack-note" data-en="Pair programmer while I learn the craft faster." data-es="Programador en pareja mientras aprendo más rápido.">Pair programmer while I learn the craft faster.</p>
-            <div class="stack-bar"><i></i></div>
-          </div>
-        </div>
-
-        <header class="section-head" style="margin-top: clamp(3rem, 6vw, 5rem);">
-          <span class="section-index">08</span>
-          <div>
-            <p class="section-kicker" data-en="Now / Ahora" data-es="Ahora">Now / Ahora</p>
-            <h2 class="section-title" data-en="On the rail this week." data-es="En el riel esta semana.">On the rail this week.</h2>
-          </div>
-        </header>
-
-        <div class="now-grid">
-          <article class="now-card reveal">
-            <div class="now-num">01</div>
-            <h3 data-en="Shipping this site" data-es="Publicando este sitio">Shipping this site</h3>
-            <p data-en="louieelizondo.com as a bilingual bio, a kitchen metaphor, and a proof of what I can build."
-               data-es="louieelizondo.com como bio bilingüe, metáfora de cocina, y prueba de lo que puedo construir.">
-              louieelizondo.com as a bilingual bio, a kitchen metaphor, and a proof of what I can build.
-            </p>
-          </article>
-          <article class="now-card reveal" data-delay="1">
-            <div class="now-num">02</div>
-            <h3 data-en="The Shopify app" data-es="La app de Shopify">The Shopify app</h3>
-            <p data-en="Turning a real ops gap at Natural Balance into a product other kitchens might use."
-               data-es="Convertir un hueco real de ops en Natural Balance en un producto que otras cocinas puedan usar.">
-              Turning a real ops gap at Natural Balance into a product other kitchens might use.
-            </p>
-          </article>
-          <article class="now-card reveal" data-delay="2">
-            <div class="now-num">03</div>
-            <h3 data-en="CANACO, in public" data-es="CANACO, en público">CANACO, in public</h3>
-            <p data-en="Growing Donde Comemos and showing local restaurants that software is a station, not a department."
-               data-es="Hacer crecer Donde Comemos y mostrar a los restaurantes locales que el software es una estación, no un departamento.">
-              Growing Donde Comemos and showing local restaurants that software is a station, not a department.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <header class="section-head">
-        <span class="section-index">09</span>
-        <div>
-          <p class="section-kicker" data-en="The pass / Contacto" data-es="El pase / Contacto">The pass / Contacto</p>
-          <h2 class="section-title" data-en="Let's talk." data-es="Hablemos.">Let's talk.</h2>
-        </div>
-      </header>
-
-      <div class="contact-wrap">
-        <div>
-          <p class="contact-lede"
-             data-en="Building something interesting? Food tech, Shopify, operations in México, or a kitchen that needs software — I publish most of the thinking on X."
-             data-es="¿Construyendo algo interesante? Food tech, Shopify, operaciones en México, o una cocina que necesita software — publico la mayor parte del pensamiento en X.">
-            Building something interesting? Food tech, Shopify, operations in México, or a kitchen that needs software — I publish most of the thinking on X.
-          </p>
-          <div class="contact-links">
-            <a class="btn btn-primary" href="https://x.com/louieelizondo" target="_blank" rel="noopener">𝕏 @louieelizondo</a>
-            <a class="btn btn-ghost" href="https://github.com/louieelizondo" target="_blank" rel="noopener">GitHub →</a>
-          </div>
-        </div>
-        <div class="contact-cards">
-          <a class="contact-card" href="https://x.com/louieelizondo" target="_blank" rel="noopener">
-            <span>
-              <span class="contact-card-label">X</span>
-              <span class="contact-card-val">@louieelizondo</span>
-            </span>
-            <span class="contact-card-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="contact-card" href="https://github.com/louieelizondo" target="_blank" rel="noopener">
-            <span>
-              <span class="contact-card-label">GitHub</span>
-              <span class="contact-card-val">@louieelizondo</span>
-            </span>
-            <span class="contact-card-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="contact-card" href="https://naturalbalance.club" target="_blank" rel="noopener">
-            <span>
-              <span class="contact-card-label">Kitchen</span>
-              <span class="contact-card-val">naturalbalance.club</span>
-            </span>
-            <span class="contact-card-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <span>© 2026 Louie Elizondo · Chihuahua, México</span>
-    <span data-en="Hand-coded. Dark + light. EN + ES. Served on GitHub Pages."
-          data-es="Hecho a mano. Oscuro + claro. EN + ES. Servido en GitHub Pages.">
-      Hand-coded. Dark + light. EN + ES. Served on GitHub Pages.
-    </span>
-    <a href="https://github.com/louieelizondo/louieelizondo.github.io">Source</a>
-  </footer>
-
-  <div class="cmdk" id="cmdk" data-open="false" role="dialog" aria-modal="true" aria-labelledby="cmdk-label">
-    <div class="cmdk-scrim"></div>
-    <div class="cmdk-panel">
-      <p class="sr-only" id="cmdk-label">Command menu</p>
-      <div class="cmdk-input-row">
-        <span class="prompt" aria-hidden="true">/</span>
-        <input class="cmdk-input" id="cmdk-input" type="text" placeholder="Search sections, projects, commands…" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="cmdk-list" />
-        <span class="cmdk-esc">esc</span>
-      </div>
-      <ul class="cmdk-list" id="cmdk-list" role="listbox"></ul>
-      <div class="cmdk-foot">
-        <span>↑↓ move</span>
-        <span>↵ open</span>
-        <span>esc close</span>
-      </div>
+    <div class="linea-fallback" data-state="fallback" hidden>
+      <button type="button" class="linea-fb-cell" data-station="0">
+        <div class="linea-fb-no">01</div>
+        <div class="linea-fb-name">Prep</div>
+        <div class="linea-fb-sys">Notion</div>
+      </button>
+      <button type="button" class="linea-fb-cell" data-station="1">
+        <div class="linea-fb-no">02</div>
+        <div class="linea-fb-name" data-en="Fire" data-es="Fuego">Fire</div>
+        <div class="linea-fb-sys">Shopify + POS</div>
+      </button>
+      <button type="button" class="linea-fb-cell" data-station="2">
+        <div class="linea-fb-no">03</div>
+        <div class="linea-fb-name" data-en="The pass" data-es="El pase">The pass</div>
+        <div class="linea-fb-sys" data-en="Finance suite" data-es="Suite de finanzas">Finance suite</div>
+      </button>
+      <button type="button" class="linea-fb-cell" data-station="3">
+        <div class="linea-fb-no">04</div>
+        <div class="linea-fb-name" data-en="Out" data-es="Salida">Out</div>
+        <div class="linea-fb-sys" data-en="Payroll · contracts" data-es="Nómina · contratos">Payroll · contracts</div>
+      </button>
     </div>
-  </div>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer class="trail">
+      <div class="trail-copy">
+        <p class="trail-kicker" data-en="The trail" data-es="El rastro">The trail</p>
+        <p id="gh-total"></p>
+        <p class="trail-note"
+           data-en="GitHub’s public year, plus every commit in this kitchen. Refreshed on each push and once a day — so the paper matches the work, even when GitHub’s own graph lags."
+           data-es="El año público de GitHub, más cada commit de esta cocina. Se actualiza en cada push y una vez al día, para que el papel coincida con el trabajo aunque la gráfica de GitHub se quede atrás.">
+          GitHub’s public year, plus every commit in this kitchen. Refreshed on each push and once a day — so the paper matches the work, even when GitHub’s own graph lags.
+        </p>
+      </div>
+      <div id="gh-graph"><span class="placeholder">Loading…</span></div>
+      <div class="gh-legend" id="gh-legend" hidden>
+        <span data-en="Less" data-es="Menos">Less</span>
+        <i></i><i></i><i></i><i></i><i></i>
+        <span data-en="More" data-es="Más">More</span>
+        <a class="gh-link" href="https://github.com/louieelizondo" target="_blank" rel="noopener">github.com/louieelizondo</a>
+      </div>
+    </footer>
+  </section>
 
-  <script type="module" src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" type="module"></script>
 </body>
 </html>

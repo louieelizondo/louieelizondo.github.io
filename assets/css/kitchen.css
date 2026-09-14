@@ -1,34 +1,34 @@
-/* =========================================================
-   "La Línea" — the interactive 3D kitchen line
-   Four stations. Real systems. Plates that actually move.
-   ========================================================= */
+/* Full-bleed kitchen — room two */
 
-.linea {
-  display: grid;
-  grid-template-columns: 1.45fr 0.55fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  overflow: hidden;
+.room-line {
+  position: relative;
+  background: var(--bg);
 }
 
-/* ---------- STAGE ---------- */
+.back-letter {
+  position: absolute;
+  z-index: 5;
+  top: 0.95rem;
+  left: var(--gutter);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: var(--fg-muted);
+}
+.back-letter:hover { color: var(--fg); }
+
 .linea-stage {
   position: relative;
-  background:
-    radial-gradient(120% 80% at 50% 0%, var(--glow-ember), transparent 60%),
-    var(--bg);
-  min-height: clamp(320px, 46vh, 460px);
-  height: clamp(320px, 46vh, 460px);
+  min-height: 62dvh;
+  height: calc(100dvh - 11.5rem);
   cursor: grab;
-  touch-action: pan-y;
+  touch-action: none;
   overflow: hidden;
 }
 .linea-stage[data-dragging='true'] { cursor: grabbing; }
 .linea-stage canvas { display: block; width: 100%; height: 100%; }
 
-/* Loading + fallback states sit on top of the stage */
 .linea-state {
   position: absolute;
   inset: 0;
@@ -36,10 +36,7 @@
   place-content: center;
   gap: 0.6rem;
   justify-items: center;
-  padding: 2rem;
-  text-align: center;
   background: var(--bg);
-  transition: opacity 0.5s var(--ease);
 }
 .linea-state[hidden] { display: none; }
 .linea-state p {
@@ -58,46 +55,23 @@
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Corner HUD */
-.linea-hud {
-  position: absolute;
-  left: 0.9rem; top: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--fg-faint);
-  pointer-events: none;
-}
-.linea-hud b { color: var(--cilantro); font-weight: 400; }
-
 .linea-hint {
   position: absolute;
-  right: 0.9rem; bottom: 0.9rem;
-  display: flex;
-  gap: 0.45rem;
-  align-items: center;
+  right: var(--gutter);
+  top: 1.05rem;
   font-family: var(--mono);
   font-size: 0.56rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-faint);
-  background: var(--nav-bg);
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 0.3rem 0.65rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   transition: opacity 0.4s;
 }
 .linea-stage[data-touched='true'] .linea-hint { opacity: 0; }
 
 .linea-controls {
   position: absolute;
-  left: 0.9rem; bottom: 0.9rem;
+  right: var(--gutter);
+  bottom: 0.9rem;
   display: flex;
   gap: 0.35rem;
 }
@@ -112,23 +86,18 @@
   text-transform: uppercase;
   padding: 0.34rem 0.7rem;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: color 0.25s, border-color 0.25s, background 0.25s;
 }
-.linea-ctrl:hover { color: var(--fg); border-color: var(--line-2); }
+.linea-ctrl:hover { color: var(--fg); }
 .linea-ctrl[aria-pressed='true'] { color: var(--ember-ink); border-color: var(--ember); }
 
-/* Floating 3D tooltip */
 .linea-tip {
   position: absolute;
   z-index: 3;
   transform: translate(-50%, -130%);
   background: var(--surface);
   border: 1px solid var(--line-2);
-  border-radius: 10px;
-  padding: 0.5rem 0.75rem;
-  box-shadow: var(--shadow-md);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s;
@@ -139,7 +108,6 @@
   font-family: var(--display);
   font-weight: 700;
   font-size: 0.82rem;
-  letter-spacing: -0.01em;
 }
 .linea-tip-sys {
   font-family: var(--mono);
@@ -147,131 +115,30 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ember-ink);
-  margin-top: 0.15rem;
 }
 
-/* ---------- STATION RAIL (right column) ---------- */
-.linea-rail {
-  background: var(--surface);
-  display: flex;
-  flex-direction: column;
-}
-.linea-rail-head {
-  padding: 1.15rem 1.3rem 0.9rem;
-  border-bottom: 1px solid var(--line);
-}
-.linea-rail-head .side-label { margin-bottom: 0.3rem; }
-.linea-rail-head p { font-size: 0.82rem; color: var(--fg-muted); line-height: 1.6; }
-
-.linea-stations { list-style: none; flex: 1; }
-.linea-station {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1.7rem 1fr;
-  gap: 0.8rem;
-  align-items: start;
-  text-align: left;
-  padding: 0.95rem 1.3rem;
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--line);
-  border-left: 3px solid transparent;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-  transition: background 0.3s, border-left-color 0.3s, padding-left 0.3s var(--ease);
-}
-.linea-station:hover { background: var(--surface-2); }
-.linea-station[aria-pressed='true'] {
-  background: var(--surface-2);
-  border-left-color: var(--st-tone, var(--ember));
-  padding-left: 1.5rem;
-}
-.linea-station-no {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  color: var(--st-tone, var(--ember));
-  padding-top: 0.2rem;
-}
-.linea-station-name {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: -0.015em;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-.linea-station-name em {
-  font-family: var(--mono);
-  font-style: normal;
-  font-size: 0.55rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-faint);
-}
-.linea-station-sys {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--st-tone, var(--ember));
-  margin-top: 0.3rem;
-}
-.linea-station-desc {
-  font-size: 0.8rem;
-  color: var(--fg-muted);
-  line-height: 1.55;
-  margin-top: 0.35rem;
-  display: none;
-}
-.linea-station[aria-pressed='true'] .linea-station-desc { display: block; }
-
-.linea-station[data-tone='ember'] { --st-tone: var(--ember-ink); }
-.linea-station[data-tone='clay'] { --st-tone: var(--clay); }
-.linea-station[data-tone='limon'] { --st-tone: var(--limon-ink); }
-.linea-station[data-tone='cilantro'] { --st-tone: var(--cilantro); }
-
-/* ---------- NO-WEBGL / REDUCED-MOTION FALLBACK ---------- */
 .linea-fallback {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  width: 100%;
-  align-self: center;
   background: var(--line);
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
+.linea-fallback[hidden] { display: none; }
 .linea-fb-cell {
   background: var(--surface);
-  padding: 1.2rem 1rem;
-  position: relative;
+  padding: 1.1rem 1rem;
+  text-align: left;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
 }
-.linea-fb-cell::after {
-  content: '→';
-  position: absolute;
-  right: -0.55rem; top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--ember-ink);
-  z-index: 1;
-}
-.linea-fb-cell:last-child::after { content: none; }
 .linea-fb-no { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.12em; color: var(--ember-ink); }
-.linea-fb-name { font-family: var(--display); font-weight: 700; font-size: 0.92rem; margin-top: 0.4rem; }
-.linea-fb-sys { font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-muted); margin-top: 0.3rem; }
+.linea-fb-name { font-family: var(--display); font-weight: 700; font-size: 0.95rem; margin-top: 0.35rem; }
+.linea-fb-sys { font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-muted); margin-top: 0.25rem; }
 
-@media (max-width: 980px) {
-  .linea { grid-template-columns: 1fr; }
-  .linea-stage { min-height: clamp(280px, 40vh, 380px); }
-}
-@media (max-width: 560px) {
-  .linea-fallback { grid-template-columns: repeat(2, 1fr); }
-  .linea-fb-cell:nth-child(2)::after { content: none; }
-  .linea-controls { display: none; }
+@media (max-width: 720px) {
+  .linea-stage { height: 52dvh; min-height: 320px; }
+  .linea-hint { display: none; }
+  .linea-fallback { grid-template-columns: 1fr 1fr; }
 }
