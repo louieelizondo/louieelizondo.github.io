@@ -190,6 +190,7 @@ function applyLang() {
   });
   localStorage.setItem("le-lang", lang);
   renderPalette();
+  if (window.__ghReady) githubCalendar();
 }
 
 function setLang(next) {
@@ -312,6 +313,7 @@ async function githubCalendar() {
     if (!res.ok) throw new Error("api");
     const data = await res.json();
     const total = data.total?.lastYear || data.total?.last || Object.values(data.total || {}).pop() || 0;
+    window.__ghReady = true;
     totalEl.innerHTML = `<span style="color:var(--chile)">${total}</span> ${lang === "es" ? "contribuciones este año" : "contributions this year"}`;
     const contributions = data.contributions || [];
     const cellSize = 11;
