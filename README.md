@@ -2,51 +2,25 @@
 
 Personal site for **Louie Elizondo** — operator at Natural Balance Club, Presidente of CANACO Chihuahua Restauranteros, self-taught developer learning in public.
 
-Two rooms: a letter, then the line. Dark + light. English + Spanish.
+One page: a letter and a thermal printer. Dark + light. English + Spanish.
 
 Hosted on [GitHub Pages](https://pages.github.com) from this repo.
 
-## What’s in each room
+## What’s on the page
 
-**Room 1 — the letter.** Name, a photo, a few sentences, and three links (X, Natural Balance, CANACO / Donde Comemos). Language and theme live in the corner. Nothing else.
+**The letter.** Name, a photo, a few sentences.
 
-**Room 2 — the line.** Full-bleed 3D kitchen. Click a station and a paper ticket is the bio:
+**The printer.** Three buttons, three tickets:
 
-| Station | What’s on the ticket |
+| Button | What prints |
 | --- | --- |
-| Prep | Notion: recipes, checklists, the week |
-| Fire | Natural Balance — Shopify + POS |
-| The pass | Private finance suite (six apps, not public) |
-| Out | Payroll and contracts, with a quiet link to nómina |
+| Natural Balance | The house — naturalbalance.club / Shopify |
+| Restauranteros | CANACO in real life + Donde Comemos |
+| Office | People and money — the apps stay private |
 
-The footer is the commit trail.
+**The status bar.** X, GitHub, louieelizondo.com, louie@naturalbalance.club.
 
-## Keep the GitHub calendar honest
-
-GitHub’s public contribution graph only paints commits that:
-
-1. Land on a **default branch** (this site’s is `main`), and
-2. Use an **author email verified** on [github.com/settings/emails](https://github.com/settings/emails).
-
-Work on a feature branch, or commits from `cursoragent@cursor.com`, will not turn Louie’s squares green — even if the kitchen was busy. That is why the last few weeks looked empty.
-
-This site does not scrape a third-party cache as the source of truth. A committed file, `assets/data/contributions.json`, is rebuilt by `.github/workflows/update-contributions.yml` **on every push to `main` and once a day**. Each day is the max of:
-
-- GitHub’s official public contribution count
-- Commits in **this repository** (`git log --all`)
-
-To make GitHub’s own profile catch up, commit to `main` with `le.nbclub@gmail.com` (or another verified address):
-
-```bash
-git config user.email "le.nbclub@gmail.com"
-```
-
-Refresh locally anytime:
-
-```bash
-python3 scripts/update_contributions.py
-```
-
+Print all three, then tap the printer’s black lid a few times.
 ## Point the GoDaddy domain here
 
 The domain is registered at **GoDaddy México** and is not configured yet. GitHub Pages will serve the site once DNS and Pages settings match.

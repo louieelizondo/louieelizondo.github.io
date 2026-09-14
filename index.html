@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Louie Elizondo</title>
-  <meta name="description" content="Louie Elizondo — Chihuahua. Natural Balance, CANACO Restauranteros, and the software the kitchen didn’t come with." />
+  <meta name="description" content="Louie Elizondo — Chihuahua. Natural Balance, Restauranteros, and the software the house runs on." />
   <meta name="author" content="Louie Elizondo" />
   <meta name="theme-color" content="#0b0a09" />
   <link rel="canonical" href="https://louieelizondo.com/" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://louieelizondo.com/" />
   <meta property="og:title" content="Louie Elizondo" />
-  <meta property="og:description" content="A letter, then the line. Chihuahua, México." />
+  <meta property="og:description" content="A letter, and a printer. Chihuahua, México." />
   <meta property="og:image" content="https://louieelizondo.com/louie.jpeg" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="es_MX" />
@@ -22,14 +22,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@louieelizondo" />
   <meta name="twitter:title" content="Louie Elizondo" />
-  <meta name="twitter:description" content="A letter, then the line. Chihuahua, México." />
+  <meta name="twitter:description" content="A letter, and a printer. Chihuahua, México." />
   <meta name="twitter:image" content="https://louieelizondo.com/louie.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/kitchen.css" />
 
   <script>
     (function () {
@@ -41,8 +40,6 @@
         document.documentElement.lang = lang;
         var meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.setAttribute('content', theme === 'light' ? '#f7f2e8' : '#0b0a09');
-        var hash = (location.hash || '').replace('#', '');
-        document.documentElement.dataset.room = hash === 'line' ? 'line' : 'letter';
       } catch (e) {}
     })();
   </script>
@@ -53,6 +50,7 @@
     "@type": "Person",
     "name": "Louie Elizondo",
     "url": "https://louieelizondo.com",
+    "email": "mailto:louie@naturalbalance.club",
     "image": "https://louieelizondo.com/louie.jpeg",
     "jobTitle": "Operator & software developer",
     "address": { "@type": "PostalAddress", "addressLocality": "Chihuahua", "addressCountry": "MX" },
@@ -84,104 +82,56 @@
     </button>
   </header>
 
-  <section class="room room-letter" id="letter" aria-label="The letter">
-    <article class="letter">
+  <main>
+    <article class="letter" id="letter">
       <img class="letter-photo" src="louie.jpeg" width="220" height="220" alt="Louie Elizondo" />
       <p class="letter-place">Chihuahua</p>
       <h1>Louie Elizondo</h1>
       <div class="letter-body">
-        <p data-en="I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the kitchen didn’t come with."
-           data-es="Corro Natural Balance: comida de casa para familias que no tienen tiempo de cocinar. Presido Restauranteros en CANACO Chihuahua. Estoy aprendiendo a escribir el software que la cocina no trajo.">
-          I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the kitchen didn’t come with.
+        <p data-en="I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the house didn’t come with."
+           data-es="Corro Natural Balance: comida de casa para familias que no tienen tiempo de cocinar. Presido Restauranteros en CANACO Chihuahua. Estoy aprendiendo a escribir el software que la casa no trajo.">
+          I run Natural Balance — homestyle meals for families who don’t have time to cook. I chair Restauranteros at CANACO Chihuahua. I’m learning to write the software the house didn’t come with.
         </p>
-        <p data-en="This page is the public log. The first room is a letter. The second is the line — four stations, each a real system at the house."
-           data-es="Esta página es el cuaderno público. El primer cuarto es una carta. El segundo es la línea: cuatro estaciones, cada una un sistema real de la casa.">
-          This page is the public log. The first room is a letter. The second is the line — four stations, each a real system at the house.
+        <p data-en="This site is the public face. Press a button. A ticket prints."
+           data-es="Este sitio es la cara pública. Oprime un botón. Sale un ticket.">
+          This site is the public face. Press a button. A ticket prints.
         </p>
       </div>
-      <p class="letter-links">
-        <a href="https://x.com/louieelizondo" target="_blank" rel="noopener">X</a>
-        <a href="https://naturalbalance.club" target="_blank" rel="noopener">Natural Balance</a>
-        <a href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noopener">CANACO</a>
-      </p>
-      <a class="enter-line" href="#line" data-en="The line →" data-es="La línea →">The line →</a>
-    </article>
-  </section>
-
-  <section class="room room-line" id="line" aria-label="The line">
-    <a class="back-letter" href="#letter" data-en="← The letter" data-es="← La carta">← The letter</a>
-
-    <div class="linea-stage" id="linea-stage">
-      <canvas aria-label="Interactive 3D kitchen line"></canvas>
-      <div class="linea-state" data-state="loading">
-        <span class="linea-spinner" aria-hidden="true"></span>
-        <p data-en="Firing the line…" data-es="Encendiendo la línea…">Firing the line…</p>
-      </div>
-      <p class="linea-hint" data-en="Drag to look around · click a station" data-es="Arrastra para mirar · clic en una estación">Drag to look around · click a station</p>
-      <div class="linea-controls">
-        <button type="button" class="linea-ctrl" id="linea-spin" aria-pressed="true" data-en="Spin" data-es="Girar">Spin</button>
-        <button type="button" class="linea-ctrl" id="linea-reset" data-en="Reset" data-es="Reset">Reset</button>
-      </div>
-      <div class="linea-tip" aria-hidden="true">
-        <div class="linea-tip-name"></div>
-        <div class="linea-tip-sys"></div>
-      </div>
-    </div>
-
-    <article class="kitchen-ticket" id="kitchen-ticket" hidden>
-      <header>
-        <span class="ticket-no"></span>
-        <span class="ticket-sys"></span>
-        <button type="button" class="ticket-close" id="ticket-close" aria-label="Close ticket">×</button>
-      </header>
-      <h2 class="ticket-title"></h2>
-      <p class="ticket-body"></p>
-      <p class="ticket-holds"></p>
-      <a class="ticket-link" hidden target="_blank" rel="noopener"></a>
     </article>
 
-    <div class="linea-fallback" data-state="fallback" hidden>
-      <button type="button" class="linea-fb-cell" data-station="0">
-        <div class="linea-fb-no">01</div>
-        <div class="linea-fb-name">Prep</div>
-        <div class="linea-fb-sys">Notion</div>
-      </button>
-      <button type="button" class="linea-fb-cell" data-station="1">
-        <div class="linea-fb-no">02</div>
-        <div class="linea-fb-name" data-en="Fire" data-es="Fuego">Fire</div>
-        <div class="linea-fb-sys">Shopify + POS</div>
-      </button>
-      <button type="button" class="linea-fb-cell" data-station="2">
-        <div class="linea-fb-no">03</div>
-        <div class="linea-fb-name" data-en="The pass" data-es="El pase">The pass</div>
-        <div class="linea-fb-sys" data-en="Finance suite" data-es="Suite de finanzas">Finance suite</div>
-      </button>
-      <button type="button" class="linea-fb-cell" data-station="3">
-        <div class="linea-fb-no">04</div>
-        <div class="linea-fb-name" data-en="Out" data-es="Salida">Out</div>
-        <div class="linea-fb-sys" data-en="Payroll · contracts" data-es="Nómina · contratos">Payroll · contracts</div>
-      </button>
-    </div>
+    <section class="desk" aria-label="Printer">
+      <div class="printer" id="printer">
+        <button type="button" class="printer-lid" id="printer-lid" aria-label="Printer">
+          <span class="printer-led" aria-hidden="true"></span>
+          <span class="printer-lcd" id="printer-lcd">READY</span>
+        </button>
+        <div class="printer-mouth">
+          <article class="receipt" id="receipt" hidden></article>
+        </div>
+        <div class="printer-keys" role="group" aria-label="Print">
+          <button type="button" class="printer-key" data-print="house">
+            <span class="key-no">01</span>
+            <span data-en="Natural Balance" data-es="Natural Balance">Natural Balance</span>
+          </button>
+          <button type="button" class="printer-key" data-print="restauranteros">
+            <span class="key-no">02</span>
+            <span>Restauranteros</span>
+          </button>
+          <button type="button" class="printer-key" data-print="office">
+            <span class="key-no">03</span>
+            <span data-en="Office" data-es="Oficina">Office</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer class="trail">
-      <div class="trail-copy">
-        <p class="trail-kicker" data-en="The trail" data-es="El rastro">The trail</p>
-        <p id="gh-total"></p>
-        <p class="trail-note"
-           data-en="GitHub’s public year, plus every commit in this kitchen. Refreshed on each push and once a day — so the paper matches the work, even when GitHub’s own graph lags."
-           data-es="El año público de GitHub, más cada commit de esta cocina. Se actualiza en cada push y una vez al día, para que el papel coincida con el trabajo aunque la gráfica de GitHub se quede atrás.">
-          GitHub’s public year, plus every commit in this kitchen. Refreshed on each push and once a day — so the paper matches the work, even when GitHub’s own graph lags.
-        </p>
-      </div>
-      <div id="gh-graph"><span class="placeholder">Loading…</span></div>
-      <div class="gh-legend" id="gh-legend" hidden>
-        <span data-en="Less" data-es="Menos">Less</span>
-        <i></i><i></i><i></i><i></i><i></i>
-        <span data-en="More" data-es="Más">More</span>
-        <a class="gh-link" href="https://github.com/louieelizondo" target="_blank" rel="noopener">github.com/louieelizondo</a>
-      </div>
-    </footer>
-  </section>
+  <footer class="status">
+    <a href="https://x.com/louieelizondo" target="_blank" rel="noopener">X</a>
+    <a href="https://github.com/louieelizondo" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://louieelizondo.com">louieelizondo.com</a>
+    <a href="mailto:louie@naturalbalance.club">louie@naturalbalance.club</a>
+  </footer>
 
   <script src="assets/js/main.js" type="module"></script>
 </body>
