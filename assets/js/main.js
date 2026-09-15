@@ -134,17 +134,15 @@ function receiptHtml(key, no) {
 
   if (key === 'house') {
     return `
-      ${head('NATURAL BALANCE', 'naturalbalance.club', no)}
-      ${row('1', es ? 'Comida de casa / semana' : 'Homestyle week', es ? 'POR QUÉ' : 'WHY')}
-      ${row('50+', es ? 'Platillos en el menú' : 'Plates on the menu', '#')}
-      ${row('1', es ? 'Tienda Shopify' : 'Shopify storefront', '$')}
-      ${row('∞', es ? 'Familias sin tiempo' : 'Families w/ no time', '✓')}
+      ${head('NATURAL BALANCE', es ? 'EMPRESA FAMILIAR' : 'FAMILY BUSINESS', no)}
+      ${row('1', es ? 'Copropietario' : 'Co-owner', 'LE')}
+      ${row('1', es ? 'Comida de casa / semana' : 'Homestyle week', '✓')}
+      ${row('1', es ? 'Muchas ganas' : 'A lot of heart', '✓')}
+      ${row('1', 'naturalbalance.club', 'WEB')}
       ${tot(es ? 'SUB' : 'SUB', es ? 'LA CASA' : 'THE HOUSE')}
-      ${tot(es ? 'IVA' : 'TAX', es ? 'TODO LO DEMÁS' : 'EVERYTHING ELSE')}
-      ${tot('TOTAL', es ? 'EXISTIMOS' : 'WE EXIST')}
+      ${tot('TOTAL', es ? 'FAMILIA' : 'FAMILY')}
       ${rule()}
-      <p class="center">${es ? 'PAGADO  SHOPIFY' : 'PAID  SHOPIFY'}</p>
-      <p class="center">${es ? 'CAMBIO  EL RESTO DE LOS PROYECTOS' : 'CHANGE  THE REST OF THE WORK'}</p>
+      <p class="center">${es ? 'LE HEMOS METIDO MUCHAS GANAS' : 'WE’VE PUT A LOT OF HEART IN HER'}</p>
       ${bars(`nb-${no}`)}
       <p class="center"><a href="https://naturalbalance.club" target="_blank" rel="noopener">naturalbalance.club</a></p>
     `;

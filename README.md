@@ -8,15 +8,17 @@ Hosted on [GitHub Pages](https://pages.github.com) from this repo.
 
 ## What’s on the page
 
-**The letter.** Name, a photo, a few sentences.
+**The letter.** Co-owner of Natural Balance, a family business. Restauranteros at CANACO.
 
 **The printer.** Menu first, then the machine. Paper comes out the bottom.
 
 | Button | What prints |
 | --- | --- |
-| Natural Balance | The house — naturalbalance.club / Shopify |
+| Natural Balance | Family house — ganas, not the moneymaker |
 | Restauranteros | CANACO in real life + Donde Comemos |
 | Office | People and money — the apps stay private |
+
+**The screen under the printer.** Always learning: with her, at CANACO, with books, YouTube, Google. Willing to share.
 
 **The status bar.** X, GitHub, louieelizondo.com, louie@naturalbalance.club.
 
