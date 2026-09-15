@@ -23,6 +23,7 @@ Hosted on [GitHub Pages](https://pages.github.com) from this repo.
 **The status bar.** X, GitHub, louieelizondo.com, louie@naturalbalance.club.
 
 Print all three, then tap the printer’s black lid a few times.
+
 ## Point the GoDaddy domain here
 
 The domain is registered at **GoDaddy México** and is not configured yet. GitHub Pages will serve the site once DNS and Pages settings match.
