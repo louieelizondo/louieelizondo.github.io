@@ -29,7 +29,10 @@
   let reducedMotion = false;
   let introDone = false;
   let rafPointer = null;
+  let pointerClientX = 0;
+  let pointerClientY = 0;
   let pointerFine = window.matchMedia("(pointer: fine)").matches;
+  const SHIPPED_LIST_MAX = 5;
   let listenersActive = false;
   let layoutCell = CELL_MAX;
   let layoutGap = GAP;
@@ -399,9 +402,14 @@
       return;
     }
     grid.classList.add("garden-intro");
-    const duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-intro")) || 600;
-    cells.forEach((c, i) => {
-      const delay = ((c.wi + c.di) / (WEEKS_FULL + 6)) * duration;
+    const duration =
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-intro")) || 600;
+    const cellDur =
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dur-cell")) || 140;
+    const maxIdx = Math.max(1, ...cells.map((c) => c.wi + c.di));
+    const k = Math.max(0, (duration - cellDur) / maxIdx);
+    cells.forEach((c) => {
+      const delay = (c.wi + c.di) * k;
       c.el.style.transitionDelay = `${delay}ms`;
     });
     requestAnimationFrame(() => {
@@ -419,7 +427,7 @@
       });
       mount.classList.add("garden-ready");
       introDone = true;
-    }, duration + 80);
+    }, duration + 40);
   }
 
   function showTooltip(btn, day) {
@@ -463,7 +471,7 @@
 
     grid.addEventListener("blur", hideTooltip);
 
-    if (pointerFine && !reducedMotion) {
+    if (pointerFine) {
       grid.addEventListener("pointermove", (e) => onPointerMove(e, grid));
       grid.addEventListener("pointerleave", resetCellScales);
     }
@@ -489,47 +497,61 @@
     showTooltip(cell.el, cell.day);
   }
 
-  function onPointerMove(e, grid) {
+  function applyPointerField(clientX, clientY) {
     if (!listenersActive || !introDone || reducedMotion) return;
+    let nearest = cells[0];
+    let nearestDist = Infinity;
+    cells.forEach((c) => {
+      const r = c.el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const d = Math.hypot(clientX - cx, clientY - cy);
+      if (d < nearestDist) {
+        nearestDist = d;
+        nearest = c;
+      }
+    });
+    const col = nearest?.wi ?? 0;
+    const row = nearest?.di ?? 0;
+    const radius =
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-radius")) || 3;
+    cells.forEach((c) => {
+      const dx = c.wi - col;
+      const dy = c.di - row;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 0.55) {
+        c.el.classList.add("is-field-active");
+        c.el.style.transform = "scale(1.35)";
+        c.el.style.opacity = "1";
+        showTooltip(c.el, c.day);
+      } else if (dist <= radius) {
+        c.el.classList.remove("is-field-active");
+        const t = 1 - dist / radius;
+        const scale = 1 - t * 0.2;
+        c.el.style.transform = `scale(${scale})`;
+        c.el.style.opacity = String(0.85 + t * 0.15);
+      } else {
+        c.el.classList.remove("is-field-active");
+        c.el.style.transform = "scale(1)";
+        c.el.style.opacity = "1";
+      }
+    });
+  }
+
+  function onPointerMove(e, grid) {
+    if (!introDone || reducedMotion) return;
+    pointerClientX = e.clientX;
+    pointerClientY = e.clientY;
     if (rafPointer) return;
     rafPointer = requestAnimationFrame(() => {
       rafPointer = null;
-      const rect = grid.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const first = cells[0]?.el;
-      const nextWeek = cells[7]?.el;
-      const step =
-        first && nextWeek
-          ? nextWeek.getBoundingClientRect().left - first.getBoundingClientRect().left
-          : layoutCell + layoutGap;
-      const col = Math.max(0, Math.min(gridWeeks - 1, Math.round(x / step)));
-      const row = Math.max(0, Math.min(6, Math.round(y / step)));
-      const radius =
-        parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-radius")) || 3;
-      cells.forEach((c) => {
-        const dx = c.wi - col;
-        const dy = c.di - row;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 0.5) {
-          c.el.style.transform = "scale(1.35)";
-          c.el.style.opacity = "1";
-          showTooltip(c.el, c.day);
-        } else if (dist <= radius) {
-          const t = 1 - dist / radius;
-          const scale = 1 - t * 0.2;
-          c.el.style.transform = `scale(${scale})`;
-          c.el.style.opacity = String(0.85 + t * 0.15);
-        } else {
-          c.el.style.transform = "scale(1)";
-          c.el.style.opacity = "1";
-        }
-      });
+      applyPointerField(pointerClientX, pointerClientY);
     });
   }
 
   function resetCellScales() {
     cells.forEach((c) => {
+      c.el.classList.remove("is-field-active");
       c.el.style.transform = "";
       c.el.style.opacity = "";
     });
@@ -549,16 +571,23 @@
     dayCard?.replaceChildren();
   }
 
+  function githubDayUrl(iso) {
+    return `https://github.com/louieelizondo?tab=overview&from=${iso}&to=${iso}`;
+  }
+
   function showDayCard(day) {
     if (!dayCard) return;
     dayCard.replaceChildren();
+    const inner = document.createElement("div");
+    inner.className = "garden-day-card__inner";
     const h = document.createElement("h3");
     h.textContent = formatDayLong(day.date, day.count || 0);
-    dayCard.appendChild(h);
+    inner.appendChild(h);
     const shipped = day.shipped || [];
     if (shipped.length) {
       const ul = document.createElement("ul");
-      shipped.forEach((s) => {
+      const shown = shipped.slice(0, SHIPPED_LIST_MAX);
+      shown.forEach((s) => {
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.href = s.url;
@@ -568,14 +597,31 @@
         li.appendChild(a);
         ul.appendChild(li);
       });
-      dayCard.appendChild(ul);
+      inner.appendChild(ul);
+      const rest = shipped.length - shown.length;
+      if (rest > 0) {
+        const more = document.createElement("p");
+        more.className = "garden-day-card__more";
+        const link = document.createElement("a");
+        link.href = githubDayUrl(day.date);
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        if (lang() === "es") {
+          link.textContent = `+${rest} más en GitHub`;
+        } else {
+          link.textContent = `+${rest} more on GitHub`;
+        }
+        more.appendChild(link);
+        inner.appendChild(more);
+      }
     } else {
       const p = document.createElement("p");
       p.dataset.en = "No public commits";
       p.dataset.es = "Sin commits públicos";
       p.textContent = p.dataset[lang()] || p.dataset.en;
-      dayCard.appendChild(p);
+      inner.appendChild(p);
     }
+    dayCard.appendChild(inner);
     dayCard.classList.add("is-visible");
   }
 

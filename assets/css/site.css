@@ -50,6 +50,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 html.reduced-motion {
@@ -206,12 +207,14 @@ html.no-js .garden-mount {
 
 .garden-scroll {
   overflow-x: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   width: 100%;
 }
 
 .garden-layout {
   width: 100%;
+  overflow: visible;
 }
 
 .garden-months {
@@ -241,6 +244,9 @@ html.no-js .garden-mount {
   width: 100%;
   position: relative;
   touch-action: manipulation;
+  overflow: visible;
+  padding: 3px;
+  margin: -3px;
 }
 
 .garden-grid[role="grid"] {
@@ -257,11 +263,19 @@ html.no-js .garden-mount {
   background: var(--hairline);
   cursor: pointer;
   transform: scale(1);
+  transform-origin: center;
   opacity: 1;
+  will-change: transform;
+  position: relative;
+  z-index: 0;
   transition:
     transform var(--dur-cell) var(--ease-out),
     opacity var(--dur-cell) var(--ease-out),
     background-color var(--dur-fast) linear;
+}
+
+.garden-cell.is-field-active {
+  z-index: 2;
 }
 
 .garden-cell[data-level="1"] {
@@ -289,6 +303,10 @@ html.no-js .garden-mount {
 .garden-intro .garden-cell {
   transform: scale(0);
   opacity: 0;
+  transition:
+    transform var(--dur-cell) var(--ease-out),
+    opacity var(--dur-cell) var(--ease-out),
+    background-color var(--dur-fast) linear;
 }
 
 .garden-tooltip {
@@ -338,14 +356,30 @@ html.no-js .garden-mount {
 
 .garden-day-card {
   margin-top: calc(var(--space) * 4);
-  padding: calc(var(--space) * 4);
   border: 1px solid var(--hairline);
   font-size: var(--size-14);
-  display: none;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-open) var(--ease-out);
 }
 
 .garden-day-card.is-visible {
-  display: block;
+  grid-template-rows: 1fr;
+}
+
+html.reduced-motion .garden-day-card {
+  transition: none;
+}
+
+.garden-day-card__inner {
+  overflow: hidden;
+  padding: calc(var(--space) * 4);
+}
+
+.garden-day-card__more {
+  font-family: var(--font-mono);
+  font-size: var(--size-12);
+  margin-top: calc(var(--space) * 2);
 }
 
 .garden-day-card h3 {
@@ -568,16 +602,22 @@ html.reduced-motion .ledger-line.is-highlighted {
   .ledger-entry__header {
     grid-template-columns: 1fr auto;
     grid-template-areas:
+      "date impact"
       "title impact"
       "line line";
+    align-items: start;
   }
 
   .ledger-entry__date {
-    display: none;
+    display: block;
+    grid-area: date;
+    font-family: var(--font-mono);
+    font-size: var(--size-12);
+    color: var(--muted);
   }
 
   .ledger-entry__main {
-    grid-area: title / title / line / line;
+    display: contents;
   }
 
   .ledger-entry__title {
@@ -586,10 +626,18 @@ html.reduced-motion .ledger-line.is-highlighted {
 
   .ledger-entry__line {
     grid-area: line;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
   }
 
   .ledger-entry__impact {
     grid-area: impact;
+    align-self: start;
+    padding-top: calc(var(--space) * 1);
   }
 
   .ledger-entry__detail {
