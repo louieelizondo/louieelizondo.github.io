@@ -34,7 +34,28 @@
   let pointerClientX = 0;
   let pointerClientY = 0;
   let pointerFine = window.matchMedia("(pointer: fine)").matches;
-  const SHIPPED_LIST_MAX = 5;
+  const emptyDay = (iso) => ({
+    date: iso,
+    count: 0,
+    level: 0,
+    public: 0,
+    private: 0,
+  });
+
+  function normalizeDay(d) {
+    const count = Number(d.count) || 0;
+    const level = d.level ?? levelFromCount(count);
+    let publicN = Number(d.public);
+    if (Number.isNaN(publicN)) publicN = count;
+    publicN = Math.min(count, Math.max(0, publicN));
+    let privateN = Number(d.private);
+    if (Number.isNaN(privateN)) privateN = Math.max(0, count - publicN);
+    privateN = Math.max(0, Math.min(count - publicN, privateN));
+    if (publicN + privateN !== count) {
+      privateN = Math.max(0, count - publicN);
+    }
+    return { date: d.date, count, level, public: publicN, private: privateN };
+  }
   let listenersActive = false;
   let layoutCell = CELL_MAX;
   let layoutGap = GAP;
@@ -95,7 +116,7 @@
       const week = [];
       for (let i = 0; i < 7; i++) {
         const iso = cursor.toISOString().slice(0, 10);
-        const rec = daysByDate.get(iso) || { date: iso, count: 0, level: 0, shipped: [] };
+        const rec = daysByDate.get(iso) || emptyDay(iso);
         week.push(rec);
         cursor.setDate(cursor.getDate() + 1);
       }
@@ -106,7 +127,7 @@
       const week = [];
       for (let i = 0; i < 7; i++) {
         const iso = cursor.toISOString().slice(0, 10);
-        week.push(daysByDate.get(iso) || { date: iso, count: 0, level: 0, shipped: [] });
+        week.push(daysByDate.get(iso) || emptyDay(iso));
         cursor.setDate(cursor.getDate() + 1);
       }
       weeks.push(week);
@@ -126,24 +147,11 @@
       const day = ev.created_at.slice(0, 10);
       const payload = ev.payload || {};
       const commits = payload.commits || [];
-      const existing = daysByDate.get(day) || {
-        date: day,
-        count: 0,
-        level: 0,
-        shipped: [],
-      };
+      const existing = normalizeDay(daysByDate.get(day) || emptyDay(day));
       const addCount = commits.length || 1;
       existing.count += addCount;
+      existing.public += addCount;
       existing.level = levelFromCount(existing.count);
-      commits.forEach((c) => {
-        const msg = (c.message || "").split("\n", 1)[0];
-        if (!msg) return;
-        existing.shipped.push({
-          repo,
-          message: msg,
-          url: `https://github.com/${repo}/commit/${c.sha}`,
-        });
-      });
       daysByDate.set(day, existing);
     });
   }
@@ -154,7 +162,7 @@
       if (!res.ok) throw new Error("bad status");
       const data = await res.json();
       generatedAt = data.generated;
-      (data.days || []).forEach((d) => daysByDate.set(d.date, { ...d, shipped: d.shipped || [] }));
+      (data.days || []).forEach((d) => daysByDate.set(d.date, normalizeDay(d)));
       if (!isDemo) {
         try {
           const evRes = await fetch(EVENTS_URL);
@@ -619,85 +627,57 @@
     return `https://github.com/louieelizondo?tab=overview&from=${iso}&to=${iso}`;
   }
 
-  function privateCommitCount(day) {
-    const publicN = (day.shipped || []).length;
-    return Math.max(0, (day.count || 0) - publicN);
-  }
-
-  function privateCommitLabel(n) {
-    if (lang() === "es") {
+  function visibilityCountLabel(n, kind) {
+    const isEs = lang() === "es";
+    const word = n === 1 ? "commit" : "commits";
+    if (kind === "public") {
+      if (isEs) {
+        return `${n} commit${n === 1 ? "" : "s"} en repos públicos`;
+      }
+      return `${n} ${word} in public repos`;
+    }
+    if (isEs) {
       return `${n} commit${n === 1 ? "" : "s"} en repos privados`;
     }
-    return `${n} commit${n === 1 ? "" : "s"} in private repos`;
+    return `${n} ${word} in private repos`;
   }
 
-  function appendPrivateNote(parent, day) {
-    const priv = privateCommitCount(day);
-    if (priv <= 0) return;
+  function appendVisibilityLine(parent, n, kind) {
+    if (n <= 0) return;
     const p = document.createElement("p");
-    p.className = "garden-day-card__private";
-    p.textContent = privateCommitLabel(priv);
+    p.className = "garden-day-card__line";
+    p.textContent = visibilityCountLabel(n, kind);
     parent.appendChild(p);
   }
 
   function showDayCard(day) {
     if (!dayCard) return;
+    const record = normalizeDay(day);
     dayCard.replaceChildren();
     const inner = document.createElement("div");
     inner.className = "garden-day-card__inner";
     const h = document.createElement("h3");
-    h.textContent = formatDayLong(day.date, day.count || 0);
+    h.textContent = formatDayLong(record.date, record.count || 0);
     inner.appendChild(h);
-    const shipped = day.shipped || [];
-    if (shipped.length) {
-      const ul = document.createElement("ul");
-      const shown = shipped.slice(0, SHIPPED_LIST_MAX);
-      shown.forEach((s) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = s.url;
-        a.textContent = s.message;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        li.appendChild(a);
-        ul.appendChild(li);
-      });
-      inner.appendChild(ul);
-      appendPrivateNote(inner, day);
-      const rest = shipped.length - shown.length;
-      if (rest > 0) {
-        const more = document.createElement("p");
-        more.className = "garden-day-card__more";
-        const link = document.createElement("a");
-        link.href = githubDayUrl(day.date);
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        if (lang() === "es") {
-          link.textContent = `+${rest} más en GitHub`;
-        } else {
-          link.textContent = `+${rest} more on GitHub`;
-        }
-        more.appendChild(link);
-        inner.appendChild(more);
-      }
-    } else {
-      const priv = privateCommitCount(day);
-      if (priv > 0) {
-        appendPrivateNote(inner, day);
-      } else {
-        const p = document.createElement("p");
-        p.dataset.en = "No public commits";
-        p.dataset.es = "Sin commits públicos";
-        p.textContent = p.dataset[lang()] || p.dataset.en;
-        inner.appendChild(p);
-      }
-    }
+    appendVisibilityLine(inner, record.public, "public");
+    appendVisibilityLine(inner, record.private, "private");
+    const gh = document.createElement("p");
+    gh.className = "garden-day-card__more";
+    const link = document.createElement("a");
+    link.href = githubDayUrl(record.date);
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.dataset.en = "View on GitHub";
+    link.dataset.es = "Ver en GitHub";
+    link.textContent = link.dataset[lang()] || link.dataset.en;
+    gh.appendChild(link);
+    inner.appendChild(gh);
     dayCard.appendChild(inner);
     dayCard.classList.add("is-visible");
   }
 
   function activateDay(iso, { fromKeyboard = false } = {}) {
-    const day = daysByDate.get(iso) || { date: iso, count: 0, level: 0, shipped: [] };
+    const day = daysByDate.get(iso) || emptyDay(iso);
     const lines = window.LedgerSite?.highlightDateLines?.(iso) || [];
     hideChip();
     hideDayCard();

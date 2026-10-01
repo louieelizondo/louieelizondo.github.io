@@ -413,7 +413,7 @@ html.reduced-motion .garden-day-card {
 .garden-day-card__more {
   font-family: var(--font-mono);
   font-size: var(--size-12);
-  margin-top: calc(var(--space) * 2);
+  margin: calc(var(--space) * 3) 0 0;
 }
 
 .garden-day-card h3 {
@@ -423,20 +423,15 @@ html.reduced-motion .garden-day-card {
   font-weight: 500;
 }
 
-.garden-day-card ul {
-  margin: 0;
-  padding-left: 1.2em;
-}
-
-.garden-day-card li {
-  margin-bottom: calc(var(--space) * 1);
-}
-
-.garden-day-card__private {
+.garden-day-card__line {
   font-family: var(--font-mono);
   font-size: var(--size-12);
   color: var(--muted);
-  margin: calc(var(--space) * 2) 0 0;
+  margin: 0;
+}
+
+.garden-day-card__line + .garden-day-card__line {
+  margin-top: calc(var(--space) * 1);
 }
 
 html.reduced-motion .garden-cell {

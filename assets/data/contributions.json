@@ -1,3679 +1,2589 @@
 {
-  "generated": "2026-10-01T03:57:38Z",
-  "total": 288,
+  "generated": "2026-10-01T15:02:06Z",
+  "total": 300,
   "days": [
     {
       "date": "2025-09-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-09-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-09-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-10-31",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-11-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2025-12-31",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-01-31",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-18",
       "count": 1,
       "level": 1,
-      "shipped": []
+      "public": 0,
+      "private": 1
     },
     {
       "date": "2026-02-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-22",
       "count": 3,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add files via upload",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/d4711d0dc2715755a6b24422c411be1d461c3273"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add files via upload",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/2e6812193cca1b701aafd476b55423a66dca606b"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add files via upload",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/c9455d20bca06dc48abe6ea6bc43f09c1744f656"
-        }
-      ]
+      "public": 3,
+      "private": 0
     },
     {
       "date": "2026-02-23",
       "count": 2,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "N\u00f3mina en efectivo (Viernes)",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/327cbb31a57449dfaaa0e5e52221319d341aec35"
-        }
-      ]
+      "public": 1,
+      "private": 1
     },
     {
       "date": "2026-02-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-02-27",
       "count": 2,
       "level": 1,
-      "shipped": []
+      "public": 0,
+      "private": 2
     },
     {
       "date": "2026-02-28",
       "count": 13,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add sync queue, retry logic, inventory/orders logging, localStorage management",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e3d2fdb8cf1b793f45335531fdccd63970074e62"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: filter summary by fecha_compra instead of fecha_pago",
-          "url": "https://github.com/louieelizondo/nb-app/commit/06c7e802772153c8ee6c0fa30853b255f44c6606"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add month rotator to summary cards - filter por pagar/pagados by month",
-          "url": "https://github.com/louieelizondo/nb-app/commit/2f4ae6ce19c333c009832ed843c71ce0d4ec623d"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: separate Folio column + inline editing",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3c8b824807f2a52b181618f1fdc4c12791400d4a"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update portal (month selector, inline edit, facturado) + inventario (alphabetical sort, aderezo cleanup)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3350e170d55f84dd0029b3e8b378822548c8f788"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Portal pagos: inline edit, month selector, facturado; Inventario: alphabetical sort",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5479d727c083dda61bc9e985662a4d17992eccf9"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "sync: latest portal + captura files",
-          "url": "https://github.com/louieelizondo/nb-app/commit/1c7a8d29fb1450226d1a26d6d328d14f5bae42d6"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: product management, grupo variants, season/tags",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7b2635b83b3020221a7f4de0962f6bf64fe05d7f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Inventario: pedir + recibir flows",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e44588b9262e3835d8494bfe6c31748f25991dd3"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Photos: Google Drive storage + 3-month auto-cleanup",
-          "url": "https://github.com/louieelizondo/nb-app/commit/185af66e953de5f5aa1ef1335112db8d0b3abfe8"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Portal: mobile cards, selection pay/delete. Capture: PROVEEDORES sync + credit days",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0fc7f8175ce83c7e7376d29622434f65451b3126"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add captura facturas and portal pagos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/91256137548f7a4a58243e2710adfef841e42261"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Initial commit",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0c505d3511fa7106d55980b5266db2935600577c"
-        }
-      ]
+      "public": 13,
+      "private": 0
     },
     {
       "date": "2026-03-01",
       "count": 10,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add ingredient rename: invoice names become canonical in MATERIA PRIMA",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b2aeb680c69448e5d8550f04592647ace1f43782"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update Apps Script: Grupo/Presentacion \u2192 Variantes, add Variante to inventory log",
-          "url": "https://github.com/louieelizondo/nb-app/commit/474b03edb14fcd0358e06c1886648d4d129eca09"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Replace grupo/presentacion with simple optional variantes field",
-          "url": "https://github.com/louieelizondo/nb-app/commit/2c1ce8e597e15feb11f1dca25dc6f7c78ee05933"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: add bottom padding to inventory section list so last sections aren't hidden behind fixed summary bar",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5334e33bac82296573234eef05abd3047ee52f78"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: price sync writes to correct column C (CostoPaq) + auto-sync on invoice save",
-          "url": "https://github.com/louieelizondo/nb-app/commit/73dd9a1d6470e87c8397f0bb8596a407bb67aafa"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix deleted invoices persisting on other devices after sync",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a2b8b2f9869822033dc04117fddc295fcc0d2fe8"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Drive uploads: full-res images, folio+supplier filenames, fix auth email typo",
-          "url": "https://github.com/louieelizondo/nb-app/commit/bb4ddbdacc320f30bc35ac7a21ac4e594ec9b359"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add Google Sign-In authentication across all 3 apps",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b1545f70aad61bee25fec0f1594a7a8bae9b5c39"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Move Claude API key to server-side proxy via Apps Script",
-          "url": "https://github.com/louieelizondo/nb-app/commit/ac4c5f24951b5b5dda891c17d291902c89886bd1"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add version stamp conflict detection for concurrent edit protection",
-          "url": "https://github.com/louieelizondo/nb-app/commit/ce511867eb3ecf41c869cf62feea433f8641fcda"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix 7 audit issues across all three portals",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7154e6f7eb9de3e8a9de4cd4546b7657303c5344"
-        }
-      ]
+      "public": 10,
+      "private": 0
     },
     {
       "date": "2026-03-02",
       "count": 28,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix price/date/name sync to MATERIA PRIMA on every invoice flow",
-          "url": "https://github.com/louieelizondo/nb-app/commit/37381fb85df3e5a0e211dc903d9c7b85a6e50a02"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix price comparison: use Costo x Paquete (col C) instead of Costo por kg/lt (col H)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/629a50ed8c9efde241d6d147ecbb5804cbab1a90"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add persistent storage warning bar with Limpiar ahora button",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5be01d55988e0de3240fd7cbbd38cc22c733ff63"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: mapeos aprendidos cerrado por default",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0b031f68579ac735de49d0be58eb450409a0f295"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: move config sections to bottom of captura facturas",
-          "url": "https://github.com/louieelizondo/nb-app/commit/65c813ce5c718b0a5b005f2eb2c0cac8324dc08f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "remove: edit mode for corte individual",
-          "url": "https://github.com/louieelizondo/nb-app/commit/09704d445bcac8cba05250640e725aa04494457e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: Tab 2 empty results \u2014 GAS date comparison + better error feedback",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e6edfaa13279ae0df82ca7f5783fb86ef16377b4"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: editable corte individual + update_corte_individual GAS function",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7f739edc3b9effac897c9c74dc0ac1775bc46b54"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: arqueo history last 7 days + corte_caja links open in new tab",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3189cdf20a361b0a8edfd49448025e587a5ab96e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: use text/plain content-type to avoid CORS preflight on GAS POST requests",
-          "url": "https://github.com/louieelizondo/nb-app/commit/ecf8067d48ec5ac313c0ae268c099b835a7dab04"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(arqueo): restructure formula + add Fondo4 and FondoRepartidor2",
-          "url": "https://github.com/louieelizondo/nb-app/commit/bc29694bf7ee823a2e01a1a74ed2001e9ffa07f1"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(inventario): fix category layout duplication on tablet/desktop",
-          "url": "https://github.com/louieelizondo/nb-app/commit/fc6faeb094ee1319c1a65a31ba71c1dd2496851f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(corte-caja): add Arqueo de Caja Chica tab (tab5)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/56f96b991b283d40b8d39dd105d1e0d7eaca0ff4"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: interactive shopping list with exclusions, not-found, and completar",
-          "url": "https://github.com/louieelizondo/nb-app/commit/27fd300aa6651b426bb45884373adf4a2b7f80d7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: inline min/max editor during inventory counting",
-          "url": "https://github.com/louieelizondo/nb-app/commit/cd313a7bc38be45fb54ae856e4f95c363feacb55"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: load orders from Sheet on init so all devices see same pedidos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/6e82d54e36f0d1f27fefa28fc28dc8d21b27d66a"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Consolidate all docs into single NB_PROJECT_CONTEXT.md",
-          "url": "https://github.com/louieelizondo/nb-app/commit/573ac60f04f1f32b82277a61fb76566487b3b403"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add NB_PROJECT_CONTEXT.md for new conversation onboarding",
-          "url": "https://github.com/louieelizondo/nb-app/commit/ec1193469a7dbe24eaf59e875c257e9966964a01"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Wire charts-grid class to HTML for side-by-side charts on wide desktop",
-          "url": "https://github.com/louieelizondo/nb-app/commit/27439e0a50717ec0c4b7af8ed47a4fd68a45a592"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update project summaries: responsive design complete, deployment status current",
-          "url": "https://github.com/louieelizondo/nb-app/commit/403832117ab522bd196338ce3cb28d5a911b70db"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Responsive design: mobile/tablet/desktop optimization for all apps",
-          "url": "https://github.com/louieelizondo/nb-app/commit/bdd7935ac1daf6458d8cd1075d45bf71b440a8f7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "perf: cut Dashboard from 4 API calls to 2 + fix March gastos bug",
-          "url": "https://github.com/louieelizondo/nb-app/commit/20191c9b3e927939c95079323b08e3852d49a686"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: Gastos showing $0 \u2014 use formatDateStr instead of String for date filtering",
-          "url": "https://github.com/louieelizondo/nb-app/commit/30fe5a116f8c4353f0d8ab916db33082d0c1f573"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: caja selector, field validation, totals row, filter reorder",
-          "url": "https://github.com/louieelizondo/nb-app/commit/38d697eb53e96eaba34e92103493fd3410e7bab3"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: wire notification emails for Corte de Tienda workflow",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f88a0949343ed2c64822cbf16c3de67b30d408c3"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: standardized month rotator across Dashboard and Portal de Pagos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9fb5056f8465dd5f4a804b7bbf2d4edb83b5ee55"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Reorder nav + rename tabs + fix daily sales chart",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3ef24565f730555b2349b5150e5074a1fff2af43"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add Finance Center: nav bar, auth gates, landing page + new apps",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b6da48a5db0d5c6c5ca3bf97eb9c9f2c86dee05d"
-        }
-      ]
+      "public": 28,
+      "private": 0
     },
     {
       "date": "2026-03-03",
       "count": 11,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: move cambio de billetes to tab2 (post corte submit), simplify tab4",
-          "url": "https://github.com/louieelizondo/nb-app/commit/8dc84ab072b399c262143c0b4ecedcf2696747e4"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: deposito formula and resumen corte breakdown in preparacion deposito",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a6666931437e33804231348c0830dad5ab6e0631"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: cambio de billetes panel in Preparaci\u00f3n de Dep\u00f3sito",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0f37e708419f8c7785bece0d44c164c23c6b58f2"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: callAPI in registro_ingresos uses POST for write actions",
-          "url": "https://github.com/louieelizondo/nb-app/commit/d7c7b1313b9eb0fe3f720fc633e596119f195a54"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: remove 4 stray closing braces from cortes_ingresos_extension.gs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/24e8fd907040a1aae7af4836960b1420ff9fa30f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: add cortes/ingresos action cases to doGet, doPost, processSyncBatch",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a18062cf2681f581ed0892f1ed6f24f3611bd5c7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: Total Efectivo display + Deposito BBVA formula in Sobre2 tab",
-          "url": "https://github.com/louieelizondo/nb-app/commit/68b2926da5a5da9b361fce22fa4e58f3724bdd3f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: prevent localStorage quota crash on Enviar button",
-          "url": "https://github.com/louieelizondo/nb-app/commit/1ec52c66a875aaa6887a6e8bdbf2fa0642f4cbb3"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: instant reset, storage fix, tipo editable, cashback reorder",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0454e9e02acad9d4b867f44267561dfd0d3be9f8"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: handle Date objects from GAS in portal sync; default filter to all; fix double toast",
-          "url": "https://github.com/louieelizondo/nb-app/commit/94509c0e33b6f75019bbc5a4f66a0296954bb184"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "ui: remove CSV/guardar/nueva-factura buttons; enviar portal auto-resets",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b9c510a494289211e9ec140f4ce2b659a041e6d6"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix storage warning: clearHistory now purges ingredient+proveedores cache",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b3d31f15d82e6af1f9af1eac3909ee52d9d9db7c"
-        }
-      ]
+      "public": 11,
+      "private": 0
     },
     {
       "date": "2026-03-04",
       "count": 19,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "gestionar productos: collapsible categories + inline editing + pu field",
-          "url": "https://github.com/louieelizondo/nb-app/commit/52b67742cdb0421f369765d77c22ef1a8132c652"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "inventario: add pu field, shopping list upload, MP sync",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b02ae742c877efeb3ec7c3d63f80fa468757bd30"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: round dep\u00f3sito BBVA to nearest peso (no cents)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/aca33ed4f741b7786e00824e21004d37cd03a661"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: use actual avocado PNG logo instead of SVG recreation",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f68ea7497f6aec834e8368cf684ed41ace62222b"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: replace avocado logo SVG with accurate kawaii mascot",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c51db4bf9581a417878c79ed2cc30afc946beb85"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: NB design system 2026 \u2014 Inter font, dark topbar, modern components",
-          "url": "https://github.com/louieelizondo/nb-app/commit/1764ce345eddaedf3836da9464a35bea7db0267e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: tablet/phone numpad overlay + responsive UX polish",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b97c49d55e09a819aed5827220296700f9f8f44b"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Portal: manual entry proveedor search + CFDI tracking + remisi\u00f3n filter",
-          "url": "https://github.com/louieelizondo/nb-app/commit/26acf166ad88ee9fcf7996ef772adb2e9b424890"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add supplier/ingredient creation, manual portal entry, inline row editing",
-          "url": "https://github.com/louieelizondo/nb-app/commit/d4538062861b065b220be6006f3de916e7197776"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Separate print receipts: DEPOSITO and SOBRE 2 as individual 80mm tickets",
-          "url": "https://github.com/louieelizondo/nb-app/commit/37218b010ad248e3f0b2afb0d3f1ca6fefb9ab3f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Revert faltanteSobrante sign to original convention",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a357e5f12c6c8dc48f2f5221ee6a2f9d257cca04"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix faltanteSobrante sign and totalXFacturar cashback exclusion",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9bffc54588bd48a1ce879dec996beaffcee06903"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix Apps Script cashback and depositoAjustado formulas",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e1c6627b2ebabf03fa33874509818985e751fdd9"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix deposit comparison formula and update Paso 2 text",
-          "url": "https://github.com/louieelizondo/nb-app/commit/d16774977d643b20f025498ee322767ed56c9945"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: keep counter 2 intact when sobre2 arrives, deposit prep flows inline in tab 2",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f6f13dbb469d85bc3158f34719ab1e1e843f6172"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: remove duplicate const cell \u2014 dead legacy code was breaking all JS",
-          "url": "https://github.com/louieelizondo/nb-app/commit/139979a0560864b29e55783fa33a473c04644f56"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: restore cashback below denom grid in corte individual (only tienda has it in payment methods)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/2fc9c24bce733de40fa87536d83cffd6b71ee877"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: move cashback to payment methods in corte individual, fix formula sign",
-          "url": "https://github.com/louieelizondo/nb-app/commit/4d14ea2550ff874afa84856ed5664495dc665f28"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: full denom cambio counters, cashback fix, tab4 table view, merged ingreso tabs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/da5f754c3c51cae3ac9097aa8b0310f7a0ff9da0"
-        }
-      ]
+      "public": 19,
+      "private": 0
     },
     {
       "date": "2026-03-05",
       "count": 6,
       "level": 3,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add Arqueo de Caja + Transferencias apps, add to landing nav",
-          "url": "https://github.com/louieelizondo/nb-app/commit/90ed9cfc4e5f88f09d6331245d96780eb10ec0ab"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Inventario: global reset, pedir qty editing + manual add, Recoger Comprado/Facturado/Archivado flow, remove bottom bar",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9ab7ed4e7571326744f1cce98fe9a0e4182dcf39"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix denom pre-fill and reset to use setDenomValue() \u2014 hidden input + button refactor complete",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5586b49d8e4d7446d81a1c8fe5e531fe6bf06bd9"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix numpad: null element bug + readonly to block native keyboard",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7310ce223d2b6fa188221218b3c58c16bbba329b"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "corte caja: fix numpad attachment + bigger payment inputs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/4c6e0143deb85e22eda436965d97be3186712116"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "corte caja: big +/- denom counters + editable deposit targets",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5357ae7d904a6663b25fa9f757e155af56e147e5"
-        }
-      ]
+      "public": 6,
+      "private": 0
     },
     {
       "date": "2026-03-06",
       "count": 9,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: guard against null/undefined p.n and cat in renderProductList",
-          "url": "https://github.com/louieelizondo/nb-app/commit/195a0a6e1bd32c24419d3c943b5324dfbf497ec8"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "inventario: qty snap-to-0.5, alpha sort products, bulk activate/deactivate per category",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0d164bcdb66279c5e209518faff9c2a8dcbc0c05"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix desktop pedir layout: order-cards full width inside flex section-list",
-          "url": "https://github.com/louieelizondo/nb-app/commit/801315182536132d02f0f31c5370ccb56ca53ec9"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "inventario pedir: sequential recoger flow, Deshacer btns, bigger mobile stepper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/fb3c53232cf52d383b5a7b7d5c521e43fef15b3b"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "inventario pedir: stepper qty +/- for mobile, sort items alpha per supplier",
-          "url": "https://github.com/louieelizondo/nb-app/commit/80d46dc9f88aec6b5643c22ed71ed341233163d6"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Prep Dep\u00f3sito: fix Sobre2/Dep\u00f3sito amounts, make denom tables editable",
-          "url": "https://github.com/louieelizondo/nb-app/commit/01fb94c0a911972656f1c9b34c9d648443d156df"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Switch arqueo_denomGrid (Tab 5) to createDenomGridSimple \u2014 plain inputs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/286769ab7adfa701004e7f258cd9d04789708ad2"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Remove +/- buttons from desktop denom grids \u2014 plain inputs only",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7e9a64816cae34039d0a6594c076930fae89faf8"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Revert denom inputs to standard number inputs on desktop views",
-          "url": "https://github.com/louieelizondo/nb-app/commit/feb38341c17be60e9d305acc7c3ad5146ac196f4"
-        }
-      ]
+      "public": 9,
+      "private": 0
     },
     {
       "date": "2026-03-07",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: prevent products from going silently inactive",
-          "url": "https://github.com/louieelizondo/nb-app/commit/6196713eb267f232fbb7d5c1e2cf082782b7e86b"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-03-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-09",
       "count": 3,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Move Page 2 button to preview section \u2014 capture both photos before analyzing",
-          "url": "https://github.com/louieelizondo/nb-app/commit/50a60d9ffd88ddf9512ab9a861b68860331278c7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Overhaul captura facturas v2: nombre favorito, two-page photos, invoice history, editable total, price mapping fix",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f781277357d6470c74ce8ebeb88a49d1c5be5f84"
-        }
-      ]
+      "public": 2,
+      "private": 1
     },
     {
       "date": "2026-03-10",
       "count": 9,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix: paid invoices reappearing as Sin asignar",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3b9ed5dcfe536e413c3a5a4da386ebef693ea9e4"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Hide Categor\u00eda column from desktop table to fit on laptop screens",
-          "url": "https://github.com/louieelizondo/nb-app/commit/6706f2c85de21e58bc2797005f3949a4c7ebef43"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix paid-not-sticking + localStorage bloat + force resync",
-          "url": "https://github.com/louieelizondo/nb-app/commit/462b424efb716df4c8f74b43dec62ec56b875680"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix: cast folio to String (sheet returns numbers)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/44bb136f09f0409c7e709cb1b35cacfd4e03d826"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix sync queue congestion: optimized batch processing + queue management",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9495509e08dae3d41fdcc4f3d24111d5387e1146"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix: add Fecha_Pago and Estado to editable fields in updateFactura",
-          "url": "https://github.com/louieelizondo/nb-app/commit/de1eb89822798555063927f743c93c18e8a69470"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix: trust sheet Estado but infer from forma_pago when empty",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b7a2439d924596ebec2f8672943710d021199735"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Phase 1 + Phase 2: Portal overhaul \u2014 captura & pagos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/04e617d7bda212c870dde4fb63d2f5ca03ca7aa8"
-        }
-      ]
+      "public": 8,
+      "private": 1
     },
     {
       "date": "2026-03-11",
       "count": 5,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Mobile: single-column layout for captura invoice form",
-          "url": "https://github.com/louieelizondo/nb-app/commit/68e36fe8f1f5b2d099e9981056d83d6695c91350"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix: Transferencia invoices never auto-assign fecha_pago",
-          "url": "https://github.com/louieelizondo/nb-app/commit/59b326e309c52e6441b970bbd75f9637dadca000"
-        }
-      ]
+      "public": 2,
+      "private": 3
     },
     {
       "date": "2026-03-12",
       "count": 0,
       "level": 0,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(inventario): whole-number counters, smart rounding, yesterday defaults",
-          "url": "https://github.com/louieelizondo/nb-app/commit/84b3518fe66016c68f50efa3304b66f5756367f2"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(captura): fix price comparison, sync scoping, and name drift",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f69b546af7e7462ea4e1082b8bd6b966e07baa22"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Portal v3: add Categor\u00eda dropdown to manual entry",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c6cb711bded2ba94900e46ef2e5981eca9fcb57c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Portal v3: bigger dates + payment due date with arrow",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0da5a111cf43a34ca8e7fcb446ff3ebbe5084355"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add Portal de Pagos V3 \u2014 server-first rebuild",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a484eafc91828bd30b722cb002a214a4dfd16fe2"
-        }
-      ]
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-13",
       "count": 7,
       "level": 3,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(ingresos): rebuild pendientes logic with cross-reference + dedup",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e810279c7e6ea0a8d523b4c31b17c724781514cd"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(ingresos): resolve Invalid Date display in Pendientes de Sobre 2",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e2dcfda43550dd03147b9757503a45b91535f101"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Improve nomina page: 10 employees, preserve data, print slips",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0204658f8b6f99ce8796a6accc6b95af18a0ef67"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add standalone payroll payment page (pagos_nomina.html)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/752233d2fce5b090de77455d9091972011087e1a"
-        }
-      ]
+      "public": 4,
+      "private": 3
     },
     {
       "date": "2026-03-14",
       "count": 2,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: hardcode script URL in inventory app (no localStorage)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/8bdf6ba492994709f09e110dae60ae23b4280c16"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "inventory v2: single-source MATERIA PRIMA, no localStorage, save to Sheet",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e18d445263e32d053fdb97d88fe6e222fd1c4e24"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "swap portal de pagos v2 \u2192 v3 as main, keep v2 backup",
-          "url": "https://github.com/louieelizondo/nb-app/commit/614dfe26ba89c26dda36c79a5cd87158a21d4763"
-        }
-      ]
+      "public": 2,
+      "private": 0
     },
     {
       "date": "2026-03-15",
       "count": 8,
       "level": 3,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix captura de facturas: column indexes, supplier matching, explicit price sync",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3069bc53fa72f519d9a05511aa93c477a8c4493f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add hold-to-repeat with acceleration on stepper buttons",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a1e785c9b682c237797d9d0e74ccf3f4828d2184"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Restructure product card layout for mobile",
-          "url": "https://github.com/louieelizondo/nb-app/commit/65cc2c7850e5e7698f5d3ba8e02df2105177364f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix supplier filter not applied in count view",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f7ed45dafdc9ec0c2fd7a5159d822711aad5e117"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: add supplier filter chips below area chips",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a5a3e4c76492ed01fd737afcc50b739e107d1876"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: hide items with 0 purchase qty from shopping list",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c748806f7c7ec9c72c914bfb2a2f56daf8a92063"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: round purchase qty to whole units \u2014 cant buy 0.1 of a Caja",
-          "url": "https://github.com/louieelizondo/nb-app/commit/852f813388a98e5e1a9a29da16a6e1b299b8ce80"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: use standard rounding for purchase qty conversion (.5 up, .4 down)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/42306801a0d305c1c020872b0893073059f7833a"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: remove supplier from count view, update cols for Factor_Conversion move to R",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f1850696e9e44faea5ccf9360a2b9b0365b6ec3f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: inventario overhaul \u2014 fix broken columns, per-supplier shopping list, unit labels",
-          "url": "https://github.com/louieelizondo/nb-app/commit/45d441b9b9016312f95cd54783d6a96d22c433d9"
-        }
-      ]
+      "public": 8,
+      "private": 0
     },
     {
       "date": "2026-03-16",
       "count": 3,
       "level": 2,
-      "shipped": []
+      "public": 0,
+      "private": 3
     },
     {
       "date": "2026-03-17",
       "count": 16,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix stats refresh after correction + fuzzy learned mappings",
-          "url": "https://github.com/louieelizondo/nb-app/commit/90583bb2369ba8f50fb7c716d183c3a31dfe43e0"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add debug logging for price sync",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5b59a61a58fdb93e44ccbc7ed63aa3237e01934f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix Captura Facturas: auto price sync, remove local data storage, fix column indexes",
-          "url": "https://github.com/louieelizondo/nb-app/commit/423565af64583af6b74528e03ee5dc5309bf1396"
-        }
-      ]
+      "public": 3,
+      "private": 13
     },
     {
       "date": "2026-03-18",
       "count": 6,
       "level": 3,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add GitHub contribution calendar section",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/ae2638470c42143c4042f23dd50ba42775c3e5d6"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Redesign v2: color-coded project cards, glassmorphism, scroll fix",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/a57292f6fcb2ec5755d83de5671e5e163e6cb94e"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Redesign portfolio site + add new projects",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/c0b531acc7a6e19045dae39d4f505a450112adf7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Auto-load Facturaci\u00f3n and Historial on page load",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9c3cc06811b9fe78770d064d92b9014c72fa6196"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix batch facturaci\u00f3n: rename action to start with update_",
-          "url": "https://github.com/louieelizondo/nb-app/commit/776d096c88c5dc1a65ff4182f421e8e1665ae808"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Batch facturaci\u00f3n save + fix scrollbar",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9beed02358c97c31619dbf1174d1deb97a3de37a"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix Facturaci\u00f3n tab: save button, date format, column layout",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7985cf72a44b6209773cb3aa077b8cf6e05a2766"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Shopping list only shows items you actually counted",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e18ad161fbc79f1f6df847b4b686bca5c15e332a"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Shopping list only shows items you actually counted",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a50703cb5cce40f73838bd99d2250914a39dabca"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix formatDateStr to use spreadsheet timezone globally",
-          "url": "https://github.com/louieelizondo/nb-app/commit/db1c311d57ab66c3ea7d805f23da1e1947bcae94"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add status banner to Portal de Pagos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/dbff531f34383b363e25d606bfb750b1097e6403"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add status banner to Corte Individual, Corte Tienda, Arqueo de Caja",
-          "url": "https://github.com/louieelizondo/nb-app/commit/68037f9ac5556d140fa9342bbdf311b39eca83b7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add status banner + fix bonus system + aux count",
-          "url": "https://github.com/louieelizondo/nb-app/commit/431a91b0b4b014f047af708042793efb64a2dc86"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update registro_ingresos.html",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7c23f8817157581300a03a68a9d0906fe5770c39"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update registro_ingresos.html",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0ce096f64bafa45d00d904281b9d21fe8dba2a0d"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update registro_ingresos.html",
-          "url": "https://github.com/louieelizondo/nb-app/commit/ae0954ba0ff09136367607841f153d2e808b32f7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update registro_ingresos.html",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a7bc88dfa8e10c81b0785c1602fe911fb3ce4186"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update registro_ingresos.html",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e4a02c19db2ebfa72980011113c3db236e626f61"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Update registro_ingresos.html",
-          "url": "https://github.com/louieelizondo/nb-app/commit/28a0987009ab9c5d750fb83919e6bc968ff61515"
-        }
-      ]
+      "public": 6,
+      "private": 0
     },
     {
       "date": "2026-03-19",
       "count": 5,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Arqueo de Caja - add Caja dropdown, refactor loadCajas as shared helper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/174a6b03843360f004d560769fba57eda6ca51f2"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: match Shopify API action name and response fields",
-          "url": "https://github.com/louieelizondo/nb-app/commit/94ef24e59e49da47b8deeb91568d1bcd0e512a9d"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: Corte de Tienda - desktop denom grid for cambio + Shopify API comparison",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c621839dc72d4a8772e2d26c871df9047a77d48a"
-        }
-      ]
+      "public": 3,
+      "private": 2
     },
     {
       "date": "2026-03-20",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Shopify comparison shows Pagos Recibidos (net payments) + Cashback",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c41419dffbf4c7517387f9e4c82c2a4985d08ecd"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: update DEFAULT_CAJAS fallback to match actual sheet, add debug log",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a81df1378662673cbb1cc8f998ee81fcff2ba78e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "simplify: remove Activa/Orden from CONFIG_CAJAS \u2014 if it's on the list, it shows",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a9780ca3db3015b7def5443655c6ec15d6dcaaf1"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: filter inactive cajas from dropdown (Activa=FALSE)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/cabcd64b1c4d6f75dd2914fa325860cd71eff23e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: remove stray braces breaking loadCajas \u2014 caja dropdown was dead",
-          "url": "https://github.com/louieelizondo/nb-app/commit/d5dd2ac57316fe2a750fd8a2c3c681d2f3f67b3d"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-03-21",
       "count": 0,
       "level": 0,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: remove Caja dropdown from Arqueo \u2014 it's petty cash, not per-register",
-          "url": "https://github.com/louieelizondo/nb-app/commit/efdde5210bb499df4e31c883283e0f90dc5bd51c"
-        }
-      ]
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-23",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add Donde Comemos (CANACO) project card",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/038b3bf7b554475dd08705bc680bc41645b4afc9"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-03-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-03-30",
       "count": 14,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "docs: add per-register Shopify lookup + Caja 4 + POS_ID mapping to project tracker",
-          "url": "https://github.com/louieelizondo/nb-app/commit/528aa42a00b8fda64f4d777b67ecaca614a0d55e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Shopify POS per-register lookup for Corte Individual",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7307fde324a5ff9405be9a0fc3c2178e38a2837f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "docs: update project tracker \u2014 Shopify live, Arqueo shipped, CONFIG_CAJAS simplified, denom UX improvements",
-          "url": "https://github.com/louieelizondo/nb-app/commit/eecd040fba03850e8f814dde3c603efd9be777d0"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "UX: auto-select input value on focus for quick overwrite",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f2a44ee6f1e855371acef4ed8d962a782f7bfd2b"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: denom counter now editable on desktop \u2014 type numbers directly",
-          "url": "https://github.com/louieelizondo/nb-app/commit/df5c2759d8d0e00036d505f64c7efbac4b460a78"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix numpad not opening: lazy-init DOM refs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/040edc5ae43df875285d5d83f72b904de80f2173"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Sobre 2: replace inputs with tappable buttons on mobile",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e102f22d08bd5a77929c6c9d49444347837d8270"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Sobre 2 tab: much bigger mobile inputs for fat-finger use",
-          "url": "https://github.com/louieelizondo/nb-app/commit/08754a64dd31e66edc59eeaaba8f1f83aac1d559"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix horizontal scroll: constrain table to viewport width",
-          "url": "https://github.com/louieelizondo/nb-app/commit/456fd09d0bff7421d2a435c02eb1614d698b136c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix horizontal scroll on Facturaci\u00f3n table",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3a7bd9c541f24db387ed3f0f106d9092973cf209"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Facturaci\u00f3n: bigger input fields for large amounts",
-          "url": "https://github.com/louieelizondo/nb-app/commit/28e782af4830ddcf27fae25737b7c4dad5b60367"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Facturaci\u00f3n: add totals row for all columns",
-          "url": "https://github.com/louieelizondo/nb-app/commit/6b188bae09e02b3d626c6384eb4fad09be4e8e2d"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Facturaci\u00f3n: ensure Falta column visible, compact inputs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e96d4dd6cc8c4e1cc36894de5cf4d4870893d2f0"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Fix Facturaci\u00f3n tab: sort ascending, remove CFDI, optimize batch save",
-          "url": "https://github.com/louieelizondo/nb-app/commit/09dac58bd38d2aa142f6b7a29ee18f9233330564"
-        }
-      ]
+      "public": 14,
+      "private": 0
     },
     {
       "date": "2026-03-31",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-13",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Remove employee limit on nomina page",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b88d7f057eb3cd61f0b556a351a8a75eb943b7a3"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-04-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-04-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-04",
       "count": 13,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Bono Productividad lee de Sheets + uploads procesan todas las semanas detectadas",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e3eb29bb54081ca15d603d38f2d033663ef38aba"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "remove(reporte-semanal): drop Lock column",
-          "url": "https://github.com/louieelizondo/nb-app/commit/29b87a674c16d8264125883779c26c4a585c814f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "add: cleanupAjustesAutoGenerated helper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/86f3661ac050dbfcfe0f3e3519f6ec0f9935e96d"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(asistencia): group SEMANAL by name, add cleanup helper for dup numeros",
-          "url": "https://github.com/louieelizondo/nb-app/commit/723ea98d7ed072c74d95a135b671a9d8f812c9c0"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(reporte-semanal): remove Permiso column, Louicarlo 7.5hrs, clearer copy",
-          "url": "https://github.com/louieelizondo/nb-app/commit/525165030fca7ae7b6f70c4adeaf28c69611bfc5"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(reporte-semanal): UI polish + duration parsing bug",
-          "url": "https://github.com/louieelizondo/nb-app/commit/da6d276f689ca927635077a18f1a8d516f1f1d36"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Reporte Semanal de Asistencia + asistencia data layer",
-          "url": "https://github.com/louieelizondo/nb-app/commit/951707b230faf28148f28d7f48fc6d6cef971a3c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(bono-prod): exclude Cashback from PR for Aux/Lider Tienda bonos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/607738aee78031be52be7740d8a06f8ee04c2614"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(bono-prod): header-aware save_ventas_mesa_safe",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0911acee74a38147339ee39df0e8cc0e19b7a4ed"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(bono-prod): defensive null guards in renderBonoTable + multi-mesa scan for roster",
-          "url": "https://github.com/louieelizondo/nb-app/commit/5b8a22275537d22a6e9a256cf26d052eda891a5f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: unify Ventas por Mesa capture into Bono Productividad page",
-          "url": "https://github.com/louieelizondo/nb-app/commit/97e3f398942d9a9c4d86cd9bef51602aae01d0fb"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix: Bono Productividad \u2014 use Notion data_sources endpoint for multi-source DBs",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9d84e7d7ff59f4d42e4beef8486d903e419174ce"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Bono Productividad \u2014 per-employee biweekly bonus engine",
-          "url": "https://github.com/louieelizondo/nb-app/commit/ab3792b7fc72d2b8a6dedd8533a688f626760c08"
-        }
-      ]
+      "public": 13,
+      "private": 0
     },
     {
       "date": "2026-05-05",
       "count": 20,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(reporte-semanal): add Punt and Asis columns to Excel export",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f64728111779d39d3ecde1aadd5320d02c1b2695"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(reporte-semanal): styled Excel export matching web UI",
-          "url": "https://github.com/louieelizondo/nb-app/commit/4fc73b478e38efa5b711edbb44bf92644225f584"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(reporte-semanal): export to Excel for accountant",
-          "url": "https://github.com/louieelizondo/nb-app/commit/cba4b2253024760f5c83d89f7abc8e94edb65fa0"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "ui(reporte-semanal): sticky status bar + reorder cards + share button",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c46f2a14efd8e8d3ccaef2bee22b0075f62171c0"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "chore: include _debugRecomputeEduardo helper in the file",
-          "url": "https://github.com/louieelizondo/nb-app/commit/237ffabed7c6ed7d12f0f6a2800380833bd295a7"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(permisos): Option C carry-forward + daily breakdown + INH\u00c1BIL handling",
-          "url": "https://github.com/louieelizondo/nb-app/commit/6916d0748a6782a5b640ec1e8dcfa1eb07f0ba15"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(permisos): use string-based date math to avoid timezone shift",
-          "url": "https://github.com/louieelizondo/nb-app/commit/94e00d36247fe19a675e3f53b66c9470e1604828"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "perf(asistencia): batch sheet writes, dedupe RAW reads",
-          "url": "https://github.com/louieelizondo/nb-app/commit/89d1edf3bd349df386398870363a424c9d9fec05"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(permisos): checador as truth + per-day repose verification",
-          "url": "https://github.com/louieelizondo/nb-app/commit/8ab3fbf4d9f7d1d587c0ebbe6b32ed70ecd39c3c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(asistencia): always recompute HNT + FaltasInjustificadas",
-          "url": "https://github.com/louieelizondo/nb-app/commit/75a9db34cedc1fb525033dca8e91f522735f9758"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(asistencia): permisos engine with auto-detection of repose status",
-          "url": "https://github.com/louieelizondo/nb-app/commit/3477e43ce362d166babc658e3091c6a3f2b1dcdf"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(asistencia): syncNombresFromNotion helper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/8c92ffbdca8a910b50bffae6864330912e4da16f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(asistencia): noChecador inject also updates Nombre on existing rows",
-          "url": "https://github.com/louieelizondo/nb-app/commit/8c4dc30b309df0a8233023b2fbd843c752c22383"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(asistencia): empleado rules driven from Notion Colaboradores Activos",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f59ec432594519503f7c4a72165f756ac7d4a60c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(asistencia): Enrique full name - Gonz\u00e1lez Pando",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f83d338141dace44c3c89ca35c031d96d211881f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(reporte-semanal): retardos cell stops shifting when no info icon",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c2085bdade3edb32a3fedec77167c46029cf6907"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "polish(reporte-semanal): two-line names + Guardar inside Notas + vertical tooltip",
-          "url": "https://github.com/louieelizondo/nb-app/commit/658eee9668e55e19619cafabea36551bb5dac97d"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(reporte-semanal): better retardo tooltip + dropdown auto-load",
-          "url": "https://github.com/louieelizondo/nb-app/commit/4df6118abc1d078c7b78c81f5740d2a8d234c636"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(reporte-semanal): full names + editable retardos + textarea ajustes + tooltip retardo detail",
-          "url": "https://github.com/louieelizondo/nb-app/commit/4a9a6b7411cd4a8c01934616b185d82be298809e"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(asistencia): Louicarlo workDays M-V + Enrique noChecador inject + reset helpers",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9223240e340a000dfe3c28de78b8eca916a862fe"
-        }
-      ]
+      "public": 20,
+      "private": 0
     },
     {
       "date": "2026-05-06",
       "count": 9,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(vacaciones): string-based date math + backfill column + reservation seed",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9580fa3429cf17c045540204f916d757ab74bb86"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(colaboradores): match by Notion_Page_Id, not Numero",
-          "url": "https://github.com/louieelizondo/nb-app/commit/330cb056557f27dd3277969eac97755e3dca941c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(colaboradores): handle phone_number/email types + whitespace-tolerant lookup",
-          "url": "https://github.com/louieelizondo/nb-app/commit/4a418c0ef1b9b92e6a02e323d29990716515126c"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(colaboradores): expand schema 14->34 cols + correct Notion property names",
-          "url": "https://github.com/louieelizondo/nb-app/commit/7220839c145822242c0656ed82a4f9e88b923ebf"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(vacaciones + colaboradores): unified absence system with calendar",
-          "url": "https://github.com/louieelizondo/nb-app/commit/aefb306562da7ab1ab6cf03a54baabc3f8a47af4"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(permisos): fixMigratedPermisoColumns handles Date cells",
-          "url": "https://github.com/louieelizondo/nb-app/commit/76c6c02e0e1b838159fcc73a41dd80b0839237bc"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(permisos v3): polish + column fix + comprobante urgency + avocado logo",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a33ca2b7f3c2403dd329757a16dfd149c0858e13"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(permisos v2): countdown, cancel/delete, comprobante in admin, auto-justifica, emails",
-          "url": "https://github.com/louieelizondo/nb-app/commit/cb68cef1a69272a6ce1f51323d3ca83e8c1c6f81"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(permisos): migrate from Notion to PERMISOS sheet",
-          "url": "https://github.com/louieelizondo/nb-app/commit/2855ba1f760b5d2c9880d6c658e5ca77146ddf8d"
-        }
-      ]
+      "public": 9,
+      "private": 0
     },
     {
       "date": "2026-05-07",
       "count": 15,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(historial): clean per-year view + repair colab orphan columns",
-          "url": "https://github.com/louieelizondo/nb-app/commit/a21e20b2ecd305cb64346601528c42ab2120871f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(historial): year selector + per-year balance + sort by numero asc",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c979171ed4884cf9115ea1b3d06f5f710ca74afb"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(admin): tabs + Historial RH + explicit anualidad year on vacation form",
-          "url": "https://github.com/louieelizondo/nb-app/commit/831b440fc24674e5300a659dee264d3d5bbd3eae"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(admin): smarter sort + Pasadas filter + colab search + vacation record",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9e0fdf36821d2e49d3fb5e2b92c4b53defc2c712"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(permisos): fixV2ToV3Permisos also handles PRM* submissions made pre-V3",
-          "url": "https://github.com/louieelizondo/nb-app/commit/6d8a251c27d5eefb4e79905903474d2e3e299c98"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(permisos): V2\u2192V3 migration helper + mobile cal + nav links",
-          "url": "https://github.com/louieelizondo/nb-app/commit/fdfb5fcb8dc490e02902ebda732a58d7d1795fd6"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(tier1): admin notifications + HrsDeducir uses FaltasReales",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f013401761c0b004707bf1fefa7f90d4f56cb48f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(reporte): VACACIONES detection + D\u00edas Vacaciones column",
-          "url": "https://github.com/louieelizondo/nb-app/commit/795ad7ba6a619e21411d8d3dfe6135532847543f"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "chore: rename gastos_script_DEPLOY_THIS.gs \u2192 codigo.gs + permanent _runReset wrapper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/527618e2d828f903df85d4760754280756298dee"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(engine): only checador IsFestivo counts for checador employees",
-          "url": "https://github.com/louieelizondo/nb-app/commit/d5d3f5655532245193ed74c6e26dd4bd9d2f37ef"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(reporte-semanal): add D\u00edas Festivos column to web table + Excel export",
-          "url": "https://github.com/louieelizondo/nb-app/commit/032127f21f3b1780b5e0546a1289bdf15c83fbdb"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "refactor(festivos): drop sheet, compute federal holidays in code",
-          "url": "https://github.com/louieelizondo/nb-app/commit/cab8cc5e34002a34860c19fe1992e7ec8a3c3a14"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(festivos): d\u00edas festivos system + checador INHABIL detection",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e572922b138428e9d624a7eeb6caef537feeb04b"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(reporte-semanal): defensive String() on RetardosDetalle + resetSemanalSemana helper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/04cbc9e4dda336ad731612bdb85d0a140e3e2619"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "hotfix(engine): move DiasVacacion to end of SEMANAL headers",
-          "url": "https://github.com/louieelizondo/nb-app/commit/fea03db859eeecfbd7ca911f6ee9be64539c5cbd"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(vacaciones): Chihuahua TZ + recategorize used vs reserved",
-          "url": "https://github.com/louieelizondo/nb-app/commit/1275cc4519ace0719ee2603c141fd2116c8ea0d1"
-        }
-      ]
+      "public": 15,
+      "private": 0
     },
     {
       "date": "2026-05-08",
       "count": 12,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: Cerrar Permiso button + saldo adjustment uses max(form, actual) min",
-          "url": "https://github.com/louieelizondo/nb-app/commit/643883cc9c3c29f84503be928f7f6892ef9164a6"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(repose): same-day window + permiso-day saldo adjust + single HNT charge",
-          "url": "https://github.com/louieelizondo/nb-app/commit/b3bbd1d2e5af7914b28fee0acc0d7f2ad3270e89"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(admin): Recomputar semana button on pending-analysis cards",
-          "url": "https://github.com/louieelizondo/nb-app/commit/66132c8f6b9e749e527631e71cfe7fc37fb3d786"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "simplify(backfill): hardcode VACACION_BACKFILL constant, drop sheet column",
-          "url": "https://github.com/louieelizondo/nb-app/commit/e2ca8c629588dcd7b586befc4b3150c73d816449"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(historial): read year from DOM + show queried year above table",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c49cb33bb1f9a3146f6e63ce8725441b9167494a"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(colaboradores): skip phantom rows + cleanup helper",
-          "url": "https://github.com/louieelizondo/nb-app/commit/9e16127fa9308346e76ad16ee242455c75d31c39"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "debug: _testLoopDebug to find duplicate numero=1 rows",
-          "url": "https://github.com/louieelizondo/nb-app/commit/bd5ea6431211547a54c2eac9a2538c1a1d1bd5f6"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "debug: _testDirectBackfill bypasses getColaboradoresFromSheet_",
-          "url": "https://github.com/louieelizondo/nb-app/commit/bfe4aba4af93e1aa7848386169ec61dcef1038e5"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "debug: add debugColaboradorBackfill helper to diagnose backfill not showing",
-          "url": "https://github.com/louieelizondo/nb-app/commit/f99330a7611af33f0f8d99b43dad7cc753aa9583"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(historial): per-year counts + faltas/retardos + robust col lookup",
-          "url": "https://github.com/louieelizondo/nb-app/commit/cc8d4a195ecb97951b06020a5aec8b2753b820f1"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "fix(historial): admin endpoints bypass colaboradores cache",
-          "url": "https://github.com/louieelizondo/nb-app/commit/c3e03aaebfdd9aef42bb788d546099515347dcd8"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat(historial): inline multi-year detail + selector includes 2025",
-          "url": "https://github.com/louieelizondo/nb-app/commit/1409a1d17a95d8dd6c11fc6f0db21c2f7cad9e39"
-        }
-      ]
+      "public": 12,
+      "private": 0
     },
     {
       "date": "2026-05-09",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "docs: tracker rewrite \u2014 transition to nb-platform, status per app, dual-system roadmap",
-          "url": "https://github.com/louieelizondo/nb-app/commit/09b7d7f03660d38c315c95e4cd699ab59e49c75c"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-05-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-05-31",
       "count": 1,
       "level": 1,
-      "shipped": []
+      "public": 0,
+      "private": 1
     },
     {
       "date": "2026-06-01",
       "count": 0,
       "level": 0,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Add facturacion_log.gs: append-only factura log backend (Task B2)",
-          "url": "https://github.com/louieelizondo/nb-app/commit/19c8e7925d182b73875afe2f85284aaa678fe999"
-        }
-      ]
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-09",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "feat: daily recompute trigger + repose uses actual min taken",
-          "url": "https://github.com/louieelizondo/nb-app/commit/0450453189bd15d4eca3fe394c96331e39827e45"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-06-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-13",
       "count": 3,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Merge pull request #1 from louieelizondo/facturacion-overhaul-2026-06",
-          "url": "https://github.com/louieelizondo/nb-app/commit/2a8d559a6558fcc8ebb7bbfb3f2ab42ea331ca88"
-        },
-        {
-          "repo": "louieelizondo/nb-app",
-          "message": "Redirect old portal/captura pages to Supabase Vercel apps",
-          "url": "https://github.com/louieelizondo/nb-app/commit/19ef3cf038669af2a29c4e5f6bfa1339ee5af869"
-        }
-      ]
+      "public": 2,
+      "private": 1
     },
     {
       "date": "2026-06-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-15",
       "count": 3,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add family financial dashboard (finance.html)",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/c4b53e50904a2c159ecb2484bd7db3498f750974"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add .gitignore to exclude Claude internal tooling directory",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/19cc996114a6b025401f085f1742afafc66cd710"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add family financial dashboard planning files",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/e5c7f87af999225736c244c414d56eac19dbbc23"
-        }
-      ]
+      "public": 3,
+      "private": 0
     },
     {
       "date": "2026-06-16",
       "count": 5,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Remove Finanzas nav link (dashboard moving to private hosting)",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/1e0296edebf0ffb66d86fd3889e1d46b26eab79f"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Remove finance.html from public repo (moving to private hosting)",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/8d90600d90879e75c1aecdb4e8048339ed2b82ff"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add email/password login (Supabase Auth) + Row Level Security",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/605cf81e4ddb4edebb1d80c7a8aa161d94247ca5"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Prefix Supabase tables with fin_ for safe coexistence",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/fc6861a87039298062c3e98247bcc1a5729b2122"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add family financial dashboard (finance.html)",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/fae21ad86872ca67b49fbc1ce152caf8b2accc63"
-        }
-      ]
+      "public": 5,
+      "private": 0
     },
     {
       "date": "2026-06-17",
       "count": 2,
       "level": 1,
-      "shipped": []
+      "public": 0,
+      "private": 2
     },
     {
       "date": "2026-06-18",
       "count": 1,
       "level": 1,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Add AGENTS.md with Cursor Cloud dev setup instructions",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/be7d308949bb461f02a5a39d1670070613b870e0"
-        }
-      ]
+      "public": 1,
+      "private": 0
     },
     {
       "date": "2026-06-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-06-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-07-31",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-14",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-15",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-30",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-08-31",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-01",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-02",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-03",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-04",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-05",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-06",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-07",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-08",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-09",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-10",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-11",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-12",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-13",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-14",
       "count": 13,
       "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Keep the lid from spoiling CARTA and note paper exits below the printer",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/207408e42262437d6bbbe9d07d47ef81dbb588d1"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Make the printer a machine: menu above, paper out the bottom",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/7f2766006f8c2e032f4f9caaaf9a1b18d2689dbc"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Replace the kitchen rooms with a letter and a thermal printer",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/1fb29fc966663a8ab429a5e8d75ce7dfc89633a0"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Split the site into two rooms and keep the commit trail current",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/016ec63f3eb73b3b9f71606d499dc81320213401"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Initialize the kitchen render loop before the first resize",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/d2ae2f2b534bdc21a6a21d9d5495097e3a19408c"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Declare steam helpers before first use and cache-bust the kitchen module",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/6158b8e3b744dc6e079adc6819eaff0be001590d"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Fix steam texture TDZ that blocked the 3D kitchen from loading",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/df6c9f913a5066a53bd79cf32f84b1cea872f5dd"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Make the 3D kitchen visible without an environment map",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/9c5abb1bdff32b4c68a9affbdde5128ab5145e65"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Fix language init crashing the clock and command menu",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/bb4beca197909d203c0c567017cbc785bb78fded"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Redesign louieelizondo.com as a mise-en-place bio site",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/e1ac239d61923e8ab354e9b935e1dfb2ebc140de"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Keep GitHub contribution totals across language switches",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/4462d02cc164708b7ce23a06fd187f8e82321d01"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Redesign louieelizondo.com as Tres Estaciones",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/057748f23ce9f0e5dda9b125cfcb561fc4242783"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Bio site for louieelizondo.com: Mercado Moderno theme, bento + lab demos + CNAME",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/88e60c5e7c3369fcdfaf46ba15d6c071c270883a"
-        }
-      ]
+      "public": 13,
+      "private": 0
     },
     {
       "date": "2026-09-15",
       "count": 3,
       "level": 2,
-      "shipped": [
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Make the learning block a little monitor under the printer",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/20799333e54a61e8d9a42250aa1094b74bbbe4ad"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Put a learning screen under the printer and drop the moneymaker line",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/051ac1882a6224d05c69eaa53372d71f538b4189"
-        },
-        {
-          "repo": "louieelizondo/louieelizondo.github.io",
-          "message": "Print tickets like a register: feed, sound, and a real total",
-          "url": "https://github.com/louieelizondo/louieelizondo.github.io/commit/3ec297e1cd60be5ee690a2a6f44bee1e629d294b"
-        }
-      ]
+      "public": 3,
+      "private": 0
     },
     {
       "date": "2026-09-16",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-17",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-18",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-19",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-20",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-21",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-22",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-23",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-24",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-25",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-26",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-27",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-28",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-29",
       "count": 0,
       "level": 0,
-      "shipped": []
+      "public": 0,
+      "private": 0
     },
     {
       "date": "2026-09-30",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "public": 0,
+      "private": 1
     },
     {
       "date": "2026-10-01",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 11,
+      "level": 4,
+      "public": 11,
+      "private": 0
     }
   ]
 }

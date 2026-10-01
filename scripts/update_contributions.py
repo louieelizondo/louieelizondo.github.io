@@ -2,9 +2,8 @@
 """Refresh assets/data/contributions.json from GitHub + this repo's git log.
 
 Counts follow GitHub's contribution calendar merged with every commit in this
-repository (max per day). Each day also lists public "shipped" commit subjects
-from this repo's git log and from the GitHub API for public repositories only.
-Private repositories affect counts, never commit messages.
+repository (max per day). Each day stores total count plus public and private
+commit counts only (no commit messages).
 """
 
 from __future__ import annotations
@@ -131,45 +130,12 @@ def site_commits() -> Counter:
     return Counter(line.strip() for line in raw.splitlines() if line.strip())
 
 
-def site_shipped() -> dict[str, list[dict]]:
-    """Commit subjects from this repository only."""
-    try:
-        raw = subprocess.check_output(
-            [
-                "git",
-                "-C",
-                str(ROOT),
-                "log",
-                "--all",
-                "--pretty=format:%H|%ad|%s",
-                "--date=short",
-            ],
-            text=True,
-        )
-    except subprocess.CalledProcessError as exc:
-        print(f"git log (subjects) failed: {exc}", file=sys.stderr)
-        return {}
-
-    by_day: dict[str, list[dict]] = defaultdict(list)
-    for line in raw.splitlines():
-        if not line.strip():
-            continue
-        parts = line.split("|", 2)
-        if len(parts) != 3:
-            continue
-        sha, day, subject = parts
-        by_day[day].append(
-            {
-                "repo": SITE_REPO,
-                "message": subject.strip(),
-                "url": f"https://github.com/{SITE_REPO}/commit/{sha}",
-            }
-        )
-    return by_day
+def site_public_commit_counts() -> Counter:
+    """Public commits from this repository (counts only)."""
+    return site_commits()
 
 
 def verify_repo_public(full: str, cache: dict[str, bool], token: str | None) -> bool:
-    """Confirm repository visibility via the GitHub API (private repos never ship messages)."""
     if full in cache:
         return cache[full]
     try:
@@ -213,10 +179,10 @@ def public_repos(token: str | None) -> list[str]:
     return repos
 
 
-def public_repo_shipped(since: date, token: str | None) -> dict[str, list[dict]]:
-    """Fetch commit subjects from public repos (excluding this site repo)."""
+def public_repo_commit_counts(since: date, token: str | None) -> Counter:
+    """Count commits per day in public repos (excluding this site repo)."""
     since_iso = since.isoformat() + "T00:00:00Z"
-    by_day: dict[str, list[dict]] = defaultdict(list)
+    counts: Counter = Counter()
     visibility: dict[str, bool] = {}
     repos = public_repos(token)
     for full in repos:
@@ -239,36 +205,20 @@ def public_repo_shipped(since: date, token: str | None) -> dict[str, list[dict]]
                 c = commit.get("commit") or {}
                 author = c.get("author") or {}
                 day = (author.get("date") or "")[:10]
-                if not day:
-                    continue
                 sha = commit.get("sha") or ""
-                msg = (c.get("message") or "").split("\n", 1)[0].strip()
-                if not sha or not msg:
+                if not day or not sha:
                     continue
-                by_day[day].append(
-                    {
-                        "repo": full,
-                        "message": msg,
-                        "url": f"https://github.com/{full}/commit/{sha}",
-                    }
-                )
+                counts[day] += 1
             if len(commits) < 100:
                 break
             page += 1
-    return by_day
+    return counts
 
 
-def merge_shipped(*maps: dict[str, list[dict]]) -> dict[str, list[dict]]:
-    merged: dict[str, list[dict]] = defaultdict(list)
-    seen: dict[str, set[str]] = defaultdict(set)
-    for m in maps:
-        for day, items in m.items():
-            for item in items:
-                key = item.get("url") or f"{item.get('repo')}:{item.get('message')}"
-                if key in seen[day]:
-                    continue
-                seen[day].add(key)
-                merged[day].append(item)
+def merge_public_counts(*counters: Counter) -> Counter:
+    merged: Counter = Counter()
+    for counter in counters:
+        merged.update(counter)
     return merged
 
 
@@ -288,7 +238,6 @@ def main() -> int:
     token = github_token()
     gh_days = {d["date"]: d for d in github_calendar()}
     site = site_commits()
-    site_msgs = site_shipped()
     visibility: dict[str, bool] = {SITE_REPO: True}
 
     if gh_days:
@@ -298,8 +247,7 @@ def main() -> int:
         start = date.fromisoformat(last_year_dates()[0])
         end = date.today()
 
-    public_msgs = public_repo_shipped(start, token)
-    all_shipped = merge_shipped(site_msgs, public_msgs)
+    public_counts = merge_public_counts(site_public_commit_counts(), public_repo_commit_counts(start, token))
 
     dates = []
     cursor = start
@@ -313,17 +261,15 @@ def main() -> int:
         github = int(gh.get("github") or 0)
         kitchen = int(site.get(iso) or 0)
         count = max(github, kitchen)
-        shipped = [
-            item
-            for item in all_shipped.get(iso, [])
-            if verify_repo_public(item.get("repo", ""), visibility, token)
-        ]
+        public_n = min(count, int(public_counts.get(iso) or 0))
+        private_n = max(0, count - public_n)
         days.append(
             {
                 "date": iso,
                 "count": count,
                 "level": level_from_count(count),
-                "shipped": shipped,
+                "public": public_n,
+                "private": private_n,
             }
         )
 
