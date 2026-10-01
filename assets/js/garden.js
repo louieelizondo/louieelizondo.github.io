@@ -224,8 +224,15 @@
     return Array.from(map.values());
   }
 
+  function formatMonthLabel(month, year) {
+    const fmt = new Intl.DateTimeFormat(locale(), { month: "short" });
+    let text = fmt.format(new Date(year, month, 1));
+    text = text.replace(/\.$/u, "");
+    if (lang() === "es") text = text.toLowerCase();
+    return text;
+  }
+
   function monthLabelColumns(weeks) {
-    const monthFmt = new Intl.DateTimeFormat(locale(), { month: "short" });
     const candidates = monthsPresent(weeks)
       .map(({ month, year }) => {
         const weeksInMonth = countWeeksForMonth(weeks, month, year);
@@ -236,7 +243,7 @@
         if (weeksFromStart < MIN_WEEKS_FOR_MONTH_LABEL) return null;
         return {
           wi,
-          text: monthFmt.format(new Date(year, month, 1)),
+          text: formatMonthLabel(month, year),
           key: `${year}-${month}`,
         };
       })
@@ -260,15 +267,28 @@
     return placed;
   }
 
-  function renderMonths(weeks, container) {
+  function positionMonthLabels(container, labels, grid) {
+    const first = grid.querySelector('.garden-cell[data-week="0"][data-day="0"]');
+    const second = grid.querySelector('.garden-cell[data-week="1"][data-day="0"]');
+    if (!first || !second) return;
+    const stepPx = second.getBoundingClientRect().left - first.getBoundingClientRect().left;
+    labels.forEach((l) => {
+      const span = container.querySelector(`.garden-month-label[data-wi="${l.wi}"]`);
+      if (span) span.style.left = `${l.wi * stepPx}px`;
+    });
+  }
+
+  function renderMonths(weeks, container, grid, labels) {
     container.innerHTML = "";
-    const labels = monthLabelColumns(weeks);
-    const labelAt = new Map(labels.map((l) => [l.wi, l.text]));
-    for (let wi = 0; wi < weeks.length; wi++) {
+    const list = labels || monthLabelColumns(weeks);
+    list.forEach((l) => {
       const span = document.createElement("span");
-      span.textContent = labelAt.get(wi) || "";
+      span.className = "garden-month-label";
+      span.dataset.wi = String(l.wi);
+      span.textContent = l.text;
       container.appendChild(span);
-    }
+    });
+    requestAnimationFrame(() => positionMonthLabels(container, list, grid));
   }
 
   function computeLayout(weekCount) {
@@ -281,11 +301,9 @@
   }
 
   function applyColumnTemplate(el, weekCount) {
-    const trackWidth = weekCount * layoutCell + (weekCount - 1) * layoutGap;
-    el.style.gridTemplateColumns = `repeat(${weekCount}, ${layoutCell}px)`;
+    el.style.width = "100%";
+    el.style.gridTemplateColumns = `repeat(${weekCount}, minmax(0, 1fr))`;
     el.style.gap = `${layoutGap}px`;
-    el.style.width = `${trackWidth}px`;
-    el.style.maxWidth = "100%";
   }
 
   function visibleWeeks() {
@@ -311,8 +329,8 @@
     grid.setAttribute("aria-label", lang() === "es" ? "Contribuciones" : "Contributions");
     grid.tabIndex = 0;
 
+    mount.classList.remove("garden-ready");
     computeLayout(weeks.length);
-    applyColumnTemplate(months, weeks.length);
     applyColumnTemplate(grid, weeks.length);
 
     cells = [];
@@ -340,7 +358,7 @@
       });
     });
 
-    renderMonths(weeks, months);
+    renderMonths(weeks, months, grid);
     layout.appendChild(months);
     layout.appendChild(grid);
     scroll.appendChild(layout);
@@ -377,6 +395,7 @@
   function runIntro(grid) {
     if (reducedMotion) {
       introDone = true;
+      mount.classList.add("garden-ready");
       return;
     }
     grid.classList.add("garden-intro");
@@ -395,7 +414,10 @@
       grid.classList.remove("garden-intro");
       cells.forEach((c) => {
         c.el.style.transitionDelay = "";
+        c.el.style.transform = "";
+        c.el.style.opacity = "";
       });
+      mount.classList.add("garden-ready");
       introDone = true;
     }, duration + 80);
   }
@@ -475,9 +497,14 @@
       const rect = grid.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      const step = layoutCell + layoutGap;
-      const col = Math.floor(x / step);
-      const row = Math.floor(y / step);
+      const first = cells[0]?.el;
+      const nextWeek = cells[7]?.el;
+      const step =
+        first && nextWeek
+          ? nextWeek.getBoundingClientRect().left - first.getBoundingClientRect().left
+          : layoutCell + layoutGap;
+      const col = Math.max(0, Math.min(gridWeeks - 1, Math.round(x / step)));
+      const row = Math.max(0, Math.min(6, Math.round(y / step)));
       const radius =
         parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-radius")) || 3;
       cells.forEach((c) => {
@@ -585,8 +612,9 @@
     const data = { total: null };
     updateTotal(data);
     const monthsEl = mount.querySelector(".garden-months");
+    const gridEl = mount.querySelector(".garden-grid");
     const weeks = visibleWeeks();
-    if (monthsEl && weeks.length) renderMonths(weeks, monthsEl);
+    if (monthsEl && gridEl && weeks.length) renderMonths(weeks, monthsEl, gridEl);
     cells.forEach((c) => {
       c.el.setAttribute("aria-label", formatDayLong(c.day.date, c.day.count || 0));
     });
