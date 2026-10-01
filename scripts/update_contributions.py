@@ -168,6 +168,20 @@ def site_shipped() -> dict[str, list[dict]]:
     return by_day
 
 
+def verify_repo_public(full: str, cache: dict[str, bool], token: str | None) -> bool:
+    """Confirm repository visibility via the GitHub API (private repos never ship messages)."""
+    if full in cache:
+        return cache[full]
+    try:
+        data = gh_api(f"/repos/{full}", token)
+        ok = not bool(data.get("private"))
+    except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError) as exc:
+        print(f"Repo visibility check failed for {full}: {exc}", file=sys.stderr)
+        ok = False
+    cache[full] = ok
+    return ok
+
+
 def public_repos(token: str | None) -> list[str]:
     repos: list[str] = []
     page = 1
@@ -203,8 +217,11 @@ def public_repo_shipped(since: date, token: str | None) -> dict[str, list[dict]]
     """Fetch commit subjects from public repos (excluding this site repo)."""
     since_iso = since.isoformat() + "T00:00:00Z"
     by_day: dict[str, list[dict]] = defaultdict(list)
+    visibility: dict[str, bool] = {}
     repos = public_repos(token)
     for full in repos:
+        if not verify_repo_public(full, visibility, token):
+            continue
         page = 1
         while page <= 5:
             path = (
@@ -272,6 +289,7 @@ def main() -> int:
     gh_days = {d["date"]: d for d in github_calendar()}
     site = site_commits()
     site_msgs = site_shipped()
+    visibility: dict[str, bool] = {SITE_REPO: True}
 
     if gh_days:
         start = date.fromisoformat(min(gh_days))
@@ -295,7 +313,11 @@ def main() -> int:
         github = int(gh.get("github") or 0)
         kitchen = int(site.get(iso) or 0)
         count = max(github, kitchen)
-        shipped = all_shipped.get(iso, [])
+        shipped = [
+            item
+            for item in all_shipped.get(iso, [])
+            if verify_repo_public(item.get("repo", ""), visibility, token)
+        ]
         days.append(
             {
                 "date": iso,

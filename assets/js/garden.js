@@ -1,7 +1,9 @@
 (function () {
   "use strict";
 
-  const DATA_URL = "assets/data/contributions.json";
+  const isDemo = new URLSearchParams(window.location.search).get("demo") === "1";
+  const DATA_URL = isDemo ? "assets/data/contributions.demo.json" : "assets/data/contributions.json";
+  const GARDEN_PAD = 6;
   const EVENTS_URL = "https://api.github.com/users/louieelizondo/events/public";
   const WEEKS_FULL = 53;
   const WEEKS_NARROW = 26;
@@ -38,6 +40,8 @@
   let layoutGap = GAP;
   let fullWeeks = [];
   let resizeObserver = null;
+  let gridEl = null;
+  let scrollTrackEl = null;
 
   const motionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
   motionMq.addEventListener("change", () => {
@@ -151,14 +155,16 @@
       const data = await res.json();
       generatedAt = data.generated;
       (data.days || []).forEach((d) => daysByDate.set(d.date, { ...d, shipped: d.shipped || [] }));
-      try {
-        const evRes = await fetch(EVENTS_URL);
-        if (evRes.ok) {
-          const events = await evRes.json();
-          mergeEventTopUp(events);
+      if (!isDemo) {
+        try {
+          const evRes = await fetch(EVENTS_URL);
+          if (evRes.ok) {
+            const events = await evRes.json();
+            mergeEventTopUp(events);
+          }
+        } catch {
+          /* keep JSON */
         }
-      } catch {
-        /* keep JSON */
       }
       return data;
     } catch {
@@ -295,7 +301,7 @@
   }
 
   function computeLayout(weekCount) {
-    const width = mount.clientWidth;
+    const width = Math.max(0, mount.clientWidth - GARDEN_PAD * 2);
     layoutGap = GAP;
     layoutCell = (width - (weekCount - 1) * layoutGap) / weekCount;
     mount.style.setProperty("--garden-cell", `${layoutCell}px`);
@@ -320,6 +326,12 @@
     scroll.className = "garden-scroll";
     scroll.id = "garden-scroll";
 
+    const track = document.createElement("div");
+    track.className = "garden-scroll-track";
+
+    const pad = document.createElement("div");
+    pad.className = "garden-pad";
+
     const layout = document.createElement("div");
     layout.className = "garden-layout";
 
@@ -331,6 +343,7 @@
     grid.setAttribute("role", "grid");
     grid.setAttribute("aria-label", lang() === "es" ? "Contribuciones" : "Contributions");
     grid.tabIndex = 0;
+    grid.setAttribute("aria-activedescendant", "");
 
     mount.classList.remove("garden-ready");
     computeLayout(weeks.length);
@@ -351,11 +364,8 @@
         btn.tabIndex = -1;
         const idx = cells.length;
         btn.dataset.index = String(idx);
+        btn.id = `garden-day-${day.date}`;
         btn.addEventListener("click", () => activateDay(day.date));
-        btn.addEventListener("focus", () => {
-          focusedIndex = idx;
-          showTooltip(btn, day);
-        });
         grid.appendChild(btn);
         cells.push({ el: btn, day, wi, di });
       });
@@ -364,26 +374,31 @@
     renderMonths(weeks, months, grid);
     layout.appendChild(months);
     layout.appendChild(grid);
-    scroll.appendChild(layout);
+    pad.appendChild(layout);
+    track.appendChild(pad);
+    scroll.appendChild(track);
     mount.appendChild(scroll);
 
+    gridEl = grid;
+    scrollTrackEl = track;
     gridWeeks = weeks.length;
-    setupGridInteractions(grid, scroll);
+    focusedIndex = 0;
+    setupGridInteractions(grid);
     runIntro(grid);
-    setupNarrowScroll(scroll, weeks.length);
+    setupNarrowScroll(track, weeks.length);
   }
 
-  function setupNarrowScroll(scroll, weekCount) {
+  function setupNarrowScroll(track, weekCount) {
     const mq = window.matchMedia("(max-width: 640px)");
     function apply() {
-      scroll.scrollLeft = 0;
+      track.scrollLeft = 0;
       if (mq.matches && fullWeeks.length > WEEKS_NARROW) {
         const offset = (weekCount - WEEKS_NARROW) * (layoutCell + layoutGap);
-        scroll.scrollLeft = Math.max(0, offset);
+        track.scrollLeft = Math.max(0, offset);
       }
     }
     apply();
-    scroll._narrowApply = apply;
+    track._narrowApply = apply;
   }
 
   let relayoutFrame = 0;
@@ -443,21 +458,31 @@
     tooltip?.classList.remove("is-visible");
   }
 
-  function setupGridInteractions(grid, scroll) {
+  function setupGridInteractions(grid) {
     grid.addEventListener("keydown", (e) => {
       const c = cells[focusedIndex];
       if (!c) return;
       let wi = c.wi;
       let di = c.di;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        window.LedgerSite?.clearGardenHighlight?.();
+        hideChip();
+        return;
+      }
       if (e.key === "ArrowRight") wi = Math.min(c.wi + 1, gridWeeks - 1);
       else if (e.key === "ArrowLeft") wi = Math.max(c.wi - 1, 0);
       else if (e.key === "ArrowDown") di = Math.min(c.di + 1, 6);
       else if (e.key === "ArrowUp") di = Math.max(c.di - 1, 0);
-      else if (e.key === "Home") wi = 0;
-      else if (e.key === "End") wi = gridWeeks - 1;
-      else if (e.key === "Enter" || e.key === " ") {
+      else if (e.key === "Home") {
+        wi = 0;
+        di = c.di;
+      } else if (e.key === "End") {
+        wi = gridWeeks - 1;
+        di = c.di;
+      } else if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        activateDay(c.day.date);
+        activateDay(c.day.date, { fromKeyboard: true });
         return;
       } else return;
       e.preventDefault();
@@ -466,7 +491,7 @@
     });
 
     grid.addEventListener("focus", () => {
-      if (cells[focusedIndex]) focusCell(cells[focusedIndex], true);
+      if (cells[focusedIndex]) focusCell(cells[focusedIndex]);
     });
 
     grid.addEventListener("blur", hideTooltip);
@@ -486,14 +511,19 @@
     io.observe(grid);
   }
 
-  function focusCell(cell, fromGrid) {
+  function focusCell(cell) {
     cells.forEach((c) => {
+      c.el.classList.remove("is-keyboard-focused");
       c.el.tabIndex = -1;
     });
-    cell.el.tabIndex = 0;
-    if (!fromGrid) cell.el.focus();
+    cell.el.classList.add("is-keyboard-focused");
+    cell.el.tabIndex = -1;
+    gridEl?.setAttribute("aria-activedescendant", cell.el.id);
     focusedIndex = cells.indexOf(cell);
     showTooltip(cell.el, cell.day);
+    if (gridEl && document.activeElement !== gridEl) {
+      gridEl.focus();
+    }
   }
 
   function applyPointerField(clientX, clientY) {
@@ -575,6 +605,27 @@
     return `https://github.com/louieelizondo?tab=overview&from=${iso}&to=${iso}`;
   }
 
+  function privateCommitCount(day) {
+    const publicN = (day.shipped || []).length;
+    return Math.max(0, (day.count || 0) - publicN);
+  }
+
+  function privateCommitLabel(n) {
+    if (lang() === "es") {
+      return `${n} commit${n === 1 ? "" : "s"} en repos privados`;
+    }
+    return `${n} commit${n === 1 ? "" : "s"} in private repos`;
+  }
+
+  function appendPrivateNote(parent, day) {
+    const priv = privateCommitCount(day);
+    if (priv <= 0) return;
+    const p = document.createElement("p");
+    p.className = "garden-day-card__private";
+    p.textContent = privateCommitLabel(priv);
+    parent.appendChild(p);
+  }
+
   function showDayCard(day) {
     if (!dayCard) return;
     dayCard.replaceChildren();
@@ -598,6 +649,7 @@
         ul.appendChild(li);
       });
       inner.appendChild(ul);
+      appendPrivateNote(inner, day);
       const rest = shipped.length - shown.length;
       if (rest > 0) {
         const more = document.createElement("p");
@@ -615,17 +667,22 @@
         inner.appendChild(more);
       }
     } else {
-      const p = document.createElement("p");
-      p.dataset.en = "No public commits";
-      p.dataset.es = "Sin commits públicos";
-      p.textContent = p.dataset[lang()] || p.dataset.en;
-      inner.appendChild(p);
+      const priv = privateCommitCount(day);
+      if (priv > 0) {
+        appendPrivateNote(inner, day);
+      } else {
+        const p = document.createElement("p");
+        p.dataset.en = "No public commits";
+        p.dataset.es = "Sin commits públicos";
+        p.textContent = p.dataset[lang()] || p.dataset.en;
+        inner.appendChild(p);
+      }
     }
     dayCard.appendChild(inner);
     dayCard.classList.add("is-visible");
   }
 
-  function activateDay(iso) {
+  function activateDay(iso, { fromKeyboard = false } = {}) {
     const day = daysByDate.get(iso) || { date: iso, count: 0, level: 0, shipped: [] };
     const lines = window.LedgerSite?.highlightDateLines?.(iso) || [];
     hideChip();
@@ -635,12 +692,17 @@
       const first = lines[0];
       window.LedgerSite?.openEntryForLine?.(first);
       window.LedgerSite?.scrollToLine?.(first);
-      first.setAttribute("tabindex", "-1");
-      first.focus({ preventScroll: true });
       showChip(iso, day.count || 0);
+      if (fromKeyboard) {
+        gridEl?.focus();
+      } else {
+        first.setAttribute("tabindex", "-1");
+        first.focus({ preventScroll: true });
+      }
     } else {
       showDayCard(day);
       showChip(iso, day.count || 0);
+      if (fromKeyboard) gridEl?.focus();
     }
   }
 

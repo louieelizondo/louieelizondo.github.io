@@ -30,6 +30,7 @@
   --space: 4px;
   --garden-cell: 10px;
   --garden-gap: 2px;
+  --garden-pad: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -206,15 +207,45 @@ html.no-js .garden-mount {
 }
 
 .garden-scroll {
-  overflow-x: auto;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
   width: 100%;
+}
+
+.garden-scroll-track {
+  overflow: visible;
+  width: 100%;
+}
+
+.garden-pad {
+  padding: var(--garden-pad);
+  overflow: visible;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .garden-layout {
   width: 100%;
   overflow: visible;
+}
+
+@media (max-width: 640px) {
+  .garden-scroll-track {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    padding-block: var(--garden-pad);
+    scrollbar-width: none;
+  }
+
+  .garden-scroll-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .garden-pad {
+    padding-block: 0;
+    width: max-content;
+    min-width: 100%;
+  }
 }
 
 .garden-months {
@@ -245,8 +276,6 @@ html.no-js .garden-mount {
   position: relative;
   touch-action: manipulation;
   overflow: visible;
-  padding: 3px;
-  margin: -3px;
 }
 
 .garden-grid[role="grid"] {
@@ -294,10 +323,15 @@ html.no-js .garden-mount {
   background: color-mix(in srgb, var(--accent) 88%, var(--hairline));
 }
 
-.garden-cell:focus-visible {
+.garden-cell:focus-visible,
+.garden-cell.is-keyboard-focused {
   outline: 2px solid currentColor;
   outline-offset: 3px;
   z-index: 2;
+}
+
+.garden-grid:focus {
+  outline: none;
 }
 
 .garden-intro .garden-cell {
@@ -396,6 +430,13 @@ html.reduced-motion .garden-day-card {
 
 .garden-day-card li {
   margin-bottom: calc(var(--space) * 1);
+}
+
+.garden-day-card__private {
+  font-family: var(--font-mono);
+  font-size: var(--size-12);
+  color: var(--muted);
+  margin: calc(var(--space) * 2) 0 0;
 }
 
 html.reduced-motion .garden-cell {
