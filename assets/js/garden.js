@@ -471,11 +471,10 @@
 
     grid.addEventListener("blur", hideTooltip);
 
-    if (pointerFine) {
-      grid.addEventListener("pointermove", (e) => onPointerMove(e, grid));
-      grid.addEventListener("pointerleave", resetCellScales);
-    }
+    grid.addEventListener("pointermove", onPointerMove);
+    grid.addEventListener("pointerleave", resetCellScales);
 
+    listenersActive = true;
     const io = new IntersectionObserver(
       (entries) => {
         const visible = entries.some((en) => en.isIntersecting);
@@ -538,8 +537,9 @@
     });
   }
 
-  function onPointerMove(e, grid) {
+  function onPointerMove(e) {
     if (!introDone || reducedMotion) return;
+    if (e.pointerType === "touch") return;
     pointerClientX = e.clientX;
     pointerClientY = e.clientY;
     if (rafPointer) return;
