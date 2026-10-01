@@ -133,7 +133,12 @@
   function highlightDateLines(iso) {
     clearGardenHighlight();
     highlightDate = iso;
-    const lines = document.querySelectorAll(`.ledger-line[data-date="${iso}"]`);
+    // Exact day (YYYY-MM-DD) matches first, then month-level lines (YYYY-MM).
+    const exact = Array.from(document.querySelectorAll(`.ledger-line[data-date="${iso}"]`));
+    const month = /^\d{4}-\d{2}-\d{2}$/.test(iso)
+      ? Array.from(document.querySelectorAll(`.ledger-line[data-date="${iso.slice(0, 7)}"]`))
+      : [];
+    const lines = exact.concat(month);
     lines.forEach((line) => line.classList.add("is-highlighted"));
     return lines;
   }
