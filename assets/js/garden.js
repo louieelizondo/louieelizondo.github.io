@@ -5,8 +5,10 @@
   const EVENTS_URL = "https://api.github.com/users/louieelizondo/events/public";
   const WEEKS_FULL = 53;
   const WEEKS_NARROW = 26;
-  const CELL = 10;
+  const CELL_MAX = 10;
   const GAP = 2;
+  const MIN_WEEKS_FOR_MONTH_LABEL = 3;
+  const MIN_COLUMNS_BETWEEN_LABELS = 3;
 
   const mount = document.getElementById("commit-garden");
   const totalEl = document.getElementById("garden-total");
@@ -29,6 +31,10 @@
   let rafPointer = null;
   let pointerFine = window.matchMedia("(pointer: fine)").matches;
   let listenersActive = false;
+  let layoutCell = CELL_MAX;
+  let layoutGap = GAP;
+  let fullWeeks = [];
+  let resizeObserver = null;
 
   const motionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
   motionMq.addEventListener("change", () => {
@@ -188,39 +194,126 @@
     }
   }
 
-  function renderMonths(weeks, container) {
-    container.innerHTML = "";
-    const monthFmt = new Intl.DateTimeFormat(locale(), { month: "short" });
-    let lastMonth = -1;
-    weeks.forEach((week, wi) => {
-      const sunday = week[0]?.date;
-      if (!sunday) return;
-      const m = new Date(sunday + "T12:00:00").getMonth();
-      const span = document.createElement("span");
-      span.style.gridColumn = `${wi + 1}`;
-      if (m !== lastMonth) {
-        span.textContent = monthFmt.format(new Date(sunday + "T12:00:00"));
-        lastMonth = m;
-      }
-      container.appendChild(span);
+  function weekHasMonth(week, month, year) {
+    return week.some((d) => {
+      const t = new Date(d.date + "T12:00:00");
+      return t.getMonth() === month && t.getFullYear() === year;
     });
   }
 
+  function countWeeksForMonth(weeks, month, year) {
+    return weeks.reduce((n, w) => n + (weekHasMonth(w, month, year) ? 1 : 0), 0);
+  }
+
+  function firstWeekIndexForMonth(weeks, month, year) {
+    for (let i = 0; i < weeks.length; i++) {
+      if (weekHasMonth(weeks[i], month, year)) return i;
+    }
+    return -1;
+  }
+
+  function monthsPresent(weeks) {
+    const map = new Map();
+    weeks.forEach((week) => {
+      week.forEach((d) => {
+        const t = new Date(d.date + "T12:00:00");
+        const key = `${t.getFullYear()}-${t.getMonth()}`;
+        map.set(key, { month: t.getMonth(), year: t.getFullYear() });
+      });
+    });
+    return Array.from(map.values());
+  }
+
+  function monthLabelColumns(weeks) {
+    const monthFmt = new Intl.DateTimeFormat(locale(), { month: "short" });
+    const candidates = monthsPresent(weeks)
+      .map(({ month, year }) => {
+        const weeksInMonth = countWeeksForMonth(weeks, month, year);
+        if (weeksInMonth < MIN_WEEKS_FOR_MONTH_LABEL) return null;
+        const wi = firstWeekIndexForMonth(weeks, month, year);
+        if (wi < 0) return null;
+        const weeksFromStart = weeks.length - wi;
+        if (weeksFromStart < MIN_WEEKS_FOR_MONTH_LABEL) return null;
+        return {
+          wi,
+          text: monthFmt.format(new Date(year, month, 1)),
+          key: `${year}-${month}`,
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.wi - b.wi || a.key.localeCompare(b.key));
+
+    const seenWi = new Set();
+    const unique = candidates.filter((c) => {
+      if (seenWi.has(c.wi)) return false;
+      seenWi.add(c.wi);
+      return true;
+    });
+
+    const placed = [];
+    let lastWi = -MIN_COLUMNS_BETWEEN_LABELS;
+    unique.forEach((c) => {
+      if (c.wi - lastWi < MIN_COLUMNS_BETWEEN_LABELS) return;
+      placed.push(c);
+      lastWi = c.wi;
+    });
+    return placed;
+  }
+
+  function renderMonths(weeks, container) {
+    container.innerHTML = "";
+    const labels = monthLabelColumns(weeks);
+    const labelAt = new Map(labels.map((l) => [l.wi, l.text]));
+    for (let wi = 0; wi < weeks.length; wi++) {
+      const span = document.createElement("span");
+      span.textContent = labelAt.get(wi) || "";
+      container.appendChild(span);
+    }
+  }
+
+  function computeLayout(weekCount) {
+    const width = mount.clientWidth;
+    layoutGap = GAP;
+    layoutCell = (width - (weekCount - 1) * layoutGap) / weekCount;
+    mount.style.setProperty("--garden-cell", `${layoutCell}px`);
+    mount.style.setProperty("--garden-gap", `${layoutGap}px`);
+    return layoutCell;
+  }
+
+  function applyColumnTemplate(el, weekCount) {
+    const trackWidth = weekCount * layoutCell + (weekCount - 1) * layoutGap;
+    el.style.gridTemplateColumns = `repeat(${weekCount}, ${layoutCell}px)`;
+    el.style.gap = `${layoutGap}px`;
+    el.style.width = `${trackWidth}px`;
+    el.style.maxWidth = "100%";
+  }
+
+  function visibleWeeks() {
+    const mq = window.matchMedia("(max-width: 640px)");
+    return mq.matches ? fullWeeks.slice(-WEEKS_NARROW) : fullWeeks;
+  }
+
   function renderGrid(weeks) {
+    mount.innerHTML = "";
     const scroll = document.createElement("div");
     scroll.className = "garden-scroll";
     scroll.id = "garden-scroll";
 
+    const layout = document.createElement("div");
+    layout.className = "garden-layout";
+
     const months = document.createElement("div");
     months.className = "garden-months";
-    months.style.gridTemplateColumns = `repeat(${weeks.length}, ${CELL}px)`;
 
     const grid = document.createElement("div");
     grid.className = "garden-grid";
     grid.setAttribute("role", "grid");
     grid.setAttribute("aria-label", lang() === "es" ? "Contribuciones" : "Contributions");
     grid.tabIndex = 0;
-    grid.style.gridTemplateColumns = `repeat(${weeks.length}, ${CELL}px)`;
+
+    computeLayout(weeks.length);
+    applyColumnTemplate(months, weeks.length);
+    applyColumnTemplate(grid, weeks.length);
 
     cells = [];
     weeks.forEach((week, wi) => {
@@ -248,11 +341,12 @@
     });
 
     renderMonths(weeks, months);
-    scroll.appendChild(months);
-    scroll.appendChild(grid);
-    mount.innerHTML = "";
+    layout.appendChild(months);
+    layout.appendChild(grid);
+    scroll.appendChild(layout);
     mount.appendChild(scroll);
 
+    gridWeeks = weeks.length;
     setupGridInteractions(grid, scroll);
     runIntro(grid);
     setupNarrowScroll(scroll, weeks.length);
@@ -261,13 +355,23 @@
   function setupNarrowScroll(scroll, weekCount) {
     const mq = window.matchMedia("(max-width: 640px)");
     function apply() {
-      if (mq.matches && weekCount > WEEKS_NARROW) {
-        const offset = (weekCount - WEEKS_NARROW) * (CELL + GAP);
-        scroll.scrollLeft = offset;
+      scroll.scrollLeft = 0;
+      if (mq.matches && fullWeeks.length > WEEKS_NARROW) {
+        const offset = (weekCount - WEEKS_NARROW) * (layoutCell + layoutGap);
+        scroll.scrollLeft = Math.max(0, offset);
       }
     }
-    mq.addEventListener("change", apply);
     apply();
+    scroll._narrowApply = apply;
+  }
+
+  let relayoutFrame = 0;
+  function relayoutGarden() {
+    if (!fullWeeks.length) return;
+    cancelAnimationFrame(relayoutFrame);
+    relayoutFrame = requestAnimationFrame(() => {
+      renderGrid(visibleWeeks());
+    });
   }
 
   function runIntro(grid) {
@@ -371,8 +475,9 @@
       const rect = grid.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      const col = Math.floor(x / (CELL + GAP));
-      const row = Math.floor(y / (CELL + GAP));
+      const step = layoutCell + layoutGap;
+      const col = Math.floor(x / step);
+      const row = Math.floor(y / step);
       const radius =
         parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-radius")) || 3;
       cells.forEach((c) => {
@@ -479,6 +584,9 @@
   window.addEventListener("le-lang-change", () => {
     const data = { total: null };
     updateTotal(data);
+    const monthsEl = mount.querySelector(".garden-months");
+    const weeks = visibleWeeks();
+    if (monthsEl && weeks.length) renderMonths(weeks, monthsEl);
     cells.forEach((c) => {
       c.el.setAttribute("aria-label", formatDayLong(c.day.date, c.day.count || 0));
     });
@@ -501,10 +609,13 @@
     }
     updateTotal(data);
     const allDays = Array.from(daysByDate.values());
-    const weeks = buildWeeks(allDays);
-    gridWeeks = weeks.length;
+    fullWeeks = buildWeeks(allDays);
+    renderGrid(visibleWeeks());
+
     const mq = window.matchMedia("(max-width: 640px)");
-    const weeksToShow = mq.matches ? weeks.slice(-WEEKS_NARROW) : weeks;
-    renderGrid(weeksToShow);
+    mq.addEventListener("change", relayoutGarden);
+
+    resizeObserver = new ResizeObserver(() => relayoutGarden());
+    resizeObserver.observe(mount);
   })();
 })();
