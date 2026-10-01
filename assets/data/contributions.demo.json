@@ -1,6 +1,6 @@
 {
   "generated": "2026-01-01T00:00:00Z",
-  "total": 23,
+  "total": 280,
   "days": [
     {
       "date": "2025-09-28",
@@ -28,9 +28,15 @@
     },
     {
       "date": "2025-10-02",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 10-02 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202510021"
+        }
+      ]
     },
     {
       "date": "2025-10-03",
@@ -94,9 +100,20 @@
     },
     {
       "date": "2025-10-13",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 10-13 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202510131"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 10-13 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202510132"
+        }
+      ]
     },
     {
       "date": "2025-10-14",
@@ -166,20 +183,32 @@
     },
     {
       "date": "2025-10-25",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 10-25 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202510251"
+        }
+      ]
     },
     {
       "date": "2025-10-26",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 10-26 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202510261"
+        }
+      ]
     },
     {
       "date": "2025-10-27",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -202,8 +231,8 @@
     },
     {
       "date": "2025-10-31",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -220,9 +249,15 @@
     },
     {
       "date": "2025-11-03",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-03 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511031"
+        }
+      ]
     },
     {
       "date": "2025-11-04",
@@ -232,9 +267,15 @@
     },
     {
       "date": "2025-11-05",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-05 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511051"
+        }
+      ]
     },
     {
       "date": "2025-11-06",
@@ -262,9 +303,15 @@
     },
     {
       "date": "2025-11-10",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-10 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511101"
+        }
+      ]
     },
     {
       "date": "2025-11-11",
@@ -286,9 +333,15 @@
     },
     {
       "date": "2025-11-14",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-14 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511141"
+        }
+      ]
     },
     {
       "date": "2025-11-15",
@@ -298,9 +351,15 @@
     },
     {
       "date": "2025-11-16",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-16 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511161"
+        }
+      ]
     },
     {
       "date": "2025-11-17",
@@ -328,9 +387,20 @@
     },
     {
       "date": "2025-11-21",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 2,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-21 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511211"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 11-21 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202511212"
+        }
+      ]
     },
     {
       "date": "2025-11-22",
@@ -436,8 +506,8 @@
     },
     {
       "date": "2025-12-09",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -472,8 +542,8 @@
     },
     {
       "date": "2025-12-15",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -508,21 +578,33 @@
     },
     {
       "date": "2025-12-21",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 12-21 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202512211"
+        }
+      ]
     },
     {
       "date": "2025-12-22",
-      "count": 0,
-      "level": 0,
+      "count": 5,
+      "level": 2,
       "shipped": []
     },
     {
       "date": "2025-12-23",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 12-23 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202512231"
+        }
+      ]
     },
     {
       "date": "2025-12-24",
@@ -568,8 +650,8 @@
     },
     {
       "date": "2025-12-31",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -580,8 +662,8 @@
     },
     {
       "date": "2026-01-02",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -598,8 +680,8 @@
     },
     {
       "date": "2026-01-05",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -616,14 +698,20 @@
     },
     {
       "date": "2026-01-08",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 2,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 01-08 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202601081"
+        }
+      ]
     },
     {
       "date": "2026-01-09",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -652,8 +740,8 @@
     },
     {
       "date": "2026-01-14",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -688,9 +776,15 @@
     },
     {
       "date": "2026-01-20",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 01-20 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202601201"
+        }
+      ]
     },
     {
       "date": "2026-01-21",
@@ -718,15 +812,27 @@
     },
     {
       "date": "2026-01-25",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 01-25 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202601251"
+        }
+      ]
     },
     {
       "date": "2026-01-26",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 01-26 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202601261"
+        }
+      ]
     },
     {
       "date": "2026-01-27",
@@ -748,9 +854,15 @@
     },
     {
       "date": "2026-01-30",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 01-30 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202601301"
+        }
+      ]
     },
     {
       "date": "2026-01-31",
@@ -772,9 +884,15 @@
     },
     {
       "date": "2026-02-03",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 02-03 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202602031"
+        }
+      ]
     },
     {
       "date": "2026-02-04",
@@ -802,20 +920,26 @@
     },
     {
       "date": "2026-02-08",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-02-09",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 02-09 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202602091"
+        }
+      ]
     },
     {
       "date": "2026-02-10",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -856,9 +980,15 @@
     },
     {
       "date": "2026-02-17",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 02-17 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202602171"
+        }
+      ]
     },
     {
       "date": "2026-02-18",
@@ -868,21 +998,33 @@
     },
     {
       "date": "2026-02-19",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 02-19 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202602191"
+        }
+      ]
     },
     {
       "date": "2026-02-20",
-      "count": 0,
-      "level": 0,
+      "count": 7,
+      "level": 3,
       "shipped": []
     },
     {
       "date": "2026-02-21",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 02-21 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202602211"
+        }
+      ]
     },
     {
       "date": "2026-02-22",
@@ -892,8 +1034,8 @@
     },
     {
       "date": "2026-02-23",
-      "count": 0,
-      "level": 0,
+      "count": 2,
+      "level": 1,
       "shipped": []
     },
     {
@@ -916,41 +1058,15 @@
     },
     {
       "date": "2026-02-27",
-      "count": 0,
-      "level": 0,
+      "count": 3,
+      "level": 2,
       "shipped": []
     },
     {
       "date": "2026-02-28",
-      "count": 13,
-      "level": 4,
-      "shipped": [
-        {
-          "repo": "louieelizondo/demo-app",
-          "message": "Demo: refresh dashboard layout",
-          "url": "https://github.com/louieelizondo/demo-app/commit/demo0001"
-        },
-        {
-          "repo": "louieelizondo/demo-app",
-          "message": "Demo: tighten form validation",
-          "url": "https://github.com/louieelizondo/demo-app/commit/demo0002"
-        },
-        {
-          "repo": "louieelizondo/demo-app",
-          "message": "Demo: add export CSV",
-          "url": "https://github.com/louieelizondo/demo-app/commit/demo0003"
-        },
-        {
-          "repo": "louieelizondo/demo-app",
-          "message": "Demo: fix pagination edge case",
-          "url": "https://github.com/louieelizondo/demo-app/commit/demo0004"
-        },
-        {
-          "repo": "louieelizondo/demo-app",
-          "message": "Demo: update copy for ES",
-          "url": "https://github.com/louieelizondo/demo-app/commit/demo0005"
-        }
-      ]
+      "count": 0,
+      "level": 0,
+      "shipped": []
     },
     {
       "date": "2026-03-01",
@@ -966,27 +1082,33 @@
     },
     {
       "date": "2026-03-03",
-      "count": 0,
-      "level": 0,
+      "count": 6,
+      "level": 3,
       "shipped": []
     },
     {
       "date": "2026-03-04",
-      "count": 0,
-      "level": 0,
+      "count": 6,
+      "level": 3,
       "shipped": []
     },
     {
       "date": "2026-03-05",
-      "count": 0,
-      "level": 0,
+      "count": 6,
+      "level": 3,
       "shipped": []
     },
     {
       "date": "2026-03-06",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 6,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-06 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603061"
+        }
+      ]
     },
     {
       "date": "2026-03-07",
@@ -1002,39 +1124,88 @@
     },
     {
       "date": "2026-03-09",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-09 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603091"
+        }
+      ]
     },
     {
       "date": "2026-03-10",
-      "count": 6,
+      "count": 8,
       "level": 3,
       "shipped": [
         {
           "repo": "louieelizondo/demo-app",
-          "message": "Demo: ship feature flag",
-          "url": "https://github.com/louieelizondo/demo-app/commit/demo0010"
+          "message": "Demo: routine patch 03-10 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603101"
         }
       ]
     },
     {
       "date": "2026-03-11",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 4,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-11 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603111"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-11 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603112"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-11 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603113"
+        }
+      ]
     },
     {
       "date": "2026-03-12",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 7,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-12 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603121"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-12 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603122"
+        }
+      ]
     },
     {
       "date": "2026-03-13",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-13 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603131"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-13 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603132"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-13 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603133"
+        }
+      ]
     },
     {
       "date": "2026-03-14",
@@ -1050,33 +1221,132 @@
     },
     {
       "date": "2026-03-16",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-03-17",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 7,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-17 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603171"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-17 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603172"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-17 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603173"
+        }
+      ]
     },
     {
       "date": "2026-03-18",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 12,
+      "level": 4,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1201"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1202"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1203"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 4",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1204"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 5",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1205"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 6",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1206"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 7",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1207"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 8",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1208"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 9",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1209"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 10",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1210"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 11",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1211"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: ledger export slice 12",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demo1212"
+        }
+      ]
     },
     {
       "date": "2026-03-19",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 10,
+      "level": 4,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-19 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603191"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-19 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603192"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-19 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603193"
+        }
+      ]
     },
     {
       "date": "2026-03-20",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 4,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-20 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603201"
+        }
+      ]
     },
     {
       "date": "2026-03-21",
@@ -1092,32 +1362,61 @@
     },
     {
       "date": "2026-03-23",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 6,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-23 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603231"
+        }
+      ]
     },
     {
       "date": "2026-03-24",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 6,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-24 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603241"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-24 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603242"
+        }
+      ]
     },
     {
       "date": "2026-03-25",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 5,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-25 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603251"
+        }
+      ]
     },
     {
       "date": "2026-03-26",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 03-26 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202603261"
+        }
+      ]
     },
     {
       "date": "2026-03-27",
-      "count": 0,
-      "level": 0,
+      "count": 4,
+      "level": 2,
       "shipped": []
     },
     {
@@ -1158,15 +1457,37 @@
     },
     {
       "date": "2026-04-03",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-03 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604031"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-03 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604032"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-03 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604033"
+        }
+      ]
     },
     {
       "date": "2026-04-04",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-04 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604041"
+        }
+      ]
     },
     {
       "date": "2026-04-05",
@@ -1194,9 +1515,15 @@
     },
     {
       "date": "2026-04-09",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-09 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604091"
+        }
+      ]
     },
     {
       "date": "2026-04-10",
@@ -1218,21 +1545,39 @@
     },
     {
       "date": "2026-04-13",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-13 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604131"
+        }
+      ]
     },
     {
       "date": "2026-04-14",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-14 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604141"
+        }
+      ]
     },
     {
       "date": "2026-04-15",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-15 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604151"
+        }
+      ]
     },
     {
       "date": "2026-04-16",
@@ -1242,14 +1587,20 @@
     },
     {
       "date": "2026-04-17",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-17 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604171"
+        }
+      ]
     },
     {
       "date": "2026-04-18",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1260,8 +1611,8 @@
     },
     {
       "date": "2026-04-20",
-      "count": 0,
-      "level": 0,
+      "count": 3,
+      "level": 2,
       "shipped": []
     },
     {
@@ -1278,9 +1629,15 @@
     },
     {
       "date": "2026-04-23",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 2,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-23 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604231"
+        }
+      ]
     },
     {
       "date": "2026-04-24",
@@ -1296,15 +1653,21 @@
     },
     {
       "date": "2026-04-26",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-04-27",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 04-27 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202604271"
+        }
+      ]
     },
     {
       "date": "2026-04-28",
@@ -1344,33 +1707,71 @@
     },
     {
       "date": "2026-05-04",
-      "count": 0,
-      "level": 0,
+      "count": 2,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-05-05",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-05 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605051"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-05 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605052"
+        }
+      ]
     },
     {
       "date": "2026-05-06",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 7,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: mixed visibility item 1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demomix01"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: mixed visibility item 2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demomix02"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: mixed visibility item 3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demomix03"
+        }
+      ]
     },
     {
       "date": "2026-05-07",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-05-08",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-08 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605081"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-08 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605082"
+        }
+      ]
     },
     {
       "date": "2026-05-09",
@@ -1386,33 +1787,56 @@
     },
     {
       "date": "2026-05-11",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-11 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605111"
+        }
+      ]
     },
     {
       "date": "2026-05-12",
-      "count": 0,
-      "level": 0,
+      "count": 3,
+      "level": 2,
       "shipped": []
     },
     {
       "date": "2026-05-13",
-      "count": 0,
-      "level": 0,
+      "count": 5,
+      "level": 2,
       "shipped": []
     },
     {
       "date": "2026-05-14",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-14 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605141"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-14 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605142"
+        }
+      ]
     },
     {
       "date": "2026-05-15",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 2,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-15 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605151"
+        }
+      ]
     },
     {
       "date": "2026-05-16",
@@ -1434,15 +1858,21 @@
     },
     {
       "date": "2026-05-19",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-05-20",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 05-20 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202605201"
+        }
+      ]
     },
     {
       "date": "2026-05-21",
@@ -1452,8 +1882,8 @@
     },
     {
       "date": "2026-05-22",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1470,14 +1900,14 @@
     },
     {
       "date": "2026-05-25",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-05-26",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1512,14 +1942,14 @@
     },
     {
       "date": "2026-06-01",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-06-02",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1530,9 +1960,15 @@
     },
     {
       "date": "2026-06-04",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-04 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606041"
+        }
+      ]
     },
     {
       "date": "2026-06-05",
@@ -1578,8 +2014,8 @@
     },
     {
       "date": "2026-06-12",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1602,9 +2038,25 @@
     },
     {
       "date": "2026-06-16",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 6,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-16 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606161"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-16 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606162"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-16 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606163"
+        }
+      ]
     },
     {
       "date": "2026-06-17",
@@ -1644,9 +2096,20 @@
     },
     {
       "date": "2026-06-23",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 5,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-23 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606231"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-23 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606232"
+        }
+      ]
     },
     {
       "date": "2026-06-24",
@@ -1656,15 +2119,21 @@
     },
     {
       "date": "2026-06-25",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-06-26",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 06-26 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202606261"
+        }
+      ]
     },
     {
       "date": "2026-06-27",
@@ -1704,8 +2173,8 @@
     },
     {
       "date": "2026-07-03",
-      "count": 0,
-      "level": 0,
+      "count": 2,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1758,9 +2227,15 @@
     },
     {
       "date": "2026-07-12",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-12 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607121"
+        }
+      ]
     },
     {
       "date": "2026-07-13",
@@ -1770,15 +2245,37 @@
     },
     {
       "date": "2026-07-14",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-14 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607141"
+        }
+      ]
     },
     {
       "date": "2026-07-15",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-15 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607151"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-15 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607152"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-15 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607153"
+        }
+      ]
     },
     {
       "date": "2026-07-16",
@@ -1806,9 +2303,15 @@
     },
     {
       "date": "2026-07-20",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-20 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607201"
+        }
+      ]
     },
     {
       "date": "2026-07-21",
@@ -1848,8 +2351,8 @@
     },
     {
       "date": "2026-07-27",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -1860,9 +2363,25 @@
     },
     {
       "date": "2026-07-29",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 3,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-29 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607291"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-29 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607292"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-29 #3",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607293"
+        }
+      ]
     },
     {
       "date": "2026-07-30",
@@ -1872,9 +2391,15 @@
     },
     {
       "date": "2026-07-31",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 07-31 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202607311"
+        }
+      ]
     },
     {
       "date": "2026-08-01",
@@ -1890,9 +2415,15 @@
     },
     {
       "date": "2026-08-03",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 08-03 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202608031"
+        }
+      ]
     },
     {
       "date": "2026-08-04",
@@ -1962,9 +2493,15 @@
     },
     {
       "date": "2026-08-15",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 08-15 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202608151"
+        }
+      ]
     },
     {
       "date": "2026-08-16",
@@ -1974,9 +2511,20 @@
     },
     {
       "date": "2026-08-17",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 4,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 08-17 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202608171"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 08-17 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202608172"
+        }
+      ]
     },
     {
       "date": "2026-08-18",
@@ -1998,9 +2546,15 @@
     },
     {
       "date": "2026-08-21",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 2,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 08-21 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202608211"
+        }
+      ]
     },
     {
       "date": "2026-08-22",
@@ -2016,14 +2570,14 @@
     },
     {
       "date": "2026-08-24",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-08-25",
-      "count": 0,
-      "level": 0,
+      "count": 2,
+      "level": 1,
       "shipped": []
     },
     {
@@ -2064,14 +2618,25 @@
     },
     {
       "date": "2026-09-01",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 6,
+      "level": 3,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-01 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609011"
+        },
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-01 #2",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609012"
+        }
+      ]
     },
     {
       "date": "2026-09-02",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -2100,26 +2665,38 @@
     },
     {
       "date": "2026-09-07",
-      "count": 0,
-      "level": 0,
+      "count": 3,
+      "level": 2,
       "shipped": []
     },
     {
       "date": "2026-09-08",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-08 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609081"
+        }
+      ]
     },
     {
       "date": "2026-09-09",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-09 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609091"
+        }
+      ]
     },
     {
       "date": "2026-09-10",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -2154,9 +2731,15 @@
     },
     {
       "date": "2026-09-16",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-16 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609161"
+        }
+      ]
     },
     {
       "date": "2026-09-17",
@@ -2166,9 +2749,15 @@
     },
     {
       "date": "2026-09-18",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-18 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609181"
+        }
+      ]
     },
     {
       "date": "2026-09-19",
@@ -2184,14 +2773,14 @@
     },
     {
       "date": "2026-09-21",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
       "date": "2026-09-22",
-      "count": 0,
-      "level": 0,
+      "count": 1,
+      "level": 1,
       "shipped": []
     },
     {
@@ -2208,9 +2797,15 @@
     },
     {
       "date": "2026-09-25",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-25 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609251"
+        }
+      ]
     },
     {
       "date": "2026-09-26",
@@ -2232,21 +2827,33 @@
     },
     {
       "date": "2026-09-29",
-      "count": 4,
-      "level": 2,
+      "count": 0,
+      "level": 0,
       "shipped": []
     },
     {
       "date": "2026-09-30",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 1,
+      "level": 1,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 09-30 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202609301"
+        }
+      ]
     },
     {
       "date": "2026-10-01",
-      "count": 0,
-      "level": 0,
-      "shipped": []
+      "count": 5,
+      "level": 2,
+      "shipped": [
+        {
+          "repo": "louieelizondo/demo-app",
+          "message": "Demo: routine patch 10-01 #1",
+          "url": "https://github.com/louieelizondo/demo-app/commit/demor202610011"
+        }
+      ]
     },
     {
       "date": "2026-10-02",

@@ -544,26 +544,40 @@
     const row = nearest?.di ?? 0;
     const radius =
       parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--garden-radius")) || 3;
+
+    function magnifyScale(dist) {
+      if (dist < 0.55) return 1.35;
+      if (dist >= radius) return 1;
+      const stops = [
+        [0, 1.35],
+        [1, 1.18],
+        [2, 1.07],
+        [3, 1],
+      ];
+      for (let i = 0; i < stops.length - 1; i++) {
+        const [d0, s0] = stops[i];
+        const [d1, s1] = stops[i + 1];
+        if (dist >= d0 && dist <= d1) {
+          const t = d1 === d0 ? 0 : (dist - d0) / (d1 - d0);
+          return s0 + (s1 - s0) * t;
+        }
+      }
+      return 1;
+    }
+
     cells.forEach((c) => {
       const dx = c.wi - col;
       const dy = c.di - row;
       const dist = Math.hypot(dx, dy);
       if (dist < 0.55) {
         c.el.classList.add("is-field-active");
-        c.el.style.transform = "scale(1.35)";
-        c.el.style.opacity = "1";
         showTooltip(c.el, c.day);
-      } else if (dist <= radius) {
-        c.el.classList.remove("is-field-active");
-        const t = 1 - dist / radius;
-        const scale = 1 - t * 0.2;
-        c.el.style.transform = `scale(${scale})`;
-        c.el.style.opacity = String(0.85 + t * 0.15);
       } else {
         c.el.classList.remove("is-field-active");
-        c.el.style.transform = "scale(1)";
-        c.el.style.opacity = "1";
       }
+      const scale = magnifyScale(dist);
+      c.el.style.transform = scale === 1 ? "scale(1)" : `scale(${scale})`;
+      c.el.style.opacity = "1";
     });
   }
 
