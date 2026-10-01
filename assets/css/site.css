@@ -416,6 +416,17 @@ html.reduced-motion .garden-day-card {
   margin: calc(var(--space) * 3) 0 0;
 }
 
+.garden-day-card__more a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+}
+
+.garden-day-card__more a:hover,
+.garden-day-card__more a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
 .garden-day-card h3 {
   font-family: var(--font-mono);
   font-size: var(--size-12);
