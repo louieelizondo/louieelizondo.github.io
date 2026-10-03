@@ -1,1113 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louie Elizondo — Builder</title>
+  <title>Louie Elizondo — Operator &amp; Developer</title>
+  <meta name="description" content="Louie Elizondo — operator at Natural Balance, CANACO Restauranteros, and self-taught developer in Chihuahua, México." />
+  <link rel="canonical" href="https://louieelizondo.com/" />
+  <meta name="theme-color" content="#F7F6F3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://louieelizondo.com/" />
+  <meta property="og:title" content="Louie Elizondo" />
+  <meta property="og:description" content="Operator at Natural Balance, Presidente of CANACO Restauranteros, self-taught developer." />
+  <meta property="og:image" content="https://louieelizondo.com/louie.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@louieelizondo" />
+  <meta name="twitter:title" content="Louie Elizondo" />
+  <meta name="twitter:description" content="Operator at Natural Balance, CANACO Restauranteros, builder in Chihuahua." />
+  <meta name="twitter:image" content="https://louieelizondo.com/louie.jpeg" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0a0a0e;
-      --surface: #12121a;
-      --surface2: #1a1a24;
-      --border: #1f1f2e;
-      --border-hover: #2e2e42;
-      --text: #ededf0;
-      --muted: #7a7a8a;
-      --accent: #b8f044;
-      --accent2: #ff7a45;
-
-      /* Per-project colors */
-      --c-green: #4ade80;
-      --c-blue: #60a5fa;
-      --c-purple: #a78bfa;
-      --c-amber: #fbbf24;
-      --c-teal: #2dd4bf;
-      --c-orange: #fb923c;
-      --c-red: #f87171;
-      --c-rose: #f472b6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* NOISE */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* AMBIENT GLOWS */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(184,240,68,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -10%;
-      left: -15%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(96,165,250,0.04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .project-card.coming-soon.visible { opacity: 0.55; }
-    .project-card.coming-soon.visible:hover { opacity: 0.75; }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.1rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(16px) saturate(180%);
-      background: rgba(10,10,14,0.8);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1px;
-      background: var(--accent);
-      transition: width 0.3s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 8rem 4rem 4rem;
-      position: relative;
-      gap: 4rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .hero-left { animation: fadeUp 0.7s ease both; }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 2rem; height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--c-teal));
-    }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 2rem;
-    }
-    h1 .line2 {
-      background: linear-gradient(135deg, var(--accent), var(--c-teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-    }
-
-    .hero-bio {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 38ch;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .hero-bio span { color: var(--text); }
-
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--c-teal));
-      color: #0a0a0e;
-      box-shadow: 0 0 20px rgba(184,240,68,0.12);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 30px rgba(184,240,68,0.2);
-    }
-    .btn-ghost {
-      background: var(--surface2);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-ghost:hover { border-color: var(--border-hover); background: var(--border); }
-
-    /* HERO RIGHT */
-    .hero-right { display: flex; flex-direction: column; gap: 0.75rem; }
-
-    .stat-card {
-      background: rgba(18,18,26,0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: fadeUp 0.6s ease both;
-    }
-    .stat-card:hover {
-      border-color: rgba(255,255,255,0.1);
-      transform: translateX(6px);
-      background: rgba(26,26,36,0.7);
-    }
-    .stat-card:nth-child(1) { animation-delay: 0.1s; }
-    .stat-card:nth-child(2) { animation-delay: 0.2s; }
-    .stat-card:nth-child(3) { animation-delay: 0.3s; }
-    .stat-card:nth-child(4) { animation-delay: 0.4s; }
-
-    .stat-icon {
-      font-size: 1.5rem;
-      width: 2.8rem;
-      height: 2.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: rgba(255,255,255,0.04);
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-    .stat-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.1rem;
-    }
-    .stat-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    /* SECTION */
-    section {
-      padding: 6rem 4rem;
-      position: relative;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    #projects, #contact { max-width: none; }
-    #projects > *, #contact > * { max-width: 1400px; margin-left: auto; margin-right: auto; }
-
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .section-label::before {
-      content: '';
-      width: 2rem; height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--c-teal));
-    }
-
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
-    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; }
-    .about-text p span { color: var(--text); }
-
-    .about-tags { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      transition: all 0.3s;
-    }
-    .tag:hover { border-color: var(--border-hover); color: var(--text); }
-
-    .about-quote {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 12px;
-      padding: 2.5rem;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      font-style: italic;
-      color: var(--text);
-    }
-    .about-quote cite {
-      display: block;
-      margin-top: 1.2rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-style: normal;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    /* DIVIDER */
-    .divider {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* PROJECTS */
-    #projects {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 6rem 4rem;
-    }
-
-    .project-count {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(184,240,68,0.06);
-      border: 1px solid rgba(184,240,68,0.1);
-      border-radius: 100px;
-      padding: 0.35rem 1rem;
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .project-count .count {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .project-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--card-color, var(--border));
-      border-radius: 14px;
-      padding: 1.75rem 2rem;
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card:hover {
-      border-color: var(--border-hover);
-      border-left-color: var(--card-color, var(--border-hover));
-      transform: translateY(-4px);
-      box-shadow:
-        0 8px 32px rgba(0,0,0,0.4),
-        0 0 48px var(--card-glow, transparent);
-    }
-
-    .project-card.featured { grid-column: span 2; }
-
-    .project-card.coming-soon {
-      opacity: 0.55;
-      border-left-style: dashed;
-    }
-    .project-card.coming-soon:hover {
-      opacity: 0.75;
-      transform: translateY(-2px);
-    }
-
-    .project-card[data-color="green"]  { --card-color: var(--c-green);  --card-glow: rgba(74,222,128,0.06); }
-    .project-card[data-color="blue"]   { --card-color: var(--c-blue);   --card-glow: rgba(96,165,250,0.06); }
-    .project-card[data-color="purple"] { --card-color: var(--c-purple); --card-glow: rgba(167,139,250,0.06); }
-    .project-card[data-color="amber"]  { --card-color: var(--c-amber);  --card-glow: rgba(251,191,36,0.06); }
-    .project-card[data-color="teal"]   { --card-color: var(--c-teal);   --card-glow: rgba(45,212,191,0.06); }
-    .project-card[data-color="orange"] { --card-color: var(--c-orange); --card-glow: rgba(251,146,60,0.06); }
-    .project-card[data-color="red"]    { --card-color: var(--c-red);    --card-glow: rgba(248,113,113,0.06); }
-    .project-card[data-color="rose"]   { --card-color: var(--c-rose);   --card-glow: rgba(244,114,182,0.06); }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .card-emoji {
-      font-size: 1.6rem;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-    .project-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .project-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 100px;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-    .project-badge.live {
-      background: rgba(74,222,128,0.08);
-      color: var(--c-green);
-      border: 1px solid rgba(74,222,128,0.12);
-    }
-    .project-badge.live::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--c-green);
-      animation: pulse 2s infinite;
-    }
-    .project-badge.soon {
-      background: rgba(251,146,60,0.08);
-      color: var(--c-orange);
-      border: 1px solid rgba(251,146,60,0.12);
-    }
-    .project-badge.soon::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--c-orange);
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.3); }
-      50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(74,222,128,0); }
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.7;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 1.25rem;
-      font-size: 0.84rem;
-      color: var(--card-color, var(--accent));
-      text-decoration: none;
-      font-weight: 500;
-      transition: gap 0.3s;
-    }
-    .project-link:hover { gap: 0.8rem; }
-
-    /* GITHUB CALENDAR */
-    #github { border-bottom: 1px solid var(--border); }
-
-    .github-calendar {
-      margin-top: 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.75rem 2rem;
-      overflow-x: auto;
-    }
-
-    .github-calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .github-total {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .github-total span {
-      color: var(--c-green);
-    }
-
-    .github-link {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .github-link:hover { color: var(--text); }
-
-    #contrib-graph {
-      width: 100%;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #contrib-graph .loading {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .github-legend {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      margin-top: 1rem;
-      justify-content: flex-end;
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .legend-box {
-      width: 10px;
-      height: 10px;
-      border-radius: 2px;
-    }
-
-    /* STACK */
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-    .stack-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .stack-item:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    }
-    .stack-emoji { font-size: 2rem; margin-bottom: 0.6rem; }
-    .stack-name { font-size: 0.78rem; font-weight: 500; color: var(--muted); }
-
-    /* CONTACT */
-    #contact {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 6rem 4rem;
-    }
-    .contact-inner { max-width: 600px; }
-    .contact-inner p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; line-height: 1.8; }
-    .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* FOOTER */
-    footer {
-      padding: 2rem 4rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 0.78rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* PHOTO */
-    .hero-photo-wrap {
-      position: relative;
-      width: fit-content;
-      margin-bottom: 2rem;
-    }
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      top: -3px; left: -3px;
-      width: calc(100% + 6px);
-      height: calc(100% + 6px);
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--c-teal));
-      z-index: 0;
-    }
-    .hero-photo {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 180px;
-      aspect-ratio: 1;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 12px;
-      display: block;
-      border: 2px solid var(--bg);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .hero { padding: 8rem 3rem 4rem; gap: 3rem; }
-      section, #projects, #contact { padding: 5rem 3rem; }
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-card.featured { grid-column: span 2; }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.72rem; }
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 6.5rem 1.5rem 3rem;
-        gap: 2.5rem;
-        min-height: auto;
-      }
-      h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
-      .hero-bio { font-size: 0.95rem; max-width: none; }
-      section, #projects, #contact { padding: 4rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .project-card.featured { grid-column: span 1; }
-      .github-calendar { padding: 1.25rem; }
-      .github-calendar-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .stack-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-      .stack-item { padding: 1rem 0.5rem; }
-      .stack-emoji { font-size: 1.5rem; }
-      .stack-name { font-size: 0.7rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem 1.5rem; }
-      .hero-photo { max-width: 140px; }
-    }
-
-    @media (max-width: 400px) {
-      .nav-links { gap: 0.7rem; }
-      .nav-links a { font-size: 0.65rem; }
-      .hero { padding: 6rem 1.25rem 2rem; }
-      section, #projects, #contact { padding: 3rem 1.25rem; }
-      .stack-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-ctas { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script>document.documentElement.classList.remove("no-js");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Louie Elizondo",
+    "url": "https://louieelizondo.com/",
+    "email": "mailto:louie@naturalbalance.club",
+    "jobTitle": "Operator",
+    "worksFor": { "@type": "Organization", "name": "Natural Balance" },
+    "sameAs": [
+      "https://github.com/louieelizondo",
+      "https://x.com/louieelizondo"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#ledger" data-en="Skip to ledger" data-es="Saltar al registro">Skip to ledger</a>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">LE</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#github">GitHub</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-photo-wrap">
-        <img src="louie.jpeg" alt="Louie Elizondo" class="hero-photo" />
+  <div class="site-wrap">
+    <header class="site-header">
+      <div>
+        <h1 class="site-name">Louie Elizondo</h1>
+        <p class="site-tagline" data-en="Operator at Natural Balance (family business, Chihuahua), Presidente of CANACO Restauranteros, self-taught developer." data-es="Operador en Natural Balance (negocio familiar, Chihuahua), Presidente de CANACO Restauranteros, desarrollador autodidacta.">Operator at Natural Balance (family business, Chihuahua), Presidente of CANACO Restauranteros, self-taught developer.</p>
       </div>
-      <div class="hero-eyebrow">Chihuahua, México · Builder</div>
-      <h1>
-        Louie<br>
-        <span class="line2">Elizondo.</span>
-      </h1>
-      <p class="hero-bio">
-        Entrepreneur, operator, and self-taught developer.
-        <span>Turned a family food business into a tech-first operation</span> —
-        now building tools that didn't exist when I needed them.<br><br>
-        Emprendedor, operador, y programador autodidacta.
-        <span>Aprendiendo en público.</span>
-      </p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">Ver proyectos →</a>
-        <a href="https://x.com/louieelizondo" target="_blank" class="btn btn-ghost">𝕏 @louieelizondo</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
       </div>
-    </div>
+    </header>
 
-    <div class="hero-right">
-      <div class="stat-card">
-        <div class="stat-icon">🥗</div>
-        <div>
-          <div class="stat-label">Partner & Operator</div>
-          <div class="stat-value">Natural Balance Club</div>
-        </div>
+    <section class="garden-section" aria-labelledby="garden-heading">
+      <p class="section-label" id="garden-heading" data-en="Commit garden" data-es="Jardín de commits">Commit garden</p>
+      <p class="garden-static-summary" id="garden-static-summary">Contributions summary loads with JavaScript.</p>
+      <div class="garden-meta">
+        <p class="garden-total" id="garden-total" aria-live="polite"></p>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">🏛️</div>
-        <div>
-          <div class="stat-label">Cargo / Role</div>
-          <div class="stat-value">Presidente · Sección de Restauranteros, CANACO Chih.</div>
-        </div>
+      <div class="garden-mount" id="commit-garden" aria-busy="true"></div>
+      <div class="garden-chip" id="garden-chip">
+        <span id="garden-chip-label"></span>
+        <button type="button" id="garden-chip-clear" data-en="Clear" data-es="Limpiar">Clear</button>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">⚙️</div>
-        <div>
-          <div class="stat-label">Current Mission</div>
-          <div class="stat-value">Building in public · Aprendiendo en público</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">📍</div>
-        <div>
-          <div class="stat-label">Base</div>
-          <div class="stat-value">Chihuahua, México</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="garden-day-card" id="garden-day-card" aria-live="polite"></div>
+    </section>
 
-  <hr class="divider" />
+    <main id="ledger">
+      <p class="section-label" data-en="Ledger" data-es="Registro">Ledger</p>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-label reveal">About / Sobre mí</div>
-    <h2 class="reveal">Operator first,<br>developer in progress.</h2>
+      <section class="ledger-year" aria-labelledby="year-2026">
+        <h2 id="year-2026">2026</h2>
 
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>
-          I run <span>Natural Balance</span> — a food business in Chihuahua selling homestyle meals:
-          prepped, cooked, refrigerated, frozen, and hot-ready combos for families who want to eat well without the daily cooking grind.
-        </p>
-        <p>
-          Instead of just running the business the traditional way, I rebuilt it around technology.
-          <span>Notion runs operations. Shopify runs sales.</span> The result is a lean, modern business that punches above its weight.
-        </p>
-        <p>
-          Now I'm going further — learning to build the software I always wanted but couldn't find.
-          <span>This portfolio is my public learning log.</span> Every project here started as a real problem.
-        </p>
-        <p>
-          Soy presidente de la Sección de Restauranteros en <span>CANACO Chihuahua</span> —
-          trabajando para que más negocios locales se modernicen y crezcan.
-        </p>
-        <div class="about-tags">
-          <span class="tag">Shopify</span>
-          <span class="tag">Notion</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Google Apps Script</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">Claude AI</span>
-          <span class="tag">Food Tech</span>
-          <span class="tag">Ops Automation</span>
-          <span class="tag">CANACO</span>
-        </div>
-      </div>
+        <article class="ledger-entry" data-project="nb-platform">
+          <button type="button" class="ledger-entry__header">
+            <span class="ledger-entry__date" data-en="May 2026" data-es="may 2026">May 2026</span>
+            <div class="ledger-entry__main">
+              <p class="ledger-entry__title" data-en="NB Platform" data-es="Plataforma NB">NB Platform</p>
+              <p class="ledger-entry__line" data-en="Mando (admin), Mi-NB (employee app), Checador (kiosk)." data-es="Mando (admin), Mi-NB (app de empleados), Checador (kiosco).">Mando (admin), Mi-NB (employee app), Checador (kiosk).</p>
+            </div>
+            <span class="ledger-entry__impact" data-en="182 PRs · 8,233 checadas · 7,568 facturas" data-es="182 PRs · 8,233 checadas · 7,568 facturas">182 PRs · 8,233 checadas · 7,568 facturas</span>
+          </button>
+          <div class="ledger-entry__panel" id="panel-nb-platform">
+            <div class="ledger-entry__panel-inner">
+              <div class="ledger-entry__detail">
+                <img class="ledger-shot" src="assets/ledger/nb-platform.svg" width="640" height="400" alt="NB Platform — Mando, Mi-NB, and Checador" loading="lazy" decoding="async" />
+                <p class="ledger-detail-text" data-en="Internal tools that run Natural Balance day to day: admin, staff, and time clock." data-es="Herramientas internas para operar Natural Balance: administración, personal y checador.">Internal tools that run Natural Balance day to day: admin, staff, and time clock.</p>
+                <p class="ledger-detail-text" data-en="Shipped as static apps backed by spreadsheets and scripts where it counts." data-es="Entregadas como apps estáticas con respaldo en hojas de cálculo y scripts donde importa.">Shipped as static apps backed by spreadsheets and scripts where it counts.</p>
+                <p class="ledger-links">
+                  <a href="https://naturalbalance.club" target="_blank" rel="noopener noreferrer">naturalbalance.club</a>
+                </p>
+                <ul class="ledger-lines">
+                  <li class="ledger-line" data-date="2026-05">
+                    <span class="ledger-line__date" data-en="May 2026" data-es="may 2026">May 2026</span>
+                    <span data-en="Mando — admin console." data-es="Mando — consola de administración.">Mando — admin console.</span>
+                  </li>
+                  <li class="ledger-line" data-date="2026-05">
+                    <span class="ledger-line__date" data-en="May 2026" data-es="may 2026">May 2026</span>
+                    <span data-en="Mi-NB — employee-facing app." data-es="Mi-NB — app para empleados.">Mi-NB — employee-facing app.</span>
+                  </li>
+                  <li class="ledger-line" data-date="2026-05">
+                    <span class="ledger-line__date" data-en="May 2026" data-es="may 2026">May 2026</span>
+                    <span data-en="Checador — kiosk clock-in." data-es="Checador — kiosco de entrada.">Checador — kiosk clock-in.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <blockquote class="about-quote reveal">
-        "Build it. Break it. Feel like an idiot. Figure it out. Do it again — but better.
-        <br><br>
-        Construye. Rómpelo. Siéntete idiota. Entiéndelo. Repite — pero mejor."
-        <cite>— Louie Elizondo</cite>
-      </blockquote>
-    </div>
-  </section>
+        <article class="ledger-entry" data-project="donde-comemos">
+          <button type="button" class="ledger-entry__header">
+            <span class="ledger-entry__date" data-en="Feb 2026" data-es="feb 2026">Feb 2026</span>
+            <div class="ledger-entry__main">
+              <p class="ledger-entry__title" data-en="Donde Comemos" data-es="Donde Comemos">Donde Comemos</p>
+              <p class="ledger-entry__line" data-en="CANACO Chihuahua restaurant directory." data-es="Directorio de restaurantes CANACO Chihuahua.">CANACO Chihuahua restaurant directory.</p>
+            </div>
+            <span class="ledger-entry__impact" data-en="Public restaurant directory for CANACO Chihuahua" data-es="Directorio público de restaurantes de CANACO Chihuahua">Public restaurant directory for CANACO Chihuahua</span>
+          </button>
+          <div class="ledger-entry__panel" id="panel-donde-comemos">
+            <div class="ledger-entry__panel-inner">
+              <div class="ledger-entry__detail">
+                <img class="ledger-shot" src="assets/ledger/donde-comemos.svg" width="640" height="400" alt="Donde Comemos restaurant directory" loading="lazy" decoding="async" />
+                <p class="ledger-detail-text" data-en="A simple guide so locals can discover where to eat in the city." data-es="Una guía sencilla para que la gente descubra dónde comer en la ciudad.">A simple guide so locals can discover where to eat in the city.</p>
+                <p class="ledger-detail-text" data-en="Built with the Restauranteros committee." data-es="Construido con el comité de Restauranteros.">Built with the Restauranteros committee.</p>
+                <p class="ledger-links">
+                  <a href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" rel="noopener noreferrer">dondecomemos</a>
+                </p>
+                <ul class="ledger-lines">
+                  <li class="ledger-line" data-date="2026-02">
+                    <span class="ledger-line__date" data-en="Feb 2026" data-es="feb 2026">Feb 2026</span>
+                    <span data-en="Directory launch." data-es="Lanzamiento del directorio.">Directory launch.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-label reveal">Projects / Proyectos</div>
-    <h2 class="reveal">Built, building,<br>and next up.</h2>
-    <div class="project-count reveal">
-      <span class="count">5</span> live · <span class="count">2</span> in development
-    </div>
+        <article class="ledger-entry" data-project="canaco">
+          <button type="button" class="ledger-entry__header">
+            <span class="ledger-entry__date" data-en="Feb 2026" data-es="feb 2026">Feb 2026</span>
+            <div class="ledger-entry__main">
+              <p class="ledger-entry__title" data-en="CANACO Restauranteros" data-es="CANACO Restauranteros">CANACO Restauranteros</p>
+              <p class="ledger-entry__line" data-en="Leadership and tools for the restaurant section." data-es="Liderazgo y herramientas para la sección de restaurantes.">Leadership and tools for the restaurant section.</p>
+            </div>
+            <span class="ledger-entry__impact" data-en="Presidente, Sección Restauranteros" data-es="Presidente, Sección Restauranteros">Presidente, Sección Restauranteros</span>
+          </button>
+          <div class="ledger-entry__panel" id="panel-canaco">
+            <div class="ledger-entry__panel-inner">
+              <div class="ledger-entry__detail">
+                <img class="ledger-shot" src="assets/ledger/canaco.svg" width="640" height="400" alt="CANACO Restauranteros committee at CANACO Servytur Chihuahua" loading="lazy" decoding="async" />
+                <p class="ledger-detail-text" data-en="Presidente of the Restauranteros section at CANACO Chihuahua." data-es="Presidente de la sección de Restauranteros en CANACO Chihuahua.">Presidente of the Restauranteros section at CANACO Chihuahua.</p>
+                <p class="ledger-detail-text" data-en="Modernization and visibility for local restaurants." data-es="Modernización y visibilidad para restaurantes locales.">Modernization and visibility for local restaurants.</p>
+                <ul class="ledger-lines">
+                  <li class="ledger-line" data-date="2026-02">
+                    <span class="ledger-line__date" data-en="Feb 2026" data-es="feb 2026">Feb 2026</span>
+                    <span data-en="Section initiatives." data-es="Iniciativas de la sección.">Section initiatives.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
 
-    <div class="projects-grid">
+        <article class="ledger-entry" data-project="nomina">
+          <button type="button" class="ledger-entry__header">
+            <span class="ledger-entry__date" data-en="Feb 2026" data-es="feb 2026">Feb 2026</span>
+            <div class="ledger-entry__main">
+              <p class="ledger-entry__title" data-en="Nómina &amp; bono" data-es="Nómina y bono">Nómina &amp; bono</p>
+              <p class="ledger-entry__line" data-en="Biweekly productivity bonus engine from POS sales." data-es="Motor de bono de productividad quincenal desde ventas del POS.">Biweekly productivity bonus engine from POS sales.</p>
+            </div>
+            <span class="ledger-entry__impact" data-en="Biweekly bonus for 22 active colaboradores" data-es="Bono quincenal para 22 colaboradores activos">Biweekly bonus for 22 active colaboradores</span>
+          </button>
+          <div class="ledger-entry__panel" id="panel-nomina">
+            <div class="ledger-entry__panel-inner">
+              <div class="ledger-entry__detail">
+                <img class="ledger-shot" src="assets/ledger/nomina.svg" width="640" height="400" alt="Nómina and bonus system" loading="lazy" decoding="async" />
+                <p class="ledger-detail-text" data-en="Calculates team bonuses from station sales with editable tables." data-es="Calcula bonos del equipo por ventas de mesa con tablas editables.">Calculates team bonuses from station sales with editable tables.</p>
+                <p class="ledger-detail-text" data-en="Connected to point-of-sale exports." data-es="Conectado a exportaciones del punto de venta.">Connected to point-of-sale exports.</p>
+                <p class="ledger-links">
+                  <a href="nomina.html">nomina.html</a>
+                </p>
+                <ul class="ledger-lines">
+                  <li class="ledger-line" data-date="2026-02">
+                    <span class="ledger-line__date" data-en="Feb 2026" data-es="feb 2026">Feb 2026</span>
+                    <span data-en="Bonus engine shipped." data-es="Motor de bonos entregado.">Bonus engine shipped.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
 
-      <div class="project-card featured reveal" data-color="green">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">🥗</div>
-          <h3>Natural Balance Club</h3>
-        </div>
-        <p>
-          Home-style food delivery in Chihuahua. Prepped, cooked, refrigerated, frozen, and hot-ready meals for busy families.
-          Powered by Shopify + a custom Notion operations system.
-          <br><br>
-          <em>Comida casera a domicilio en Chihuahua. Shopify + Notion como cerebro de operaciones.</em>
-        </p>
-        <a href="https://naturalbalance.club" target="_blank" class="project-link">naturalbalance.club →</a>
-      </div>
+    <footer class="site-footer">
+      <a href="https://x.com/louieelizondo" target="_blank" rel="noopener noreferrer">X @louieelizondo</a>
+      <a href="https://github.com/louieelizondo" target="_blank" rel="noopener noreferrer">GitHub louieelizondo</a>
+      <a href="mailto:louie@naturalbalance.club">louie@naturalbalance.club</a>
+    </footer>
+  </div>
 
-      <div class="project-card reveal" data-color="blue">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">📊</div>
-          <h3>NB Finance Portal</h3>
-        </div>
-        <p>
-          A suite of 6 web apps I built to run our finances — dashboard with KPIs, supplier invoice management,
-          AI-powered invoice capture, daily cash reconciliation, income tracking, and inventory.
-          Built with HTML/CSS/JS on GitHub Pages, Google Apps Script backend, and Google Sheets as the database.
-          <br><br>
-          <em>Suite de 6 apps web para administrar las finanzas del negocio. Dashboard, facturas, cortes de caja,
-          ingresos e inventario. Frontend en GitHub Pages, backend en Google Apps Script.</em>
-        </p>
-      </div>
+  <div class="garden-tooltip" id="garden-tooltip" aria-hidden="true"></div>
 
-      <div class="project-card reveal" data-color="purple">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">📝</div>
-          <h3>Contract Generator</h3>
-        </div>
-        <p>
-          Automated employment contract system for our team. Generates pre-filled contracts for 9 roles
-          and 3 contract types (trial, training, and permanent) — ready to print and sign.
-          <br><br>
-          <em>Sistema automatizado de contratos laborales. Genera contratos pre-llenados para 9 puestos
-          y 3 tipos de contrato — listos para firmar.</em>
-        </p>
-      </div>
-
-      <div class="project-card reveal" data-color="amber">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">💰</div>
-          <h3>Nómina & Bono System</h3>
-        </div>
-        <p>
-          Payroll bonus engine that calculates biweekly productivity bonuses based on sales per station.
-          Connected to our POS data with editable percentage tables and real-time calculations.
-          <br><br>
-          <em>Motor de bonos de productividad quincenal basado en ventas por mesa.
-          Conectado al punto de venta con tablas editables y cálculos en tiempo real.</em>
-        </p>
-      </div>
-
-      <div class="project-card reveal" data-color="teal">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">🌐</div>
-          <h3>This Portfolio Site</h3>
-        </div>
-        <p>
-          My first hand-coded project. Built to learn Git, GitHub Pages, and HTML/CSS from scratch.
-          Hosted free on GitHub Pages.
-          <br><br>
-          <em>Mi primer proyecto de código. Hecho para aprender Git y GitHub Pages desde cero.</em>
-        </p>
-        <a href="https://github.com/louieelizondo/louieelizondo.github.io" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card reveal" data-color="rose">
-        <div class="project-badge live">Live · En vivo</div>
-        <div class="card-header">
-          <div class="card-emoji">🍽️</div>
-          <h3>Donde Comemos — CANACO</h3>
-        </div>
-        <p>
-          Restaurant directory for CANACO Chihuahua. A guide to help locals discover where to eat — built as part of the Restauranteros committee.
-          <br><br>
-          <em>Directorio de restaurantes de CANACO Chihuahua. Una guía para descubrir dónde comer en la ciudad.</em>
-        </p>
-        <a href="https://canacorestauranteroscuu.github.io/Restaurantes/dondecomemos.html" target="_blank" class="project-link">Visit Site →</a>
-      </div>
-
-      <div class="project-card coming-soon reveal" data-color="orange">
-        <div class="project-badge soon">Building Next · En desarrollo</div>
-        <div class="card-header">
-          <div class="card-emoji">🛒</div>
-          <h3>Shopify App</h3>
-        </div>
-        <p>
-          A tool born from running Natural Balance — solving a real operations problem that no existing Shopify app solves well.
-          The finance portal gave me the foundation to build this.
-          <br><br>
-          <em>Una herramienta nacida de operar Natural Balance. El portal financiero me dio la base para construir esto.</em>
-        </p>
-      </div>
-
-      <div class="project-card coming-soon reveal" data-color="red">
-        <div class="project-badge soon">Building Next · En desarrollo</div>
-        <div class="card-header">
-          <div class="card-emoji">🏋️</div>
-          <h3>Kettlebell Workout App</h3>
-        </div>
-        <p>
-          A training app for kettlebell athletes. Structured programs, progress tracking, and smart workout recommendations.
-          Planned as an add-on to the Natural Balance ecosystem.
-          <br><br>
-          <em>App de entrenamiento con pesas rusas. Planeada como extensión del ecosistema Natural Balance.</em>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- GITHUB ACTIVITY -->
-  <section id="github">
-    <div class="section-label reveal">GitHub / Actividad</div>
-    <h2 class="reveal">Commit by commit.</h2>
-
-    <div class="github-calendar reveal">
-      <div class="github-calendar-header">
-        <div class="github-total" id="contrib-total">Loading contributions...</div>
-        <a href="https://github.com/louieelizondo" target="_blank" class="github-link">@louieelizondo →</a>
-      </div>
-      <div id="contrib-graph">
-        <span class="loading">Fetching GitHub data...</span>
-      </div>
-      <div class="github-legend" id="contrib-legend" style="display:none;">
-        <span>Less</span>
-        <div class="legend-box" style="background: #1a1a24;"></div>
-        <div class="legend-box" style="background: #1c4a2a;"></div>
-        <div class="legend-box" style="background: #2d7a3a;"></div>
-        <div class="legend-box" style="background: #3fb950;"></div>
-        <div class="legend-box" style="background: #4ade80;"></div>
-        <span>More</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section id="stack">
-    <div class="section-label reveal">Tools / Herramientas</div>
-    <h2 class="reveal">What I build with.</h2>
-
-    <div class="stack-grid">
-      <div class="stack-item reveal"><div class="stack-emoji">🛒</div><div class="stack-name">Shopify</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🧠</div><div class="stack-name">Notion</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🌐</div><div class="stack-name">HTML / CSS</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">⚡</div><div class="stack-name">JavaScript</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">📜</div><div class="stack-name">Google Apps Script</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🐙</div><div class="stack-name">GitHub</div></div>
-      <div class="stack-item reveal"><div class="stack-emoji">🤖</div><div class="stack-name">Claude AI</div></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-label reveal">Contact / Contacto</div>
-    <h2 class="reveal">Let's talk.</h2>
-    <div class="contact-inner reveal">
-      <p>
-        Building something interesting? Want to talk food tech, Shopify, or operations in Mexico?
-        I publish most of my thinking on X.
-        <br><br>
-        <em>¿Construyendo algo interesante? Hablemos de tech, Shopify, u operaciones. Publico la mayoría de mis ideas en X.</em>
-      </p>
-      <div class="contact-links">
-        <a href="https://x.com/louieelizondo" target="_blank" class="btn btn-primary">𝕏 @louieelizondo</a>
-        <a href="https://naturalbalance.club" target="_blank" class="btn btn-ghost">Natural Balance →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <span>© 2026 Louie Elizondo · Chihuahua, México</span>
-    <span>Built with HTML + GitHub Pages · Hecho con código y café ☕</span>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.05 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // GitHub Contribution Calendar
-    (async function() {
-      const username = 'louieelizondo';
-      const graph = document.getElementById('contrib-graph');
-      const totalEl = document.getElementById('contrib-total');
-      const legendEl = document.getElementById('contrib-legend');
-
-      const colors = ['#1a1a24', '#1c4a2a', '#2d7a3a', '#3fb950', '#4ade80'];
-
-      try {
-        const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
-        if (!res.ok) throw new Error('API error');
-        const data = await res.json();
-
-        const total = data.total?.lastYear || data.total?.['last'] || Object.values(data.total || {}).pop() || 0;
-        totalEl.innerHTML = `<span>${total}</span> contributions in the last year`;
-
-        const contributions = data.contributions || [];
-
-        const cellSize = 11;
-        const cellGap = 3;
-        const step = cellSize + cellGap;
-        const weeks = 53;
-        const days = 7;
-        const labelW = 28;
-        const svgW = labelW + weeks * step;
-        const monthLabelH = 18;
-        const svgH = monthLabelH + days * step;
-
-        let svg = `<svg width="100%" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg" style="max-width:${svgW}px;">`;
-
-        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        let lastMonth = -1;
-        const flat = contributions.flat();
-
-        flat.forEach((day, i) => {
-          const d = new Date(day.date);
-          const weekIdx = Math.floor(i / 7);
-          const dayIdx = i % 7;
-          if (dayIdx === 0) {
-            const m = d.getMonth();
-            if (m !== lastMonth) {
-              lastMonth = m;
-              const x = labelW + weekIdx * step;
-              svg += `<text x="${x}" y="12" fill="#7a7a8a" font-size="9" font-family="DM Sans, sans-serif">${months[m]}</text>`;
-            }
-          }
-        });
-
-        ['Mon','','Wed','','Fri','',''].forEach((label, i) => {
-          if (label) {
-            svg += `<text x="0" y="${monthLabelH + i * step + cellSize - 2}" fill="#7a7a8a" font-size="8" font-family="DM Sans, sans-serif">${label}</text>`;
-          }
-        });
-
-        flat.forEach((day, i) => {
-          const weekIdx = Math.floor(i / 7);
-          const dayIdx = i % 7;
-          const x = labelW + weekIdx * step;
-          const y = monthLabelH + dayIdx * step;
-          const level = Math.min(day.level || 0, 4);
-          const color = colors[level];
-
-          svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2" fill="${color}"`;
-          svg += ` style="transition:opacity 0.2s"`;
-          svg += `><title>${day.date}: ${day.count || 0} contribution${(day.count || 0) !== 1 ? 's' : ''}</title></rect>`;
-        });
-
-        svg += '</svg>';
-        graph.innerHTML = svg;
-        legendEl.style.display = 'flex';
-
-      } catch (err) {
-        graph.innerHTML = `<a href="https://github.com/${username}" target="_blank" style="color: var(--c-green); text-decoration: none; font-size: 0.9rem;">View my contributions on GitHub →</a>`;
-        totalEl.textContent = 'GitHub contributions';
-      }
-    })();
-  </script>
-
+  <script src="assets/js/ledger.js" defer></script>
+  <script src="assets/js/garden.js" defer></script>
 </body>
 </html>
