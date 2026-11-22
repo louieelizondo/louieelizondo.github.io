@@ -1,56 +1,7 @@
 {
-  "generated": "2026-11-21T14:40:16Z",
-  "total": 419,
+  "generated": "2026-11-22T14:35:56Z",
+  "total": 420,
   "days": [
-    {
-      "date": "2025-11-16",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
-    {
-      "date": "2025-11-17",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
-    {
-      "date": "2025-11-18",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
-    {
-      "date": "2025-11-19",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
-    {
-      "date": "2025-11-20",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
-    {
-      "date": "2025-11-21",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
-    {
-      "date": "2025-11-22",
-      "count": 0,
-      "level": 0,
-      "public": 0,
-      "private": 0
-    },
     {
       "date": "2025-11-23",
       "count": 0,
@@ -2594,6 +2545,13 @@
     },
     {
       "date": "2026-11-21",
+      "count": 1,
+      "level": 1,
+      "public": 1,
+      "private": 0
+    },
+    {
+      "date": "2026-11-22",
       "count": 0,
       "level": 0,
       "public": 0,
